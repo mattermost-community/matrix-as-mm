@@ -1,0 +1,117 @@
+server_name: localhost
+public_baseurl: http://localhost:8008/
+
+pid_file: '/var/run/matrix-synapse.pid'
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: false
+    bind_addresses: ['0.0.0.0']
+
+    resources:
+      - names: [client]
+        compress: false
+
+database:
+  name: psycopg2
+  args:
+    database: synapse
+    user: synapse
+    password: hunter2
+    host: postgres
+    port: 5432
+    cp_min: 5
+    cp_max: 10
+#database:
+#  name: sqlite3
+#  args:
+#    database: /data/homeserver.db
+
+# log_config: '/data/localhost.log.config'
+media_store_path: '/data/media_store'
+report_stats: false
+enable_registration: true
+enable_registration_without_verification: true
+macaroon_secret_key: 'xN1OxX=0=WDNAP+dq7v8w&zI7#nH7+ho#jg*8RVv9ZoW8#GDmT'
+form_secret: 'z+3Z-B*6oi9@@Uc55K@+KOy26@eDdLK-^b-lij&f-o6C2lbKzE'
+registration_shared_secret: '8^5:4zQl6J@LjJz~5JiW^=kI0_IO8c8B_8d&YEPp.NAbMa*&zw'
+suppress_key_server_warning: true
+allowed_local_3pids:
+  - medium: email
+    pattern: '.*@localhost.com'
+  - medium: email
+    pattern: '.*@nomail.com'
+  - medium: msisdn
+    pattern: '\\+\d\d'
+# Enable 3PIDs lookup requests to identity servers from this server.
+#
+enable_3pid_lookup: true
+
+rc_registration:
+  per_second: 100
+  burst_count: 100
+
+rc_message:
+  per_second: 100
+  burst_count: 100
+
+rc_login:
+  address:
+    per_second: 100
+    burst_count: 100
+  account:
+    per_second: 100
+    burst_count: 100
+
+rc_invites:
+  per_room:
+    per_second: 100
+    burst_count: 100
+  per_user:
+    per_second: 100
+    burst_count: 100
+
+rc_joins:
+  local:
+    per_second: 100
+    burst_count: 100
+  remote:
+    per_second: 100
+    burst_count: 100
+
+app_service_config_files:
+  - /data/registration.yaml
+trusted_key_servers:
+  - server_name: 'matrix.org'
+
+signing_key_path: '/data/localhost.signing.key'
+
+email:
+  smtp_host: mailhog
+  smtp_port: 1025
+  #smtp_user: "exampleusername"
+  #smtp_pass: "examplepassword"
+  #force_tls: true
+  #require_transport_security: true
+  enable_tls: false
+  notif_from: 'Your Friendly %(app)s homeserver <noreply@example.com>'
+  app_name: my_branded_matrix_server
+  enable_notifs: true
+  notif_for_new_users: false
+  client_base_url: 'http://localhost:8008'
+  validation_token_lifetime: 15m
+  #invite_client_location: https://app.element.io
+
+  subjects:
+    message_from_person_in_room: '[%(app)s] You have a message on %(app)s from %(person)s in the %(room)s room...'
+    message_from_person: '[%(app)s] You have a message on %(app)s from %(person)s...'
+    messages_from_person: '[%(app)s] You have messages on %(app)s from %(person)s...'
+    messages_in_room: '[%(app)s] You have messages on %(app)s in the %(room)s room...'
+    messages_in_room_and_others: '[%(app)s] You have messages on %(app)s in the %(room)s room and others...'
+    messages_from_person_and_others: '[%(app)s] You have messages on %(app)s from %(person)s and others...'
+    invite_from_person_to_room: '[%(app)s] %(person)s has invited you to join the %(room)s room on %(app)s...'
+    invite_from_person: '[%(app)s] %(person)s has invited you to chat on %(app)s...'
+    password_reset: '[%(server_name)s] Password reset'
+    email_validation: '[%(server_name)s] Validate your email'

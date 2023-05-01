@@ -1,0 +1,3 @@
+#!/bin/sh
+
+npm run build && npm run fmt && npm run test

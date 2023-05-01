@@ -1,0 +1,14 @@
+[Unit]
+Description=Mattermost Matrix Connector
+After=network.target
+StartLimitIntervalSec=1800
+StartLimitBurst=60
+[Service]
+Restart=on-failure
+RestartSec=30
+User=ubuntu
+WorkingDirectory=/home/ubuntu/matrix/bridge
+ExecStart=/usr/local/bin/mm-matrix-connector -c config.yaml -f registration.yaml -p
+
+[Install]
+WantedBy=multi-user.target

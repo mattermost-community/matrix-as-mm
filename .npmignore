@@ -1,0 +1,13 @@
+src
+*.zip
+*.tgz
+log
+docker
+node_modules
+tsconfig.*
+.git*
+.vscode
+.[a-z]*
+tsconfig.tsbuildinfo
+e2e-tests
+

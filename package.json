@@ -1,0 +1,75 @@
+{
+  "name": "mm-matrix-connector",
+  "version": "3.0.1",
+  "description": "",
+  "repository": "https://github.com/janostgren/mm-matrix-connector",
+  "main": "build/Main.js",
+  "bin": "build/index.js",
+  "engines": {
+    "node": ">=10.16"
+  },
+  "scripts": {
+    "package": "rm -f docker.zip && zip -r docker.zip docker -x  docker/matrix/data/media_store/**\\* && npm pack",
+    "-preinstall": "git config core.hooksPath .githooks",
+    "build": "tsc && typescript-json-schema --noExtraProps --required src/Config.ts Config -o build/config-schema.json",
+    "test": "tape build{,/**}/*.test.js",
+    "integration": "node build/index.js -r -c config.sample.yaml -f docker/synapse/registration.yaml && tape build/tests/*.js",
+    "lint": "prettier -c . && eslint --max-warnings=0 '*/**/*.ts'",
+    "fmt": "prettier --write .",
+    "fmt-lint": "prettier --write . && eslint --max-warnings=0 '*/**/*.ts'",
+    "fix": "eslint '*/**/*.ts' --fix"
+  },
+  "author": "Jan Östgren",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^8.0.0",
+    "ajv-formats": "^2.1.1",
+    "async-mutex": "^0.4.0",
+    "axios": "^1.3.2",
+    "express": "^4.17.2",
+    "form-data": "^4.0.0",
+    "js-yaml": "^4.0.0",
+    "log4js": "^6.7.1",
+    "loglevel": "^1.8.1",
+    "marked": "^4.0.0",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "turndown": "^7.0.0",
+    "typeorm": "^0.3.12",
+    "ws": "^8.12.0",
+    "yargs": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/marked": "^4.0.1",
+    "@types/node": "^16.0.0",
+    "@types/node-fetch": "^2.5.7",
+    "@types/tape": "^4.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.3.0",
+    "sqlite3": "^5.0.0",
+    "tape": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.0",
+    "typescript-json-schema": "^0.50.0"
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "rebaseWhen": "behind-base-branch",
+    "rangeStrategy": "update-lockfile",
+    "packageRules": [
+      {
+        "packageNames": [
+          "node"
+        ],
+        "enabled": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "commonjs",
+    "allowJs": false,
+    "outDir": "./build",
+    "rootDir": "./src",
+    "strict": true,
+    "incremental": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "useUnknownInCatchVariables": false,
+    "skipLibCheck": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./src/tests/integration/**/*","e2e-tests/**/*"]
+}

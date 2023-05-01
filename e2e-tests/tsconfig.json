@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "esModuleInterop": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "@e2e-support/*": ["support/*"],
+            "@e2e-test.config": ["test.config.ts"]
+        }
+    },
+    "include": ["./**/*"],
+    "exclude": ["playwright.config.aws.ts"]
+}
