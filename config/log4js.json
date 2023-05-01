@@ -1,0 +1,32 @@
+{
+  "appenders": {
+    "access": {
+      "type": "dateFile",
+      "filename": "log/mm-matrix-connector-access.log",
+      "pattern": "-yyyy-MM-dd",
+      "category": "http"
+    },
+    "app": {
+      "type": "file",
+      "filename": "log/mm-matrix-connector-app.log",
+      "maxLogSize": 10485760,
+      "numBackups": 3
+    },
+    "errorFile": {
+      "type": "file",
+      "filename": "log/mm-matrix-connector-errors.log"
+    },
+    "errors": {
+      "type": "logLevelFilter",
+      "level": "ERROR",
+      "appender": "errorFile"
+    },
+    "out": {
+      "type": "stdout"
+    }
+  },
+  "categories": {
+    "default": { "appenders": ["app", "errors", "out"], "level": "DEBUG" },
+    "http": { "appenders": ["access"], "level": "DEBUG" }
+  }
+}

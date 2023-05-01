@@ -1,0 +1,5 @@
+build
+node_modules
+integration/mattermost/config/config.json
+tests
+

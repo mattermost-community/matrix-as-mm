@@ -1,0 +1,30 @@
+version: '3.0'
+services:
+  postgres:
+    image: postgres:15.1-alpine
+    volumes:
+      - ./postgres/mattermost.sql:/docker-entrypoint-initdb.d/00-mattermost.sql
+      # - ./backup/mattermost.sql:/docker-entrypoint-initdb.d/00-mattermost.sql
+      - ./postgres/setup-synapse.sql:/docker-entrypoint-initdb.d/01-setup-synapse.sql
+      - ./postgres/synapse.sql:/docker-entrypoint-initdb.d/02-synapse.sql
+      # - ./backup/synapse.sql:/docker-entrypoint-initdb.d/02-synapse.sql
+      - ./postgres/setup-bridge.sql:/docker-entrypoint-initdb.d/03-setup-bridge.sql
+      - ./docker-scripts/dump_db.sh:/dump_db.sh
+
+    environment:
+      #We create synapse database in 01-setup.sql
+      - POSTGRES_USER=mattermost
+      - POSTGRES_DB=mattermost
+      - POSTGRES_PASSWORD=hunter2
+    ports:
+      - '5432:5432'
+    networks:
+      - my_net
+
+networks:
+  my_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
