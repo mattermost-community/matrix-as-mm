@@ -22,7 +22,7 @@
 
 1. Clone or make a fork of this repository to a directory.
    ```shell
-   git clone https://github.com/janostgren/mm-matrix-connector
+   git clone https://github.com/mattermost/matrix-as-mm.git
    ```
 2. Install dependencies and build
 
