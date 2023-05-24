@@ -1,14 +1,10 @@
-id: xfbONb3M-hYO861rkzW7N0xUKm-6MII2M6sj-z8sdc0DaiXV1S25SXdr5ElIvatt
-hs_token: 4Z9Nbbv5SJHskTzytN2-hSMubMUCKgybSRrgtmrlkpB-QaUwm-PAdtgnAwlptwPT
-as_token: c6QW7JvyncGYcoqwPrsE7fU12cnvFkbkwmCQw_3tYQKCf0bnmzN3nZJHrTYmTUY2
+id: E6RfbAU4THjAh5twkTPh69Mfr-058t5QBtUiTnPUNdaNOvE0i8faIDY-0HpzK70O
+hs_token: uL3DwAbFXv3U2ZO1Zk4x0I6gcIsAA91TID9n2E8sT3hAYoi_VazLGvNrdaJoCtf0
+as_token: zCjTOwO98-nCClSM1papUaPnviPmv3IDQSQxC6tFSpUCLA4goKDtUWKDkQcl14gW
 namespaces:
   users:
     - exclusive: true
       regex: '@mm_.*:localhost'
-  #rooms:
-  #  - exclusive: true
-  #    regex: '.+:localhost'
-
 url: http://host.docker.internal:9995
 sender_localpart: matterbot
 rate_limited: true
