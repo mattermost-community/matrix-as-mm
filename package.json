@@ -1,8 +1,8 @@
 {
   "name": "mm-matrix-connector",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "",
-  "repository": "https://github.com/janostgren/mm-matrix-connector",
+  "repository": "https://github.com/janostgren/matrix-as-mm",
   "main": "build/Main.js",
   "bin": "build/index.js",
   "engines": {
