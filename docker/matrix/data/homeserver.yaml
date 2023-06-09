@@ -29,7 +29,7 @@ database:
 #  args:
 #    database: /data/homeserver.db
 
-log_config: '/data/log.config.yaml'
+# log_config: '/data/log.config.yaml'
 media_store_path: '/data/media_store'
 uploads_path: '/data/uploads'
 report_stats: false
