@@ -417,12 +417,16 @@ export default class Main extends EventEmitter {
         this.ws = this.client.websocket();
 
         await this.setupDataSource();
-
+        try {
         await registerAppService(
             this.botClient,
             config().matrix_bot.username,
             this.myLogger,
         );
+        } catch(error) {
+            this.myLogger.fatal("Failed to register application service: access token=%s, message=%s",this.botClient.getAccessToken(),error.message)
+            await this.killBridge(5)
+        }
         if (config().homeserver.server_type === 'synapse') {
             this.synapseClient = await SynapseAdminClient.createClient(this.adminClient)
         }

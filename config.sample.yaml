@@ -9,7 +9,7 @@ homeserver:
   server_type: 'synapse'
 
 appservice:
-  # The port the homeserver uses to talk to the appservice (bridge). This can
+  # The port the homeserver uses to talk to the appservice (connector). This can
   # be an arbitrary unused port.
   port: 9995
 
@@ -29,15 +29,6 @@ mattermost_url: http://localhost:8065/
 # If true, the bridge exits if it fails to bridge any channel. Otherwise, it
 # will go on bridging the channels it can bridge. The default is false.
 forbid_bridge_failure: true
-
-# Mappings between mattermost channels and matrix rooms.
-mappings:
-  # Town Square
-  # - mattermost: 'p7retz8iwtgzdrdceqw13fwmbr'
-  # matrix: '!FzTtpSkXWMPYBKHUQN:localhost'
-  # Off-Topic
-  #- mattermost: 'giyj94p1fp86p8zs9z6u5b3ujh'
-  # matrix: '!pYSbiOyjMFsKNxSMyi:localhost'
 
 # A puppet matrix user of a real mattermost user with have matrix localpart
 # with this prefix.
@@ -71,7 +62,7 @@ matrix_bot:
 # system administration privileges, in order to verify the emails of the puppet
 # users.
 #
-# Try with special matrix.bridge a user with system admin role
+# Use the username matrix.bridge. The user must have a system admin role
 #
 mattermost_bot_userid: 'geds3gxhdf81dccdrm8bfx37ry'
 mattermost_bot_access_token: 'bxfcapjqiina9xayxw6y65ubwh'
@@ -79,9 +70,9 @@ matrix_admin:
   username: '@admin:localhost'
   access_token: 'syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj'
 
-# Database configuration. Currently, only postgres and sqlite are supported.
-# The configuration is the arguments supplied to TypeORM's createConnection:
-# https://typeorm.io/#/connection/creating-a-new-connection
+# Database configuration. Currently only postgres and mysql are supported.
+# The configuration is the arguments supplied to TypeORM's datasource:
+# https://typeorm.biunav.com/en/data-source.html#what-is-datasource
 database:
   type: postgres
   host: localhost
@@ -107,8 +98,4 @@ ignored_mattermost_users:
 # automatically verified. However, this can pose a security issue if third
 # parties can potentially control these email addresses.
 #
-# In earlier versions of the bridge, we used the username instead of a random
-# string, with variable [USERNAME]. However, since usernames are not immutable,
-# this can potentially conflict. Currently, [USERNAME] is still accepted but
-# will be replaced by a random string as well.
 mattermost_email_template: 'devnull-[RANDOM]@localhost'

@@ -254,9 +254,13 @@ export class ClientWebsocket extends EventEmitter {
         const parts = this.client.domain.split(':');
 
         let wsProto = parts[0] === 'http' ? 'ws' : 'wss';
-        const wsUrl = `${wsProto}${this.client.domain.slice(
-            4,
-        )}/api/v4/websocket`;
+       
+        let port= parts.length== 3 ? parts[2]:''
+        let wsDomain = `${parts[1]}:${port}`;
+        if(!port) {
+          wsDomain = parts[1]
+        }
+        const wsUrl = `${wsProto}:${wsDomain}/api/v4/websocket`;
         const options = {
             followRedirects: true,
             /*

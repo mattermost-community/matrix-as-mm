@@ -1,7 +1,7 @@
 server_name: localhost
 public_baseurl: http://localhost:8008/
 
-pid_file: '/var/run/matrix-synapse.pid'
+pid_file: '/data/matrix-synapse.pid'
 
 listeners:
   - port: 8008
@@ -29,8 +29,9 @@ database:
 #  args:
 #    database: /data/homeserver.db
 
-# log_config: '/data/localhost.log.config'
+# log_config: '/data/log.config.yaml'
 media_store_path: '/data/media_store'
+uploads_path: '/data/uploads'
 report_stats: false
 enable_registration: true
 enable_registration_without_verification: true
