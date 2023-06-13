@@ -164,18 +164,21 @@ export default class Main extends EventEmitter {
     }
 
     private async getMyJoinedPublicRooms(client: MatrixClient): Promise<any[]> {
-        let publicRooms = await client.getPublicRooms(1000);
-        let myRooms = await client.getJoinedRooms();
-
         let myPublicRooms: any[] = [];
-        for (let room of publicRooms.chunk) {
-            let foundRoom = myRooms.joined_rooms.filter(
-                joined => joined == room.room_id,
-            );
-            if (foundRoom.length > 0) {
-                myPublicRooms.push(room);
+        let publicRooms = await client.getPublicRooms(1000);
+        
+        if (publicRooms.chunk.length > 0) {
+            let myRooms = await client.getJoinedRooms();
+            for (let room of publicRooms.chunk) {
+                let foundRoom = myRooms.joined_rooms.filter(
+                    joined => joined == room.room_id,
+                );
+                if (foundRoom.length > 0) {
+                    myPublicRooms.push(room);
+                }
             }
         }
+        this.myLogger.debug("Number of public rooms=%d, Number of joined public rooms=%d",publicRooms.chunk.length,myPublicRooms.length)
         return myPublicRooms;
     }
 
@@ -346,6 +349,10 @@ export default class Main extends EventEmitter {
             const myPublicRooms: any[] = await this.getMyJoinedPublicRooms(
                 this.adminClient,
             );
+            if(myPublicRooms.length == 0) {
+                this.myLogger.debug("No Matrix public rooms to map to Mattermost channel")
+                return
+            }
 
             if (myTeams.length > 0) {
                 // We only map channels in the default team now
@@ -418,13 +425,13 @@ export default class Main extends EventEmitter {
 
         await this.setupDataSource();
         try {
-        await registerAppService(
-            this.botClient,
-            config().matrix_bot.username,
-            this.myLogger,
-        );
-        } catch(error) {
-            this.myLogger.fatal("Failed to register application service: access token=%s, message=%s",this.botClient.getAccessToken(),error.message)
+            await registerAppService(
+                this.botClient,
+                config().matrix_bot.username,
+                this.myLogger,
+            );
+        } catch (error) {
+            this.myLogger.fatal("Failed to register application service: access token=%s, message=%s", this.botClient.getAccessToken(), error.message)
             await this.killBridge(5)
         }
         if (config().homeserver.server_type === 'synapse') {
@@ -459,7 +466,7 @@ export default class Main extends EventEmitter {
             filter: async m => {
                 const userid = m.data.user_id ?? m.data.user?.id;
                 return (
-                    m.event !='user_added' &&
+                    m.event != 'user_added' &&
                     userid &&
                     (this.skipMattermostUser(userid) ||
                         !(await this.isMattermostUser(userid)))
