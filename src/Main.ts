@@ -166,8 +166,10 @@ export default class Main extends EventEmitter {
     private async getMyJoinedPublicRooms(client: MatrixClient): Promise<any[]> {
         let myPublicRooms: any[] = [];
         let publicRooms = await client.getPublicRooms(1000);
+
+        let publicRoomCount= publicRooms.total_room_count_estimate || 0
         
-        if (publicRooms.chunk.length > 0) {
+        if (publicRoomCount > 0) {
             let myRooms = await client.getJoinedRooms();
             for (let room of publicRooms.chunk) {
                 let foundRoom = myRooms.joined_rooms.filter(
@@ -178,7 +180,7 @@ export default class Main extends EventEmitter {
                 }
             }
         }
-        this.myLogger.debug("Number of public rooms=%d, Number of joined public rooms=%d",publicRooms.chunk.length,myPublicRooms.length)
+        this.myLogger.debug("Number of public rooms=%d, Number of joined public rooms=%d",publicRoomCount,myPublicRooms.length)
         return myPublicRooms;
     }
 
