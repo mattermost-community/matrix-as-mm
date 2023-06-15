@@ -123,9 +123,10 @@ export class Client {
         raw: boolean = false,
         validateStatus: boolean = true
     ): Promise<any> {
+        const url= `/api/v4${endpoint}`
         const options: axios.AxiosRequestConfig = {
             method: method,
-            url: `/api/v4${endpoint}`,
+            url: url,
             data: data,
         };
         if (raw) {
@@ -137,7 +138,7 @@ export class Client {
             }
         }
 
-        this.myLogger.trace(`${method}  ${endpoint} `);
+        this.myLogger.trace(`${method}  ${this.domain}${url} `);
         try {
             let response: axios.AxiosResponse = await this.client.request(
                 options,

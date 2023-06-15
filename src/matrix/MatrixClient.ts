@@ -504,10 +504,9 @@ export class MatrixClient {
         };
         let method = options.method || 'GET';
         myOptions = Object.assign(myOptions, options);
+       
         this.myLogger.trace(
-            `${method} ${
-                options.url
-            } active userId=${this.getUserId()}. Valid Session= ${
+            `${method} ${this.getBaseUrl()}/${options.url}. Active userId=${this.getUserId()}, Valid Session= ${
                 this.sessionIsValid
             }`,
         );

@@ -110,24 +110,16 @@ export default class Main extends EventEmitter {
             }
 
             log4js.configure(jsonContent);
-
             this.myLogger = getLogger('Main');
             logLevel.setLevel(config.logging);
             this.myLogger.info("Logging to directory %s", logDir)
-
 
         } catch (error) {
             this.myLogger = getLogger('Main');
             this.myLogger.fatal("Error when configure logging. Error=%s", error.message)
             process.exit(5)
         }
-
-
-
-
-
         this.registration = loadYaml(registrationPath);
-
         this.appService = new AppService(this);
 
         this.botClient = getMatrixClient(
@@ -164,18 +156,23 @@ export default class Main extends EventEmitter {
     }
 
     private async getMyJoinedPublicRooms(client: MatrixClient): Promise<any[]> {
-        let publicRooms = await client.getPublicRooms(1000);
-        let myRooms = await client.getJoinedRooms();
-
         let myPublicRooms: any[] = [];
-        for (let room of publicRooms.chunk) {
-            let foundRoom = myRooms.joined_rooms.filter(
-                joined => joined == room.room_id,
-            );
-            if (foundRoom.length > 0) {
-                myPublicRooms.push(room);
+        let publicRooms = await client.getPublicRooms(1000);
+
+        let publicRoomCount = publicRooms.total_room_count_estimate || 0
+
+        if (publicRoomCount > 0) {
+            let myRooms = await client.getJoinedRooms();
+            for (let room of publicRooms.chunk) {
+                let foundRoom = myRooms.joined_rooms.filter(
+                    joined => joined == room.room_id,
+                );
+                if (foundRoom.length > 0) {
+                    myPublicRooms.push(room);
+                }
             }
         }
+        this.myLogger.debug("Number of public rooms=%d, Number of joined public rooms=%d", publicRoomCount, myPublicRooms.length)
         return myPublicRooms;
     }
 
@@ -346,11 +343,16 @@ export default class Main extends EventEmitter {
             const myPublicRooms: any[] = await this.getMyJoinedPublicRooms(
                 this.adminClient,
             );
+           /*  if (myPublicRooms.length == 0) {
+                this.myLogger.debug("No Matrix public rooms to map to Mattermost channel")
+                return
+            } */
 
             if (myTeams.length > 0) {
                 // We only map channels in the default team now
                 const teamId = myTeams[0].id;
                 this.defaultTeam = { id: teamId, name: myTeams[0].name };
+                this.myLogger.info(`Checking mattermost [${myTeams[0].name}] team with id ${teamId} for channels`)
                 const teamChannels = await this.client.get(
                     `/users/${myId}/teams/${teamId}/channels`,
                 );
@@ -403,6 +405,28 @@ export default class Main extends EventEmitter {
         }
 
     }
+    private async checkMattermostClient(): Promise<boolean> {
+        let ok: boolean = true
+        let message: string = ''
+        const me = await this.client.get('/users/me')
+        if (me.id != config().mattermost_bot_userid) {
+            message = `User_id for mattermost bot user must be ${me.id}. Id ${config().mattermost_bot_userid} not valid`
+        }
+        else if (!me.roles.includes('system_admin')) {
+            message = `User mattermost bot ${me.id} must have system admin role. Current role=${me.roles}`
+        } else {
+            const bot = await this.client.get(`/bots/${me.id}`, undefined, false, false)
+            if (bot.status !== 404) {
+                message = `User mattermost bot ${me.id} can not be a bot`
+            }
+        }
+        if (message) {
+            this.myLogger.error(message)
+            ok = false
+        }
+
+        return ok;
+    }
 
     public async init(): Promise<void> {
         log.time.info('Bridge initialized');
@@ -418,23 +442,33 @@ export default class Main extends EventEmitter {
 
         await this.setupDataSource();
         try {
-        await registerAppService(
-            this.botClient,
-            config().matrix_bot.username,
-            this.myLogger,
-        );
-        } catch(error) {
-            this.myLogger.fatal("Failed to register application service: access token=%s, message=%s",this.botClient.getAccessToken(),error.message)
+            await registerAppService(
+                this.botClient,
+                config().matrix_bot.username,
+                this.myLogger,
+            );
+        } catch (error) {
+            this.myLogger.fatal("Failed to register application service: access token=%s, message=%s", this.botClient.getAccessToken(), error.message)
             await this.killBridge(5)
         }
         if (config().homeserver.server_type === 'synapse') {
             this.synapseClient = await SynapseAdminClient.createClient(this.adminClient)
+            this.myLogger.info("Synapse client created for %s", this.adminClient.getUserId())
         }
 
         try {
             await this.updateBotProfile();
         } catch (e) {
             this.myLogger.warn(`Error when updating bot profile\n${e.stack}`);
+        }
+
+        const clientOK = await this.checkMattermostClient();
+        if (!clientOK) {
+            this.myLogger.error("Mattermost bot client is not valid");
+            await this.killBridge(5);
+
+        } else {
+            this.myLogger.info("Mattermost bot client with user_id=%s is valid", this.client.userid);
         }
 
         this.ws.on('error', e => {
@@ -459,7 +493,7 @@ export default class Main extends EventEmitter {
             filter: async m => {
                 const userid = m.data.user_id ?? m.data.user?.id;
                 return (
-                    m.event !='user_added' &&
+                    m.event != 'user_added' &&
                     userid &&
                     (this.skipMattermostUser(userid) ||
                         !(await this.isMattermostUser(userid)))
