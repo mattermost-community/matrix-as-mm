@@ -120,3 +120,8 @@ Configuration file _element-config.json_ changes.
 
 A simple SNMP server for testing of email. An installation of the MailHog docker container. See https://github.com/mailhog/MailHog
 for additional information.
+
+## Synapse Admin
+A user interface for administration of a Synapse Matrix Server
+See here for details https://github.com/Awesome-Technologies/synapse-admin
+
