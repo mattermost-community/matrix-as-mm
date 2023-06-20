@@ -52,7 +52,24 @@ The rest of this section documents the docker containers used development enviro
 This is a standard postgres image pulled from DockerHub. It has two database, one for mattermost and one for synapse, with the mattermost one being the "default" one.
 There is also an additional database used by the bridge for storing some meta-data. Does not need to be postgres in a target environment. Sqlite is supported https://www.sqlite.org/index.html.
 
-The tables are pre-populated with hardcoded values extracted from live instances. This makes it faster to start up and more convenient to write tests with known ids. The dumps are piped through awk to remove redundant lines. The awk script is placed at `docker/postgres/minify-dump.awk`.
+The tables are pre-populated with values extracted from live instances in our development environment. This makes it faster to start up and more convenient to write tests with known ids. The dumps are piped through awk to remove redundant lines. The awk script is placed at `docker/postgres/minify-dump.awk`.
+
+### Backup of Postgres databases
+
+Scripts are located under the _scripts_ directory in the _docker_ directory.
+- Run script ./scripts/do-dump.sh
+- Database dumps are located in the _backup_ directory.
+
+``` shell
+janostgren@MBPsomtllhorJan docker % ./scripts/do-dump.sh 
+Dumping databases to ./backup.
+total 7176
+-rw-r--r--  1 janostgren  staff  1588747 20 Jun 17:34 mattermost.sql
+-rw-r--r--  1 janostgren  staff    44567 20 Jun 17:34 mm-matrix-bridge.sql
+-rw-r--r--  1 janostgren  staff  2036095 20 Jun 17:34 synapse.sql
+janostgren@MBPsomtllhorJan docker % 
+
+```
 
 ## Matrix
 
@@ -78,10 +95,11 @@ protocols:
 ### Predefined users
 |user|authentication|usage|
 |----|--------------|-----|
-| admin| Admin..123456 | Default admin user. Used by the connector. Defined in config file.|
+| admin| Admin..123456 | Default admin user. Used by the connector. Defined in config file. Do not login with this user.|
+ user_admin| Admin..123456 | Admin user used in synapse admin. |
 | matterbot| Access Token | The application service users. |
 | user1.matrix | User..1234 | A normal user which can be used for testing |
-| mm_user1.mm | | Puppet user for user1.mm in Mattermost |
+| mm_user1.mm |N/A | Puppet user for user1.mm in Mattermost |
 
 ## Mattermost
 
@@ -94,7 +112,7 @@ This again uses `nc` to wait until `postgres` is up. While Mattermost has built 
 |user|authentication|usage|
 |----|--------------|-----|
 | admin| Admin..123456 | Default admin user. Not used by the connector.|
-| matrix.bridge| Admin..123456 and Access Token| The system user used by the connector. Defined in config file.|
+| matrix.bridge| Admin..123456 and Access Token| The system user used by the connector. Defined in config file. You must define the personal acess token to this user in __config.yaml__.|
 | user1.mm | User..1234 | A normal user which can be used for testing |
 |matrix_user1.matrix | | Puppet user from matrix for user1.matrix |
 
@@ -120,3 +138,8 @@ Configuration file _element-config.json_ changes.
 
 A simple SNMP server for testing of email. An installation of the MailHog docker container. See https://github.com/mailhog/MailHog
 for additional information.
+
+## Synapse Admin
+A user interface for administration of a Synapse Matrix Server
+See here for details https://github.com/Awesome-Technologies/synapse-admin
+

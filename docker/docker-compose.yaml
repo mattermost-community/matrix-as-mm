@@ -1,6 +1,7 @@
 version: '3.0'
 services:
   postgres:
+    restart: unless-stopped
     image: postgres:15.1-alpine
     volumes:
       - ./backup/mattermost.sql:/docker-entrypoint-initdb.d/00-mattermost.sql
@@ -35,9 +36,25 @@ services:
 
     depends_on:
       - postgres
+  synapse-admin:
+    container_name: synapse-admin
+    hostname: synapse-admin
+    build:
+      context: https://github.com/Awesome-Technologies/synapse-admin.git
+      # args:
+      #   - NODE_OPTIONS="--max_old_space_size=1024"
+      #   # see #266, PUBLIC_URL must be without surrounding quotation marks
+      #   - PUBLIC_URL=/synapse-admin
+      #   - REACT_APP_SERVER="https://matrix.example.com"
+    ports:
+      - "8081:80"
+    networks:
+      - my_net
+    restart: unless-stopped
 
   mattermost:
     build: mattermost
+    restart: unless-stopped
     ports:
       - '8065:8065'
       - '80:8065'

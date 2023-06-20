@@ -71,11 +71,13 @@ The connector create remote users automatically when a users is posting a messag
 
 
 
+
 # Detailed documentation
 
 ## Installation and deployment
 
 [Details for installation](./documentation/DEPLOYMENT.md)
+
 
 ## Development and more
 

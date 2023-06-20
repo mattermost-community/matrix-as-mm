@@ -16,6 +16,33 @@
 - Internal configuration database
   - Postgres and Mysql are supported
 
+## Technical Architecture  
+
+![Matrix Connector Architecture](./images/example.drawio.svg)
+
+## Required users in Mattermost and Matrix
+
+| Platform  |User   |Admin | in config.yaml | Comments |
+|:---|:---|:---:|---|:---|
+| Mattermost |matrix.bridge |yes| **mattermost_bot_userid**| User id in file. Personal access token must be generated |
+| Mattermost | Name of an admin user |yes| N/A  | Good practice to have another system admin user |
+| Mattermost | Normal users |no| N/A | Normal users accessing the web UI |
+| Matrix | matterbot |no |**matrix_bot.username**| Application Service main users.Copied to registration.yaml |
+| Matrix | Name of an admin user |yes|**matrix_admin.username**| Admin user used be the connector. Do not login with this user|
+| Matrix | user_admin |yes| N/A| An admin user for manage of users in Synapse Admin UI |
+| Matrix | Normal users | no | N/A| Normal users accessing the Element IO web UI|
+
+## Synapse Admin - UI 
+You can use Synapse Admin UI to manage users on a Synapse Matrix Server.  A user interface for administration of a Synapse Matrix Server
+See here for details https://github.com/Awesome-Technologies/synapse-admin
+
+![Synapse Admin UI](./images/synapse_admin.png)
+
+- It is an application deployed in one of our Docker container
+- You access the application with http://localhost:8081 when our docker containers are up and running.
+- For public environments can you access the user interface from https://github.com/Awesome-Technologies/synapse-admin.
+
+
 ## Set up
 
 ### Installation for development
@@ -38,8 +65,7 @@
    node build/index.js -c config.yaml -f registration.yaml -r
    ```
 
-   - You should regenerate the registration file every time you update the
-     bridge or change your configuration file.
+   - You should regenerate the registration file every time you update **app service** section in the configuration file.  
    - You should copy the registration file to synapse start up directory after a change. In our docker environment for development to _./docker/synapse_ .
 
 5. Add the path to the registration file to the `app_service_config_files`
