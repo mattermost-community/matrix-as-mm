@@ -33,12 +33,15 @@
 | Matrix | Normal users | no | N/A| Normal users accessing the Element IO web UI|
 
 ## Synapse Admin - UI 
-You can use Synapse Admin UI to manage users on a Synapse Matrix Server. 
+You can use Synapse Admin UI to manage users on a Synapse Matrix Server.  A user interface for administration of a Synapse Matrix Server
+See here for details https://github.com/Awesome-Technologies/synapse-admin
 
 ![Synapse Admin UI](./images/synapse_admin.png)
 
-- It is an application deployed in a Docker container
+- It is an application deployed in one of our Docker container
 - You access the application with http://localhost:8081 when our docker containers are up and running.
+- For public environments can you access the user interface from https://github.com/Awesome-Technologies/synapse-admin.
+
 
 ## Set up
 
