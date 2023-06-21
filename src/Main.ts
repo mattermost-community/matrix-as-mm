@@ -5,6 +5,7 @@ import * as logLevel from 'loglevel';
 import * as mxClient from './matrix/MatrixClient';
 import { SynapseAdminClient } from './matrix/SynapseAdminClient';
 import * as util from 'util';
+import * as base64 from 'base-64'
 
 import { Config, setConfig, config, RELOADABLE_CONFIG } from './Config';
 import { isDeepStrictEqual } from 'util';
@@ -67,6 +68,7 @@ export default class Main extends EventEmitter {
 
     public initialized: boolean;
     public killed: boolean;
+    private adminLoggedIn:boolean=false
 
     public readonly client: Client;
 
@@ -343,10 +345,10 @@ export default class Main extends EventEmitter {
             const myPublicRooms: any[] = await this.getMyJoinedPublicRooms(
                 this.adminClient,
             );
-           /*  if (myPublicRooms.length == 0) {
-                this.myLogger.debug("No Matrix public rooms to map to Mattermost channel")
-                return
-            } */
+            /*  if (myPublicRooms.length == 0) {
+                 this.myLogger.debug("No Matrix public rooms to map to Mattermost channel")
+                 return
+             } */
 
             if (myTeams.length > 0) {
                 // We only map channels in the default team now
@@ -450,6 +452,23 @@ export default class Main extends EventEmitter {
         } catch (error) {
             this.myLogger.fatal("Failed to register application service: access token=%s, message=%s", this.botClient.getAccessToken(), error.message)
             await this.killBridge(5)
+        }
+        let adminPassword = config().matrix_admin.password
+        if (adminPassword) {
+            try {
+                this.myLogger.info(`Login with password. Admin: ${this.adminClient.getUserId()}  `)
+                await this.adminClient.loginWithPassword(
+                    this.adminClient.getUserId(),
+                    base64.decode(adminPassword)
+                )
+                this.adminLoggedIn=true
+            }
+            catch (error) {
+                this.myLogger.error(`Login with password. Admin: ${this.adminClient.getUserId()} failed. Error= ${error.message} `)
+                this.killBridge(5)
+
+
+            }
         }
         if (config().homeserver.server_type === 'synapse') {
             this.synapseClient = await SynapseAdminClient.createClient(this.adminClient)
@@ -645,8 +664,16 @@ export default class Main extends EventEmitter {
             if (this.botClient.isSessionValid()) {
                 await this.botClient.logout();
             }
-            this.myLogger.info('MatrixClient logged out. Session invalidated.');
+            this.myLogger.info('Matrix bot client logged out. Session invalidated.');
         } catch (ignore) { }
+        // Logout matrix admin client if login used
+        if(this.adminLoggedIn) {
+            try {
+                await this.adminClient.logout()
+                this.myLogger.info('Matrix admin client logged out.');
+            } catch (ignore) { }
+
+        }
 
         // Destroy DataSource
         if (this.dataSource && this.dataSource.isInitialized) {
