@@ -65,7 +65,7 @@ export class User extends BaseEntity {
             if (email) {
                 const emailUser = await client.get(`/users/email/${email}`, undefined, false, false)
                 if (emailUser.status === 200) {
-                    emailMatch = userInfo.email
+                    emailMatch = email
                     email=`duplicate_${email}`
                 }
 
