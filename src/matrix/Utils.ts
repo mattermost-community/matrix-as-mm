@@ -67,6 +67,12 @@ export async function registerAppService(
         );
         return ret;
     } catch (e) {
+        logger.error(
+            'Register app service username:%s by userId:%s failed %s. Token =%s',
+            username,
+            client.getUserId(),
+            client.getAccessToken()
+        );
         throw e;
     }
 }

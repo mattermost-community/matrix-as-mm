@@ -260,9 +260,10 @@ export default class Main extends EventEmitter {
                     this.doOneMapping(channel.id, room.room_id);
                     found = true;
                     this.myLogger.info(
-                        'Matrix channel %s:%s mapped matrix room %s:%s',
+                        'Matrix channel %s:%s with id=%s mapped matrix room %s:%s',
                         channel.display_name,
                         channel.name,
+                        channel.id,
                         room.name,
                         room.canonical_alias,
                     );
