@@ -165,9 +165,12 @@ matrix_bot:
 #
 mattermost_bot_userid: 'geds3gxhdf81dccdrm8bfx37ry'
 mattermost_bot_access_token: 'bxfcapjqiina9xayxw6y65ubwh'
+# If password is defined it will be used. 
+# Password is a base64 encoded string of the users password.
 matrix_admin:
   username: '@admin:localhost'
   access_token: 'syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj'
+  # password: 'QWRtaW4uLjEyMzQ1Ng=='
 
 # Database configuration. Currently only postgres and mysql are supported.
 # The configuration is the arguments supplied to TypeORM's datasource:
@@ -194,15 +197,12 @@ ignored_mattermost_users:
 
 # Email template used for puppet users, with [RANDOM] replaced by a random
 # string. These do not have to be valid emails, as the users have their emails
-# automatically verified. 
+# automatically verified. However, this can pose a security issue if third
+# parties can potentially control these email addresses.
 #
 mattermost_email_template: 'devnull-[RANDOM]@localhost'
 
 ```
-
-## Packaging and distribution to target environment
-
-After building you can build a NPM package. We don't publish to a npm registry today. We create a .tgz file as a work-around. The file can be distributed to the run-time environment.
 
 ```shell
 npm run package
