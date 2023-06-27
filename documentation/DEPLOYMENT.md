@@ -243,7 +243,7 @@ The npm command will generate
 
 Install the connector in a target environment by installing the copied NPM package file (.tgz).
 ``` bash
-ubuntu@ip-172-31-3-173:~$ sudo npm -g install mm-matrix-connector-3.1.1l.tgz 
+ubuntu@ip-172-31-3-173:~$ sudo npm -g install mm-matrix-connector-3.1.1.tgz 
 
 changed 182 packages, and audited 183 packages in 27s
 
