@@ -145,7 +145,8 @@ export class Client {
             );
             return validateStatus ? response.data :response;
         } catch (error: any) {
-            throw this.clientError(error, endpoint, method);
+            const fullEndpoint:string=`${this.domain}${url}`
+            throw this.clientError(error, fullEndpoint, method);
         }
     }
 

@@ -15,20 +15,21 @@ import log, { getLogger } from './Logging';
 console.time('Bridge loaded');
 const TRACE_ENV_NAME = 'API_TRACE';
 
-let argv = undefined
+//let argv = undefined
 const parser = yargs(process.argv.slice(2)).options({
     f: { describe: 'registration file', nargs: 1, demand: true, type: "string", default: "registration.yaml" },
     c: { describe: 'configuration file', nargs: 1, demand: false, type: "string", default: "config.yaml" },
+    r: { describe: 'generate registration file',type: "boolean" },
     s: { describe: 'Setup/Sync database connection to configuration db', type: "boolean" },
-    at: { describe: 'extended tracing of API calls', type: "boolean" },
+    a: { describe: 'extended tracing of API calls', type: "boolean" },
     p: { describe: 'production mode. Minimal logging', type: "boolean" },
     l: { describe: 'log directory', nargs: 1, demand: false, type: "string" }
 }).scriptName('mm-matrix-connector')
     .help('help')
-    .alias('-h', 'help');
+    .alias('h', 'help');
 
 (async () => {
-    argv = await parser.argv;
+    const argv = await parser.argv;
     if (argv.s) {
         console.info("Setup database connection to configuration database...")
         const main = new Main(loadYaml(argv.c), argv.f, true);
@@ -42,7 +43,7 @@ const parser = yargs(process.argv.slice(2)).options({
         const myLogger: log4js.Logger = getLogger('index.js');
         let apiTraceEnv = process.env[TRACE_ENV_NAME];
         let traceApi: boolean =
-            argv.at ||
+            argv.a ||
             (apiTraceEnv && apiTraceEnv.toLocaleLowerCase() === 'true'
                 ? true
                 : false);
