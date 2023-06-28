@@ -2,7 +2,7 @@
 
 ## Requirements - Prerequisites 
 
-- Mattermost **7.5.1** and above. It is tested with 7.5.1 and 7.9.1, but other new versions will probably work.
+- Mattermost **7.9.1** and above. It is tested with 7.5.1 and 7.9.1, but other new versions will probably work.
 
 
 - Node **12.22.9** and above. We use version **19.6.0** in development 
@@ -19,6 +19,20 @@
 ## Technical Architecture  
 
 ![Matrix Connector Architecture](./images/example.drawio.svg)
+
+### Default ports and protocols 
+All ports can be changed in the configuration file.
+| Component|Protocol|Default Port| in config.yaml | Comments |
+|:---|:---|:---:|:---|:---|
+| Matrix Connector | http |9995 |yes |Only http is tested.|
+| Mattermost Server | http(s) |8065| yes| Https is preferred in production.|
+| Matrix Home Server | http(s) |8008| yes| Https is preferred in production.|
+| Element IO Web| http(s) |8080| yes| Https is preferred in production.|
+
+- Use a reverse proxy in production environment.
+- The Matrix Connector is tested with **nginx** as reverse proxy.
+- Logging is done with the __log4js__ npm package. Configuration for logging is in __config/log4js.json__. See https://www.npmjs.com/package/log4js for detalis.
+
 
 ## Required users in Mattermost and Matrix
 
@@ -79,20 +93,26 @@ See here for details https://github.com/Awesome-Technologies/synapse-admin
 
 ## Command line for the matrix connector
 ``` bash 
-mm_matrix_connector                                     
+janostgren@MBPsomtllhorJan matrix-as-mm % mm-matrix-connector -help
 Options:
       --version  Show version number                                   [boolean]
-  -r             generate registration file
-      ----at     extended tracing of API calls
-  -p             Production mode. Minimal logging
-  -s             Setup/Sync database connection to configuration db
-  -l             log directory
-  -c             configuration file                                   [required]
-  -f             registration file                                    [required]
+  -f             registration file
+                              [string] [required] [default: "registration.yaml"]
+  -c             configuration file            [string] [default: "config.yaml"]
+  -r             generate registration file                            [boolean]
+  -s             Setup/Sync database connection to configuration db    [boolean]
+  -a             extended tracing of API calls                         [boolean]
+  -p             production mode. Minimal logging                      [boolean]
+  -l             log directory                                          [string]
   -h, --help     Show help                                             [boolean]
-
+      ---help
 
 ```
+### News in version 3.1.1
+- Default values for configuration file.
+- Default value for registration file.
+- Extended tracing is changed from -at to -a . Not backward compatible.
+- Use -help or --help to show the help for valid options.
 
 ## The configuration file - config.yaml
 The configuration file contains all important configurations and must be updated to reflect the run-time environment in development, test and production.
@@ -165,9 +185,12 @@ matrix_bot:
 #
 mattermost_bot_userid: 'geds3gxhdf81dccdrm8bfx37ry'
 mattermost_bot_access_token: 'bxfcapjqiina9xayxw6y65ubwh'
+# If password is defined it will be used. 
+# Password is a base64 encoded string of the users password.
 matrix_admin:
   username: '@admin:localhost'
   access_token: 'syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj'
+  # password: 'QWRtaW4uLjEyMzQ1Ng=='
 
 # Database configuration. Currently only postgres and mysql are supported.
 # The configuration is the arguments supplied to TypeORM's datasource:
@@ -194,15 +217,20 @@ ignored_mattermost_users:
 
 # Email template used for puppet users, with [RANDOM] replaced by a random
 # string. These do not have to be valid emails, as the users have their emails
-# automatically verified. 
+# automatically verified. However, this can pose a security issue if third
+# parties can potentially control these email addresses.
 #
 mattermost_email_template: 'devnull-[RANDOM]@localhost'
 
 ```
+### News in version 3.1.1
+- You can setup a password to the **matrix_admin** user. If a password is defined the access token is not used. The password is defined as a base64 encoded value.
+- Email for a mattermost puppet user is copied from matrix, if it not defined for a existing user in mattermost. This feature works if **server type** is defined as synapse.
 
-## Packaging and distribution to target environment
 
-After building you can build a NPM package. We don't publish to a npm registry today. We create a .tgz file as a work-around. The file can be distributed to the run-time environment.
+## Generate a npm package - tgz file
+
+Generate a npm package file for installation in a target environment.
 
 ```shell
 npm run package
@@ -213,9 +241,9 @@ The npm command will generate
 - An installable npm package in mm-matrix-connector-**version**.tgz which can be installed with npm install. Install with -g flag for a global installation.
 - A zip file called _docker.zip_ containing the docker containers.
 
-Install the bridge in a target environment by installing the copied NPM package file (.tgz).
+Install the connector in a target environment by installing the copied NPM package file (.tgz).
 ``` bash
-ubuntu@ip-172-31-3-173:~$ sudo npm -g install mm-matrix-connector-3.0.0.tgz 
+ubuntu@ip-172-31-3-173:~$ sudo npm -g install mm-matrix-connector-3.1.1.tgz 
 
 changed 182 packages, and audited 183 packages in 27s
 
@@ -226,7 +254,7 @@ found 0 vulnerabilities
 ubuntu@ip-172-31-3-173:~$  
 ```
 
-### Installation in target environment
+## Installation in a target environment
 A target environment can be your test environment or your production environment. In test environments a docker based installation of depended components is preferred.
 
 ### Setup the internal configuration database
@@ -395,28 +423,21 @@ This renames the mattermost puppet with username `:oldName` to `:newName`. The
 - If a matrix user joins a matrix room bridged to a mattermost channel, the puppet user would
   automatically join Town Square of the corresponding team.
 
-- When the user leaves all channels of a team (i.e. all matrix rooms bridged to
-  such channels), the puppet user would leave the team, hence leave Town Square.
+- When the user leaves all channels of a team (i.e. all matrix rooms bridged to such channels), the puppet user would leave the team, hence leave Town Square.
 
 ### Post deletion
 
 Mattermost and matrix "group" posts in different ways. For example, when
 deleting the root post of a thread in Mattermost, the entire thread is deleted.
-Similarly, attachments in Mattermost are part of a text message, whereas in
-Matrix they are separate events.
+Similarly, attachments in Mattermost are part of a text message, whereas in Matrix they are separate events.
 
 Our implementation is based on the following two principles:
 
-1.  From the point of view of a single platform, the presence of a bridge
-    should not affect what happens when a post is deleted.
+1.  From the point of view of a single platform, the presence of a bridge should not affect what happens when a post is deleted.
 
-2.  When a post is deleted on a platform, the contents must not be visible on
-    the other platform.
+2.  When a post is deleted on a platform, the contents must not be visible on the other platform.
 
 In practice, this means if we delete a message on Matrix, there might be more
-posts deleted on Mattermost. These Mattermost deletions will not be reflected
-on the matrix side, so there will be more messages on Matrix than on
-Mattermost.
+posts deleted on Mattermost. These Mattermost deletions will not be reflected on the matrix side, so there will be more messages on Matrix than on Mattermost.
 
-Also, Mattermost does not remember who performed the deletion. Thus, on the
-matrix side, it is always displayed as the bot user deleting the message.
+Also, Mattermost does not remember who performed the deletion. Thus, on the matrix side, it is always displayed as the bot user deleting the message.

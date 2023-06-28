@@ -76,7 +76,10 @@ janostgren@MBPsomtllhorJan docker %
 This installs synapse from the alpine repositories. It uses `nc` to wait until `postgres` is up before starting synapse, since synapse crashes if the database is inaccessible.
 Synapse is the only container which access the bridge through http. It should use the special host called host.docker.internal. See https://docs.docker.com/desktop/networking/
 
-Example of the registration file in docker.
+### Application Service registration file
+The  registration file __registration.yaml__ is required for setting up the application service used be the connector.
+
+Example of the registration file in docker. It is generated from the information in configuration file __config.yaml__.
 
 ```yaml
 id: xfbONb3M-hYO861rkzW7N0xUKm-6MII2M6sj-z8sdc0DaiXV1S25SXdr5ElIvatt
@@ -103,7 +106,7 @@ protocols:
 
 ## Mattermost
 
-This performs a standard Mattermost 7.5.1 install on alpine.
+This performs a standard Mattermost 7.9.1 install on alpine.
 
 This again uses `nc` to wait until `postgres` is up. While Mattermost has built in support for retrying connecting to the database, it waits for 10 seconds between retries, which is generally too much.
 

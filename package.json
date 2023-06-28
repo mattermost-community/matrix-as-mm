@@ -1,6 +1,6 @@
 {
   "name": "mm-matrix-connector",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "",
   "repository": "https://github.com/janostgren/matrix-as-mm",
   "main": "build/Main.js",
@@ -26,6 +26,7 @@
     "ajv-formats": "^2.1.1",
     "async-mutex": "^0.4.0",
     "axios": "^1.3.2",
+    "base-64": "^1.0.0",
     "express": "^4.17.2",
     "form-data": "^4.0.0",
     "js-yaml": "^4.0.0",
@@ -47,6 +48,7 @@
     "@types/node": "^16.0.0",
     "@types/node-fetch": "^2.5.7",
     "@types/tape": "^4.13.0",
+    "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.0",

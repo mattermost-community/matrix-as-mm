@@ -58,3 +58,11 @@
 - You will get an invitation from the creator of the 🔐 private room.
 - The federated private rooms work exactly as normal private rooms.
 - 🙁 You cannot create a private federated from Element in this release of the connector.
+
+### EMail federation
+
+![email federation](./images/mm-email.png)
+
+- The email address for a user in matrix will be copied to mattermost, if it is not defined in mattermost for an existing user.
+- This feature works if matrix home server is Synapse.
+

@@ -30,7 +30,7 @@ export default class MattermostUserStore {
         return this.users.get(userid);
     }
 
-    public countUsers():number {
+    public countUsers(): number {
         return this.users.size
     }
 
@@ -69,7 +69,18 @@ export default class MattermostUserStore {
                 const server_name = config().homeserver.server_name;
                 const username = `${config().matrix_localpart_prefix}${data.username
                     }`;
-                const matrix_userId: string = `@${username}:${server_name}`;
+                const matrix_userId: string = `@${username}:${server_name}` || '';
+                if (!matrix_userId) {
+                    this.myLogger.error('Can not create a valid matrix user id for %s. username %s ,server name %s',
+                        userid,
+                        username || 'empty or undefined not valid',
+                        server_name || 'empty or undefined not valid'
+
+                    )
+                    throw 'Matrix user id not valid'
+                } else {
+                    this.myLogger.debug("Matrix userid=%s",matrix_userId)
+                }
 
                 let info = await registerAppService(
                     this.main.botClient,

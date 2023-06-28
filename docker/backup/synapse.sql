@@ -2642,9 +2642,11 @@ COPY public.access_tokens (id, user_id, device_id, token, valid_until_ms, puppet
 207	@user1.matrix:localhost	IWVEFPRMFH	syt_dXNlcjEubWF0cml4_eMHjOGgHOJPGtlldAlDF_0FnBZQ	\N	\N	1682506180520	\N	t
 209	@user1.matrix:localhost	GLVHXLZBAN	syt_dXNlcjEubWF0cml4_cXNjWQFDhRssYpyQUuLw_2f9eTr	\N	\N	1682511427311	\N	t
 212	@user1.matrix:localhost	TANZBFBIIU	syt_dXNlcjEubWF0cml4_wRSMWNVDcMkrhrjWGnDh_4T1TZs	\N	\N	1682516010224	\N	t
-2	@admin:localhost	OZJZGYFHKP	syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj	\N	\N	1675956521567	\N	t
 218	@user1.matrix:localhost	FCQBBFUIPA	syt_dXNlcjEubWF0cml4_pLLKjgtdPvyYXXuVrzDq_2xZ1s9	\N	\N	1687271873306	\N	t
 220	@admin:localhost	LDIQRCMIBV	syt_YWRtaW4_qyFsGYpHiEntNcOJHslc_1QATx7	\N	\N	1687272466001	\N	t
+221	@admin:localhost	TAVYLDXJOV	syt_YWRtaW4_tKHrVhnbGxdHCSsmIqYK_2668LC	\N	\N	1687330913858	\N	t
+2	@admin:localhost	OZJZGYFHKP	syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj	\N	\N	1675956521567	\N	t
+222	@admin:localhost	DSQPBFJOFO	syt_YWRtaW4_yHGGErwUCpVPApSNBdgA_2ewz6o	\N	\N	1687331124952	\N	t
 \.
 
 
@@ -4296,6 +4298,7 @@ COPY public.cache_invalidation_stream_by_instance (stream_id, instance_name, cac
 848	master	count_e2e_one_time_keys	{@user1.matrix:localhost,ZTKFWNJIAK}	1682427163700
 849	master	get_e2e_unused_fallback_key_types	{@user1.matrix:localhost,ZTKFWNJIAK}	1682427163702
 850	master	get_user_by_access_token	{syt_dXNlcjEubWF0cml4_kAfgvTPpDMvcDBiatsCW_4axlvj}	1682427656487
+1708	master	user_last_seen_monthly_active	\N	1687328164691
 1017	master	get_user_by_access_token	{syt_dXNlcjEubWF0cml4_sgMfDYaVEevZoijPAKcF_4PU9O1}	1682439788200
 1053	master	count_e2e_one_time_keys	{@user1.matrix:localhost,POCDREMYED}	1682442144032
 1054	master	get_e2e_unused_fallback_key_types	{@user1.matrix:localhost,POCDREMYED}	1682442144040
@@ -4467,6 +4470,7 @@ COPY public.cache_invalidation_stream_by_instance (stream_id, instance_name, cac
 865	master	count_e2e_one_time_keys	{@user1.matrix:localhost,NVSRWTBFSJ}	1682435468882
 1027	master	count_e2e_one_time_keys	{@user1.matrix:localhost,EQRYXCOYKM}	1682440867005
 1028	master	get_e2e_unused_fallback_key_types	{@user1.matrix:localhost,EQRYXCOYKM}	1682440867096
+1709	master	get_monthly_active_count	{}	1687328164702
 1029	master	get_user_by_access_token	{syt_dXNlcjEubWF0cml4_fkRsEPTjPLQAOZtxTHMp_1vFB1L}	1682440972715
 1030	master	count_e2e_one_time_keys	{@user1.matrix:localhost,XGWTNHFGJY}	1682440973003
 1031	master	get_e2e_unused_fallback_key_types	{@user1.matrix:localhost,XGWTNHFGJY}	1682440973013
@@ -4554,6 +4558,16 @@ COPY public.cache_invalidation_stream_by_instance (stream_id, instance_name, cac
 1703	master	get_user_by_access_token	{syt_bW1fdXNlcjEubW0_sTlrdKilciBhPlICaKff_2uAqpk}	1687272280199
 1704	master	count_e2e_one_time_keys	{@mm_user1.mm:localhost,VATIJWBDYJ}	1687272280289
 1705	master	get_e2e_unused_fallback_key_types	{@mm_user1.mm:localhost,VATIJWBDYJ}	1687272280328
+1706	master	user_last_seen_monthly_active	\N	1687275452101
+1707	master	get_monthly_active_count	{}	1687275452102
+1710	master	user_last_seen_monthly_active	\N	1687331764436
+1711	master	get_monthly_active_count	{}	1687331764439
+1712	master	get_user_by_access_token	{syt_YWRtaW4_vwPEodothKmbUyWVQgwG_2VnarQ}	1687332286875
+1713	master	count_e2e_one_time_keys	{@admin:localhost,VNFJGPMAFY}	1687332286899
+1714	master	get_e2e_unused_fallback_key_types	{@admin:localhost,VNFJGPMAFY}	1687332286906
+1715	master	user_last_seen_monthly_active	\N	1687416566884
+1716	master	get_monthly_active_count	{}	1687416566889
+1717	master	get_user_by_id	{@jan.ostgren:localhost}	1687416938137
 \.
 
 
@@ -4964,7 +4978,7 @@ COPY public.device_inbox (user_id, device_id, stream_id, message_json, instance_
 --
 
 COPY public.device_lists_changes_converted_stream_position (lock, stream_id, room_id) FROM stdin;
-X	461	!pYSbiOyjMFsKNxSMyi:localhost
+X	465	!pYSbiOyjMFsKNxSMyi:localhost
 \.
 
 
@@ -7707,6 +7721,22 @@ COPY public.device_lists_changes_in_room (user_id, device_id, room_id, stream_id
 @admin:localhost	LDIQRCMIBV	!FzTtpSkXWMPYBKHUQN:localhost	461	f	{}
 @admin:localhost	LDIQRCMIBV	!cZnmZQFBeDsHEQbFQs:localhost	461	f	{}
 @admin:localhost	LDIQRCMIBV	!AHOiTmgdxQzlhIOUsy:localhost	461	f	{}
+@admin:localhost	TAVYLDXJOV	!AHOiTmgdxQzlhIOUsy:localhost	462	f	{}
+@admin:localhost	TAVYLDXJOV	!cZnmZQFBeDsHEQbFQs:localhost	462	f	{}
+@admin:localhost	TAVYLDXJOV	!FzTtpSkXWMPYBKHUQN:localhost	462	f	{}
+@admin:localhost	TAVYLDXJOV	!pYSbiOyjMFsKNxSMyi:localhost	462	f	{}
+@admin:localhost	DSQPBFJOFO	!AHOiTmgdxQzlhIOUsy:localhost	463	f	{}
+@admin:localhost	DSQPBFJOFO	!cZnmZQFBeDsHEQbFQs:localhost	463	f	{}
+@admin:localhost	DSQPBFJOFO	!FzTtpSkXWMPYBKHUQN:localhost	463	f	{}
+@admin:localhost	DSQPBFJOFO	!pYSbiOyjMFsKNxSMyi:localhost	463	f	{}
+@admin:localhost	VNFJGPMAFY	!AHOiTmgdxQzlhIOUsy:localhost	464	f	{}
+@admin:localhost	VNFJGPMAFY	!cZnmZQFBeDsHEQbFQs:localhost	464	f	{}
+@admin:localhost	VNFJGPMAFY	!FzTtpSkXWMPYBKHUQN:localhost	464	f	{}
+@admin:localhost	VNFJGPMAFY	!pYSbiOyjMFsKNxSMyi:localhost	464	f	{}
+@admin:localhost	VNFJGPMAFY	!AHOiTmgdxQzlhIOUsy:localhost	465	f	{}
+@admin:localhost	VNFJGPMAFY	!cZnmZQFBeDsHEQbFQs:localhost	465	f	{}
+@admin:localhost	VNFJGPMAFY	!FzTtpSkXWMPYBKHUQN:localhost	465	f	{}
+@admin:localhost	VNFJGPMAFY	!pYSbiOyjMFsKNxSMyi:localhost	465	f	{}
 \.
 
 
@@ -8007,6 +8037,9 @@ COPY public.device_lists_stream (stream_id, user_id, device_id) FROM stdin;
 458	@user1.matrix:localhost	FCQBBFUIPA
 460	@mm_user1.mm:localhost	VATIJWBDYJ
 461	@admin:localhost	LDIQRCMIBV
+462	@admin:localhost	TAVYLDXJOV
+463	@admin:localhost	DSQPBFJOFO
+465	@admin:localhost	VNFJGPMAFY
 \.
 
 
@@ -8098,9 +8131,11 @@ COPY public.devices (user_id, device_id, display_name, last_seen, ip, user_agent
 @user1.matrix:localhost	GLVHXLZBAN	localhost:8080: Chrome Headless on macOS	1682511428479	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/112.0.5615.29 Safari/537.36	f
 @user1.matrix:localhost	TANZBFBIIU	localhost:8080: Chrome Headless on macOS	1682516010984	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/112.0.5615.29 Safari/537.36	f
 @mm_user1.mm:localhost	QBVTBQBLYN	\N	1686249623264	172.16.238.1	axios/1.3.2	f
-@admin:localhost	LDIQRCMIBV	Synapse Admin	1687272466235	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	f
-@admin:localhost	OZJZGYFHKP	\N	1687272291318	172.16.238.1	axios/1.3.2	f
-@user1.matrix:localhost	FCQBBFUIPA	localhost:8080: Chrome på macOS	1687275219893	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	f
+@user1.matrix:localhost	FCQBBFUIPA	localhost:8080: Chrome på macOS	1687276785211	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	f
+@admin:localhost	OZJZGYFHKP	\N	1687416631721	172.16.238.1	axios/1.3.2	f
+@admin:localhost	LDIQRCMIBV	Synapse Admin	1687416937479	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	f
+@admin:localhost	TAVYLDXJOV	@admin:localhost_device	1687330913954	172.16.238.1	axios/1.3.2	f
+@admin:localhost	DSQPBFJOFO	@admin:localhost_device	1687331125102	172.16.238.1	axios/1.3.2	f
 \.
 
 
@@ -11475,9 +11510,6 @@ COPY public.event_push_actions (room_id, event_id, user_id, profile_tag, actions
 !FzTtpSkXWMPYBKHUQN:localhost	$J_kGVkofyCXFkxc4AE36yza1CG9eJMvhcjClEzUT6nM	@user1.matrix:localhost	\N	["notify",{"set_tweak":"highlight"},{"set_tweak":"sound","value":"default"}]	348	534	1	1	0	main
 !FzTtpSkXWMPYBKHUQN:localhost	$hepmDWuWebYzNxUXD7CEBsAY1h79oFMex2KsiuE402o	@user1.matrix:localhost	\N	["notify",{"set_tweak":"highlight"},{"set_tweak":"sound","value":"default"}]	352	538	1	1	0	main
 !FzTtpSkXWMPYBKHUQN:localhost	$sr9duEePDa6yhdNnumtfOQ7xHTpO38B9ekV8UUtQPFM	@user1.matrix:localhost	\N	["notify",{"set_tweak":"highlight"},{"set_tweak":"sound","value":"default"}]	357	543	1	1	0	main
-!cZnmZQFBeDsHEQbFQs:localhost	$CDqSA8GzWEb5RwGBe258f_6iew0VyX49NQE_P4I5cQQ	@mm_user1.mm:localhost	\N	["notify",{"set_tweak":"highlight","value":false},{"set_tweak":"sound","value":"default"}]	21	629	1	0	0	main
-!cZnmZQFBeDsHEQbFQs:localhost	$gFK0q9ADKTApOOY0jXdyJhToFo2mNyNlMr3KSsEGIhY	@admin:localhost	\N		23	631	1	0	0	main
-!cZnmZQFBeDsHEQbFQs:localhost	$gFK0q9ADKTApOOY0jXdyJhToFo2mNyNlMr3KSsEGIhY	@matterbot:localhost	\N		23	631	1	0	0	main
 \.
 
 
@@ -12664,7 +12696,6 @@ $gFK0q9ADKTApOOY0jXdyJhToFo2mNyNlMr3KSsEGIhY	574
 --
 
 COPY public.event_txn_id (event_id, room_id, user_id, token_id, txn_id, inserted_ts) FROM stdin;
-$FnQqXCmSq5gPDy75-njSyGvB3RmXA3nDRmCsZ-Xac00	!cZnmZQFBeDsHEQbFQs:localhost	@user1.matrix:localhost	218	m1687271890302.0	1687271890467
 \.
 
 
@@ -13584,7 +13615,7 @@ COPY public.presence_stream (stream_id, user_id, state, last_active_ts, last_fed
 659	@admin:localhost	offline	1681128726652	1681128611846	1678033275894	\N	t	master
 662	@matterbot:localhost	offline	1681128893044	1681128893044	0	\N	f	master
 4172	@mm_user1.mm:localhost	offline	1687271935224	1687271933711	0	\N	f	master
-4236	@user1.matrix:localhost	online	1687275189860	1687274256868	1687275189860	\N	t	master
+4265	@user1.matrix:localhost	offline	1687276863470	1687276906963	1687276875384	\N	t	master
 \.
 
 
@@ -13600,6 +13631,7 @@ mm_user1.mm	mm_user1.mm	\N	@mm_user1.mm:localhost
 user2.matrix	user2.matrix	\N	@user2.matrix:localhost
 mm_user2.mm	mm_user2.mm	\N	@mm_user2.mm:localhost
 user3.matrix	user3.matrix	\N	@user3.matrix:localhost
+jan.ostgren	Janne Östgren	\N	@jan.ostgren:localhost
 \.
 
 
@@ -14933,6 +14965,54 @@ COPY public.state_group_edges (state_group, prev_state_group) FROM stdin;
 579	574
 580	574
 581	125
+583	127
+584	127
+585	130
+586	130
+587	574
+588	574
+589	125
+590	125
+591	127
+592	127
+593	130
+594	130
+595	574
+596	574
+597	125
+598	125
+599	127
+600	127
+601	130
+602	130
+603	574
+604	574
+605	125
+606	125
+607	127
+608	127
+609	130
+610	130
+611	574
+612	574
+613	125
+614	125
+615	127
+616	127
+617	130
+618	130
+619	574
+620	574
+621	125
+622	125
+623	127
+624	127
+625	130
+626	130
+627	574
+628	574
+629	125
+630	125
 \.
 
 
@@ -15523,6 +15603,54 @@ COPY public.state_groups (id, room_id, event_id) FROM stdin;
 580	!cZnmZQFBeDsHEQbFQs:localhost	$kKok6gYhrD5Q8LukjiPAvUw3tPsybnyoIV8vkyYV-ZA
 581	!FzTtpSkXWMPYBKHUQN:localhost	$vs1nj-EVN4j6hAnIeLR9pbi2sOzAbVtFeY50E1wnuvQ
 582	!FzTtpSkXWMPYBKHUQN:localhost	$Q0o1KF1iqsTiOxQ1ZGs7BklptgzEP861CyF9swJ5usY
+583	!AHOiTmgdxQzlhIOUsy:localhost	$XHoLmSRzA6NeXhQldErjdN0XHfFwtYL4zbGHuJOYUJU
+584	!AHOiTmgdxQzlhIOUsy:localhost	$fx8ldTtyxB3SKO1lYRSeGKahDVm2JhIrgwzU6mZOdSc
+585	!pYSbiOyjMFsKNxSMyi:localhost	$fF3oX51OX898u9LaCglyPDpPplbeWyFLiK04TY4E264
+586	!pYSbiOyjMFsKNxSMyi:localhost	$AXHEVChXCO0rXOxF9t84kaqdKrFoGxJSie_0rjvvlUw
+587	!cZnmZQFBeDsHEQbFQs:localhost	$87sGSEZmaQ5-SKKNbsXdTe72URNTS951TAaVC1E5nWI
+588	!cZnmZQFBeDsHEQbFQs:localhost	$Zq7pFggJJeYYcCjC8-WYK6R880r3dNciut1N8WpZY20
+589	!FzTtpSkXWMPYBKHUQN:localhost	$nMHPRmzg7soqCirphFJz-AgaJ3lm2NLoXtZzxmwL7SU
+590	!FzTtpSkXWMPYBKHUQN:localhost	$T5-Dj3lGEG5rCMucjKKXiIPdDciH71ywO6HJveRHr9A
+591	!AHOiTmgdxQzlhIOUsy:localhost	$CFOyBeQDSTbn05L319JbBl15Ps5FQORhpDZaIeJyv7E
+592	!AHOiTmgdxQzlhIOUsy:localhost	$1AEzU3RRmmbqEcPd2o6vBIGv9wBXUmeTJZsm3d-m_G8
+593	!pYSbiOyjMFsKNxSMyi:localhost	$I_FBswWDJyFTSQCQMJPqjXh6ZY7LUlHEMip87AdPY7E
+594	!pYSbiOyjMFsKNxSMyi:localhost	$XHKaa2MTt3IWnacU0oI7e55yapJbjgRixI73TJ27yI8
+595	!cZnmZQFBeDsHEQbFQs:localhost	$zpmHV2npOKmbiLYjUFRGiQJV-q4Zs1nTZoo78QpJG9Q
+596	!cZnmZQFBeDsHEQbFQs:localhost	$EZmybROC1ygY2QyOTCmxTzysPmgYRIJ1Fw3bK55iYhk
+597	!FzTtpSkXWMPYBKHUQN:localhost	$GpZWdqGr05u8Hz3MMi66yjYtJ4CogfW7LFwCQl4g338
+598	!FzTtpSkXWMPYBKHUQN:localhost	$KknJNODtf-tU1v-YDpyaGfWOYhwgunEJu8JWGkSZls4
+599	!AHOiTmgdxQzlhIOUsy:localhost	$iNfIg25g-T8HLtzw9sMVuFQL17fvHrhfxFB0yQqEL1g
+600	!AHOiTmgdxQzlhIOUsy:localhost	$2LG7h7CJE_NoKH9xGsDltd_Q-W9bY_oyJiao4ZBCkzw
+601	!pYSbiOyjMFsKNxSMyi:localhost	$dczZ5ujDXaCn8E7mqiPxdWv094BO7Ae43nDccKIcYj0
+602	!pYSbiOyjMFsKNxSMyi:localhost	$szVtIvunr_4Db7txNKgzHAuQVn_CjozjdXx1ScaaTLo
+603	!cZnmZQFBeDsHEQbFQs:localhost	$Sx6CDMFMQq-AxFM7RQsHoKpvjyS9G33u3z8gwPFPGlQ
+604	!cZnmZQFBeDsHEQbFQs:localhost	$Ds61_H6Tyc4ntlH3wyuSDv7R2xUWzBNpLkWhGl97P0Y
+605	!FzTtpSkXWMPYBKHUQN:localhost	$pR3vhxKWcFDGpnPzEJ1_UqSmBa_3bXE-NQqFCieb0ec
+606	!FzTtpSkXWMPYBKHUQN:localhost	$Ly8dTOkDmGOPHZAoBTy3xN2dvq4_CeiirRMNN12XTcM
+607	!AHOiTmgdxQzlhIOUsy:localhost	$fI-dYW6n5hAlPj_FRbtCdMBS8gm8kA4Lvb5CPZXQkHg
+608	!AHOiTmgdxQzlhIOUsy:localhost	$zFmSpwSOy-fLzwRmk6RL7SqN0sUKzX5VvioyvUbVuGs
+609	!pYSbiOyjMFsKNxSMyi:localhost	$BFtxZSwWOSA5VFoBXkyUA5PCN4cb8Oac1RfXOp_keDU
+610	!pYSbiOyjMFsKNxSMyi:localhost	$cFJv1ya7uwnZoJdDywolXoJix1BAiFesuf4ctQhmnLw
+611	!cZnmZQFBeDsHEQbFQs:localhost	$BqbiFeXVYzmPfdfWFErY_TlyAyY9JOYq-GNywD3Y9iQ
+612	!cZnmZQFBeDsHEQbFQs:localhost	$PwLYM9uXGla9EwnZ6usXYNL1JrcxBR8Avbe1CGV468U
+613	!FzTtpSkXWMPYBKHUQN:localhost	$iaQIrwMcJi8C2mG0azbCB-RrjAFjIftEVoEv0eXOqLE
+614	!FzTtpSkXWMPYBKHUQN:localhost	$3HrJ-LLBl-iCsGIdQxewZaPjWeeeEIZP0F34lIhx31I
+615	!AHOiTmgdxQzlhIOUsy:localhost	$ZbdRE7G_akb54-S3lSDZx7udJqfrhI9IT_m0RWMmDXQ
+616	!AHOiTmgdxQzlhIOUsy:localhost	$5Bw6ADQ0XEHQCAqpr3VVKw03tNTdgdOyqpTK-Rx3L2U
+617	!pYSbiOyjMFsKNxSMyi:localhost	$Cn4Aeq3cqmq1QxUQOaq7R5XxrzBXD7Py30XAFAn9hCg
+618	!pYSbiOyjMFsKNxSMyi:localhost	$_ggH37LmGCX5qvpR23_OsmmahJjIp-UWnI5NBxD-aZs
+619	!cZnmZQFBeDsHEQbFQs:localhost	$rvrVY2JDk4phcfa3uzvnkXwbGS5y8D4Jf9QPMHoUQ3E
+620	!cZnmZQFBeDsHEQbFQs:localhost	$rrsCYcHyFtmYoa-vafE-Dmb98Pzlg5fahqqdtK74mt0
+621	!FzTtpSkXWMPYBKHUQN:localhost	$_jOApKDrm7aZGRMBh_qE5IqbhJSOu1dVHnmaI3B9FpY
+622	!FzTtpSkXWMPYBKHUQN:localhost	$JVN7jrvRf7yDAbgpg7JZ4t7sqb65pokaD0GhQfxScLE
+623	!AHOiTmgdxQzlhIOUsy:localhost	$wr2At7DLOSB-dntEjCXjqqPQrf37Lj2bCWAMG8WCwHM
+624	!AHOiTmgdxQzlhIOUsy:localhost	$TZTQl6SoESIAdBZdpFlbjV6xkwTMrxpESg1u2gnwme8
+625	!pYSbiOyjMFsKNxSMyi:localhost	$pFQWi931WCeEeOuEvZ7NKeWU8ZxLZByhN7CiliQWJIU
+626	!pYSbiOyjMFsKNxSMyi:localhost	$dYFgvQbRhh-8W68XKSDFHxzSnIuZU96s2o_E9vzvJfE
+627	!cZnmZQFBeDsHEQbFQs:localhost	$wJVesM21lmem0Yqjzcx0wd4NYg7rZl-l3ioI-YtbFIA
+628	!cZnmZQFBeDsHEQbFQs:localhost	$7Qb3Ok8jLpRY2QMm9BrkPJ3HmQGw8brIC-eTZFNe_uQ
+629	!FzTtpSkXWMPYBKHUQN:localhost	$fEwfELPNwvOD4_cOSpFgDy2DDO0rDo1vFNNc50V_6Os
+630	!FzTtpSkXWMPYBKHUQN:localhost	$EL1f9HDpC5U1-H_pmdivfC_PiUuY9aj6S5JvjuWysKs
 \.
 
 
@@ -16099,6 +16227,54 @@ COPY public.state_groups_state (state_group, room_id, type, state_key, event_id)
 580	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$kKok6gYhrD5Q8LukjiPAvUw3tPsybnyoIV8vkyYV-ZA
 581	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$vs1nj-EVN4j6hAnIeLR9pbi2sOzAbVtFeY50E1wnuvQ
 582	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$Q0o1KF1iqsTiOxQ1ZGs7BklptgzEP861CyF9swJ5usY
+583	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$XHoLmSRzA6NeXhQldErjdN0XHfFwtYL4zbGHuJOYUJU
+584	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$fx8ldTtyxB3SKO1lYRSeGKahDVm2JhIrgwzU6mZOdSc
+585	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$fF3oX51OX898u9LaCglyPDpPplbeWyFLiK04TY4E264
+586	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$AXHEVChXCO0rXOxF9t84kaqdKrFoGxJSie_0rjvvlUw
+587	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$87sGSEZmaQ5-SKKNbsXdTe72URNTS951TAaVC1E5nWI
+588	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$Zq7pFggJJeYYcCjC8-WYK6R880r3dNciut1N8WpZY20
+589	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$nMHPRmzg7soqCirphFJz-AgaJ3lm2NLoXtZzxmwL7SU
+590	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$T5-Dj3lGEG5rCMucjKKXiIPdDciH71ywO6HJveRHr9A
+591	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$CFOyBeQDSTbn05L319JbBl15Ps5FQORhpDZaIeJyv7E
+592	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$1AEzU3RRmmbqEcPd2o6vBIGv9wBXUmeTJZsm3d-m_G8
+593	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$I_FBswWDJyFTSQCQMJPqjXh6ZY7LUlHEMip87AdPY7E
+594	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$XHKaa2MTt3IWnacU0oI7e55yapJbjgRixI73TJ27yI8
+595	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$zpmHV2npOKmbiLYjUFRGiQJV-q4Zs1nTZoo78QpJG9Q
+596	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$EZmybROC1ygY2QyOTCmxTzysPmgYRIJ1Fw3bK55iYhk
+597	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$GpZWdqGr05u8Hz3MMi66yjYtJ4CogfW7LFwCQl4g338
+598	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$KknJNODtf-tU1v-YDpyaGfWOYhwgunEJu8JWGkSZls4
+599	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$iNfIg25g-T8HLtzw9sMVuFQL17fvHrhfxFB0yQqEL1g
+600	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$2LG7h7CJE_NoKH9xGsDltd_Q-W9bY_oyJiao4ZBCkzw
+601	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$dczZ5ujDXaCn8E7mqiPxdWv094BO7Ae43nDccKIcYj0
+602	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$szVtIvunr_4Db7txNKgzHAuQVn_CjozjdXx1ScaaTLo
+603	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$Sx6CDMFMQq-AxFM7RQsHoKpvjyS9G33u3z8gwPFPGlQ
+604	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$Ds61_H6Tyc4ntlH3wyuSDv7R2xUWzBNpLkWhGl97P0Y
+605	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$pR3vhxKWcFDGpnPzEJ1_UqSmBa_3bXE-NQqFCieb0ec
+606	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$Ly8dTOkDmGOPHZAoBTy3xN2dvq4_CeiirRMNN12XTcM
+607	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$fI-dYW6n5hAlPj_FRbtCdMBS8gm8kA4Lvb5CPZXQkHg
+608	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$zFmSpwSOy-fLzwRmk6RL7SqN0sUKzX5VvioyvUbVuGs
+609	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$BFtxZSwWOSA5VFoBXkyUA5PCN4cb8Oac1RfXOp_keDU
+610	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$cFJv1ya7uwnZoJdDywolXoJix1BAiFesuf4ctQhmnLw
+611	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$BqbiFeXVYzmPfdfWFErY_TlyAyY9JOYq-GNywD3Y9iQ
+612	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$PwLYM9uXGla9EwnZ6usXYNL1JrcxBR8Avbe1CGV468U
+613	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$iaQIrwMcJi8C2mG0azbCB-RrjAFjIftEVoEv0eXOqLE
+614	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$3HrJ-LLBl-iCsGIdQxewZaPjWeeeEIZP0F34lIhx31I
+615	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$ZbdRE7G_akb54-S3lSDZx7udJqfrhI9IT_m0RWMmDXQ
+616	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$5Bw6ADQ0XEHQCAqpr3VVKw03tNTdgdOyqpTK-Rx3L2U
+617	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$Cn4Aeq3cqmq1QxUQOaq7R5XxrzBXD7Py30XAFAn9hCg
+618	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$_ggH37LmGCX5qvpR23_OsmmahJjIp-UWnI5NBxD-aZs
+619	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$rvrVY2JDk4phcfa3uzvnkXwbGS5y8D4Jf9QPMHoUQ3E
+620	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$rrsCYcHyFtmYoa-vafE-Dmb98Pzlg5fahqqdtK74mt0
+621	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$_jOApKDrm7aZGRMBh_qE5IqbhJSOu1dVHnmaI3B9FpY
+622	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$JVN7jrvRf7yDAbgpg7JZ4t7sqb65pokaD0GhQfxScLE
+623	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$wr2At7DLOSB-dntEjCXjqqPQrf37Lj2bCWAMG8WCwHM
+624	!AHOiTmgdxQzlhIOUsy:localhost	m.room.member	@matterbot:localhost	$TZTQl6SoESIAdBZdpFlbjV6xkwTMrxpESg1u2gnwme8
+625	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$pFQWi931WCeEeOuEvZ7NKeWU8ZxLZByhN7CiliQWJIU
+626	!pYSbiOyjMFsKNxSMyi:localhost	m.room.member	@matterbot:localhost	$dYFgvQbRhh-8W68XKSDFHxzSnIuZU96s2o_E9vzvJfE
+627	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$wJVesM21lmem0Yqjzcx0wd4NYg7rZl-l3ioI-YtbFIA
+628	!cZnmZQFBeDsHEQbFQs:localhost	m.room.member	@matterbot:localhost	$7Qb3Ok8jLpRY2QMm9BrkPJ3HmQGw8brIC-eTZFNe_uQ
+629	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$fEwfELPNwvOD4_cOSpFgDy2DDO0rDo1vFNNc50V_6Os
+630	!FzTtpSkXWMPYBKHUQN:localhost	m.room.member	@matterbot:localhost	$EL1f9HDpC5U1-H_pmdivfC_PiUuY9aj6S5JvjuWysKs
 \.
 
 
@@ -16121,140 +16297,10 @@ COPY public.stream_ordering_to_exterm (stream_ordering, room_id, event_id) FROM 
 623	!pYSbiOyjMFsKNxSMyi:localhost	$sBOLGVc9G-hzEUrT0nYoIx-a1WZt6Jjpe5OEQIfm_Dw
 625	!pYSbiOyjMFsKNxSMyi:localhost	$NqnZRw1Nf4ihObN5S2pyka_EzgjpEljHbtaRa1J0Dwg
 627	!pYSbiOyjMFsKNxSMyi:localhost	$cg2EjeRE2ZLX5IqMjtE1J7L9_MdQDjrFI7UzkbIOr7E
-56	!AHOiTmgdxQzlhIOUsy:localhost	$ZbStQfXya3r8-aGQzgeyjM1XexpMdB05yqudqOItZ7Y
-57	!AHOiTmgdxQzlhIOUsy:localhost	$Qz3TCt9TZASSCaEgtUMB4UvTNFiNj8xUud69yTLrB1A
-58	!AHOiTmgdxQzlhIOUsy:localhost	$4SCBWPaw9DfE1F8UhlHU8tcCgyNMGrdohneVcLXuYzc
-59	!AHOiTmgdxQzlhIOUsy:localhost	$slqMcNC5aM4RPcFxUSnvevAVSEwE34tlwYESlS2z7W4
-60	!AHOiTmgdxQzlhIOUsy:localhost	$cWb_bCwCrj6N8hvObwR3Dfe63W634wlYWIy2-UKO28M
-61	!AHOiTmgdxQzlhIOUsy:localhost	$s5oiTl_9b6K-IKMmuviFRxmIeO-uX2MJWYo7ws0AvWs
-62	!AHOiTmgdxQzlhIOUsy:localhost	$PLSJo_YuSdhcp8Qc1EtpopguS8UaiOZGkIcs_HYhOj4
-66	!AHOiTmgdxQzlhIOUsy:localhost	$8L8kolK-08m1wXb1AstqZz_qz_SUzB08YqJZ_kYqWMs
-68	!AHOiTmgdxQzlhIOUsy:localhost	$mmPSR9VqhO1noWGYGbl2whlFTsU1V3PHK_ncCUGnqTc
-72	!wGvWnTVpsbEMByNykc:localhost	$V4h-t7Z_ikk8f5J8DFBd6LCzIg27Ls_Cq5SwfTNvF0E
-73	!wGvWnTVpsbEMByNykc:localhost	$jD3h3ETxg2QK1PtrN6AW6y2kwQsFAQe7srLpSwfPhNg
-77	!wGvWnTVpsbEMByNykc:localhost	$83AF6m7uhB3hZQz5lmrPcLy_9huJCm_W9wt7-WQ_VYk
-78	!wGvWnTVpsbEMByNykc:localhost	$MIJv8SIPMQ5955dHrWtYlemxtCwV0f4tqf-i_3dQVns
-79	!wGvWnTVpsbEMByNykc:localhost	$bwBAv8SR7RG8_oUvZFU0lU5iPNq8aNv-mxr6MW9PztU
-80	!wGvWnTVpsbEMByNykc:localhost	$F0LR4DEA3oLcc3k_eNE6_RKKA11yLcsmfO_8qPHHW8Y
-81	!wGvWnTVpsbEMByNykc:localhost	$DOZehhyD4JGGFtEd922b5xVLGdup3v_MzKBeEQ_JzFE
-82	!wGvWnTVpsbEMByNykc:localhost	$wTfVj9B1xWTDZGpgTmLF5VwLS4zZnOAoCichsjzrqsI
-83	!wGvWnTVpsbEMByNykc:localhost	$a4Ou4JTKZxwllI40a4CS36DcmTYOyQFqH-r06D49gAg
-84	!wGvWnTVpsbEMByNykc:localhost	$ytekxng1JXi96Xdmn-7AeF1m8VLkPtS78IihXa3WZ84
-95	!wGvWnTVpsbEMByNykc:localhost	$cqZ1IfNynoUS3KLGis6wJcJp5j-RYl2XluwXAYEGSQQ
-85	!KBqzwXdLtXZopjBikg:localhost	$BzCYUUyIaNg8MGhOw_QYTtD2BuIWdSnks84kegIMIzk
-86	!KBqzwXdLtXZopjBikg:localhost	$_E-EZa8gdS-_4F2CasYTKomuDixia3fJ1R-Wu2xx_CQ
-91	!KBqzwXdLtXZopjBikg:localhost	$IZOLJfGYfNnK_aLuKaBOBCTx7SnxrLtHU1f4wTszqzo
-94	!KBqzwXdLtXZopjBikg:localhost	$lVGc_wB1P8VGJaykW33htFubukWDizH4Xwu5SfKGbn0
-96	!wGvWnTVpsbEMByNykc:localhost	$Q6YXU96RlR1dPKmp4iI3R_d2KiWzKnZbMMURN8OqDVE
-103	!vDRByArErEHuGOOJxE:localhost	$-Jddg6JtZ13Om3mZilR7hqtovSNKbu_jCbiDSN9u23M
-104	!vDRByArErEHuGOOJxE:localhost	$PtKNK0cvGyJhBT-BIAFZs4gDvODQiScnlQFqLmWKqNc
-106	!vDRByArErEHuGOOJxE:localhost	$lihGEzBm6TSVo-fe_WCOuWJNW_OgcaCyBi9g0UDlZoM
-107	!vDRByArErEHuGOOJxE:localhost	$0LNMKjea0zgdHTDMe3B3fmAnzNxu72ULA7HsNOs1pHw
-108	!CZMvztYPoMDXZghGjm:localhost	$Z8Uf7knMci62YkFiphxCZI55avAa7X64_K1l9SJ-dqQ
-114	!CZMvztYPoMDXZghGjm:localhost	$JHQCf63sTH6Vjufjj8sai_9QWCkwlbiKAUP0crmtihU
-116	!CZMvztYPoMDXZghGjm:localhost	$EVIMbY1fZLGzs0Xp19eKjkS2aizDSYFoS8Wzj42_LQI
-90	!KBqzwXdLtXZopjBikg:localhost	$RE6G8a-zySUuohhp6UFLrBJ4ROulO2pvp_K_476Q-lY
-93	!KBqzwXdLtXZopjBikg:localhost	$VaarpFJs6_0c2wYxJdAYq1G8uznJdufYfnCfjuqvI_M
-99	!vDRByArErEHuGOOJxE:localhost	$8d4e-CjuEEdRj8aSFNq0yHpo_JxouT8tHUVX8HfS4oc
-118	!CZMvztYPoMDXZghGjm:localhost	$8QUU4rDWLA_FAyy233e5yz-RKoRz1MMD2e3Dmuyueno
-92	!KBqzwXdLtXZopjBikg:localhost	$ZHUq2VN0HpuE5oJi6l_3Uh8aLOuQmXN5WDqUyhjy8Vw
-98	!vDRByArErEHuGOOJxE:localhost	$2rWHZ1dTRYXYOGEBkYy9w4xQNGND9i5euMRpJJww04o
-105	!vDRByArErEHuGOOJxE:localhost	$QvV8o1KjtX_tArxR1zwHZepfVa9NB03-81BjGpKxo9M
-97	!KBqzwXdLtXZopjBikg:localhost	$oXOzZ4Ab8mINVphaBVipRGmM3Z5L676RivBDayNaxj8
-113	!CZMvztYPoMDXZghGjm:localhost	$n4SLSzegw2_2XZuYVHMaBqQM0y0XXHqIEc6-sUt5lyo
-109	!CZMvztYPoMDXZghGjm:localhost	$pdfBN0Z96G_wbgh4VuNnIiOuwEeEcxbECI1vAE0JEC4
-115	!CZMvztYPoMDXZghGjm:localhost	$AmA--7RkBYVchLC_Tr104AXFweEwn_n7AeoFpptk0iI
-117	!CZMvztYPoMDXZghGjm:localhost	$mGp05ykxc7iuNGM9nc4QHqFY1mnuCUW_Hq3ocgiZgFg
-119	!CZMvztYPoMDXZghGjm:localhost	$jqog1KTVZdbZSwVzHyAI1GAzMymJrQgDaEx7zSDIuvw
-120	!CZMvztYPoMDXZghGjm:localhost	$LwCMrUFKLRRfUwxX_bj8hMYLg15fXGwOuu2QDPdjcHY
-121	!mjuhEfzSkeOAWJqsoF:localhost	$TV4MVQPx61vM41xEXo5UuJRdzeBIjcqclWUsGWNacYM
-122	!mjuhEfzSkeOAWJqsoF:localhost	$06Um82m6RzKMOebWv0lcKQOaSvr6C10y6QA2Snc_R0I
-126	!mjuhEfzSkeOAWJqsoF:localhost	$gn9BJ39HJ5v_qwj0jcIRfiLcgvbMbDnBRAfEJMS4RUI
-127	!mjuhEfzSkeOAWJqsoF:localhost	$8T5cGFOjiTe4zjIYX9tmzFfae8WV6TVvUpmBmV2carA
-128	!mjuhEfzSkeOAWJqsoF:localhost	$wKoDxwAtZ46KFnzdR2bV-nE-gCX8oSTpE4qkJq_05QE
-129	!mjuhEfzSkeOAWJqsoF:localhost	$5j9APu_03G5KZMO9hHc9AdVNHD7TfIlrfU87LHEi5aA
-130	!mjuhEfzSkeOAWJqsoF:localhost	$BQVp9srvRZxHcxl1NQzXpHjcHVZub1wZMinz-XO9KJE
-131	!KBqzwXdLtXZopjBikg:localhost	$ZAMV9PqrMcGH2UX-eqpPfSVfJ7UDcOelwl3-gln6nco
-132	!KBqzwXdLtXZopjBikg:localhost	$SfEuZPwDHWx4dsnQKRsLDI7Qwgt-Q84vGhE1THOba3s
-133	!mjuhEfzSkeOAWJqsoF:localhost	$r5MeySk4n_UL67iTjPp-RpDnYLITxLfuuSFi65ef9NQ
-134	!mjuhEfzSkeOAWJqsoF:localhost	$ZeOHUFxCYyrcXwwm5xcXycqdVTRt5tdY0zbyZ-uR_fQ
 620	!pYSbiOyjMFsKNxSMyi:localhost	$eYoMuw37Wp5rJifD462mPWGyABmo8PENGq4wR7oEEOo
 622	!pYSbiOyjMFsKNxSMyi:localhost	$w83h-gET4JAYUIdGKW09e0GLysOHk5G179RKvT01fwU
 624	!pYSbiOyjMFsKNxSMyi:localhost	$BC_YSPv6UbwnaLmpfO7mwu4iBC4ZjPAAejfuEDS3GLc
-172	!cZnmZQFBeDsHEQbFQs:localhost	$nc1eJdpqNsaDyb3SdIbRwuQPExhfIPzPopcRSNdl3cQ
-173	!cZnmZQFBeDsHEQbFQs:localhost	$DR5VmuWusNClKlyAtCuWLyQC__lzA2aHFKFHP9MMUfk
-178	!cZnmZQFBeDsHEQbFQs:localhost	$J6BFnxxVtwKMBZMazTB3yX8rosc2skmuxAuI4OinjBM
-179	!cZnmZQFBeDsHEQbFQs:localhost	$7kIusj7_vjnjvM5XRI1_3dU_wgeCRurNbLxWl7Wza64
-180	!cZnmZQFBeDsHEQbFQs:localhost	$yB_pgWY1MngMlhaqo70bZTnADr2mMUjbkEKY3cjnlqk
-181	!cZnmZQFBeDsHEQbFQs:localhost	$LwuV3S_QSzHUfw7pEQBk-n4jquK3n8qlEDA3ZQTkHDI
-182	!cZnmZQFBeDsHEQbFQs:localhost	$ZJsRzPjCUHZTNUN_j78KyrW5EVPSKt9Pw_F-tVVvH7k
-183	!cZnmZQFBeDsHEQbFQs:localhost	$rA5PRb7MjCz1lqKGVcHLZ_4eIRh_5slNnGazl-q0F4w
-184	!cZnmZQFBeDsHEQbFQs:localhost	$FyOdtUu1pDq9pkxIHuGA8NRmuYwbc56h3FAanha48Hk
-185	!cZnmZQFBeDsHEQbFQs:localhost	$R_BTpdLAD-BfJUNWA0gDdMNG4gc8RNi-4QhdtrCsz24
-186	!cZnmZQFBeDsHEQbFQs:localhost	$AI66VCbPMZvt2b3tqwhViAQXHs18twqgZhVW103z2sc
 626	!pYSbiOyjMFsKNxSMyi:localhost	$ZHAbmyjfizcR61TrtT7MI8X3rdltz0NSsFG52g1t4IA
-187	!cZnmZQFBeDsHEQbFQs:localhost	$MgXIz3NeQBEhrbeF8vsJzjopQxKY0sUcnwnW40fE-1Q
-191	!mOsaATLFknhUVKMKbF:localhost	$QC7bXFDxGhDk6yv_4ChjXTMkJ0t0dKySNdOD6sK8xWs
-188	!cZnmZQFBeDsHEQbFQs:localhost	$HUUDVNAe9kYy1-MJRkHq_OmumlsIRsNlMN9OZnLoLm4
-190	!mOsaATLFknhUVKMKbF:localhost	$SlMhs1Tixs22BdZ3XXqNy9AnhoIY4iemw--vg-i_Lm0
-206	!mOsaATLFknhUVKMKbF:localhost	$scKgIiXOkpnPBXE0aeKk88O6U1i21DNhX9T-JJ7H99s
-189	!cZnmZQFBeDsHEQbFQs:localhost	$VDgIn68dzLHo_gZ7neRkP0y_cgeUTlGI_ZGO7A-qJHw
-197	!mOsaATLFknhUVKMKbF:localhost	$-_npKAXQzDZatyCE982iFmq7-fA6EcpCzljKEwGGWgg
-201	!mOsaATLFknhUVKMKbF:localhost	$biZp1kn2ycj-NFYzBIsolRQUhuy_Jcdb1TWFXs-wm_M
-202	!mOsaATLFknhUVKMKbF:localhost	$Vhe96m7lCNGvQXgtlabnFhr_GUgPVpqYOsLd5pxMxxc
-198	!mOsaATLFknhUVKMKbF:localhost	$i7p_9pGUCmPcRci6QowPd0isnxc650XUL0nkZkXIJqI
-203	!mOsaATLFknhUVKMKbF:localhost	$Y0bkVaMbWG30DJH750qUtZjIwDm6EWGKt22Jikt7ncc
-199	!mOsaATLFknhUVKMKbF:localhost	$oRS_K9WwEjRY1LoGRh6ymmTYBFe4S3jiGLxKdFZq0xo
-200	!mOsaATLFknhUVKMKbF:localhost	$FWpqQbXQShRFgQ2vWg29OuQTSkDuwx17c6DhUQAfIb8
-204	!mOsaATLFknhUVKMKbF:localhost	$IurhFVNgogJHFAFqnmsFHryn2y9ekYNHC2LacVsFPKQ
-205	!mOsaATLFknhUVKMKbF:localhost	$EDaLEPba2OiPmGvBWlmz-NOHb5g2kUtwgkGzOiirHIY
-207	!mOsaATLFknhUVKMKbF:localhost	$ZWtfV6VN7cYag1OsVvbeuTNCtBCvyfsFry92Cbxe5AY
-208	!cZnmZQFBeDsHEQbFQs:localhost	$CcGczUOKTX_OEsfQVWp2qPlgJwMCRsa25dLU8fT6UH0
-554	!puqobzhQaCAiNOjLcB:localhost	$Xjn9lUHHlI8BoVPiDkpcS94L_FyG211Lo3sCPHY1VwI
-555	!puqobzhQaCAiNOjLcB:localhost	$hcS5dFulhPxhwa89HLOoTT4eWzPVr-yl3w3jx5A6PS8
-561	!puqobzhQaCAiNOjLcB:localhost	$VEKv7rw8zUn1gw78_GdIAUVzDAZEt7IFAAhCtmf2ELU
-562	!puqobzhQaCAiNOjLcB:localhost	$O3_PZEz0v9a9Fq11xsr1Yb_ojqYdgue_7WlJHu_zI1k
-563	!puqobzhQaCAiNOjLcB:localhost	$g7k3N2Ric6k0i-Xl1Tio1_tEspsYgCtsdMzAEJZqnBw
-564	!puqobzhQaCAiNOjLcB:localhost	$3Fc4-nYyA1_y_8cjzqoPBCbyZfK016mXEmN0unE2RFU
-565	!puqobzhQaCAiNOjLcB:localhost	$ONNUUamk0DvE8KQQk27WWvnBzM5HI9xOAZwWInh4QeA
-566	!puqobzhQaCAiNOjLcB:localhost	$c7ProbvMQ0cxi-r6PN7nXKqy8qjEyr6sSJdiiWZHH-M
-567	!puqobzhQaCAiNOjLcB:localhost	$9_vB9DI8lIt9NFlkzcjxuxwPTN7Av6-tf1_K_JaL91E
-568	!puqobzhQaCAiNOjLcB:localhost	$KssQ9dFtFCbWHpLa-f9fM_UT6WHwumlzPUxQTqri5p4
-569	!puqobzhQaCAiNOjLcB:localhost	$I7yx33APjOeWTtknWtG9WE2yo9OpS16k0zy-SBVXDIk
-570	!tBtowuksigFlDloJju:localhost	$f499nDX19AxYvDSnCNEpl8ZeMrjICxbkX9qEcTPWMxE
-571	!tBtowuksigFlDloJju:localhost	$j4GlMQZFimUk_9PXu2KetZg--WgWr7IQsOBEWnaza-g
-577	!tBtowuksigFlDloJju:localhost	$WGWsSlMjNimnLCEHNd1_K8bjJJxq7iKem20QhtyJ47E
-578	!tBtowuksigFlDloJju:localhost	$4YhcMxMFmINkDQm3vnRVA8aRwgu2dWYEUAbEJONjTUg
-579	!tBtowuksigFlDloJju:localhost	$9ycqal52NL9I4pYH8TPD9VjEnVxf5nj0s50-pGSadjc
-580	!tBtowuksigFlDloJju:localhost	$xsmMWo06b9qGDI9Enk8UNxRCszpANgDIhbK_cxJtRYI
-581	!tBtowuksigFlDloJju:localhost	$GEy9_pu6ZFlP3Br7zqb7imGtKlvGLtuvGRxUK_3adM4
-582	!nllwNxAePFlmipofLp:localhost	$1lUkH4oyIKOZJGE2u7ABRHOY43sbEMHy6nLxUZ-0nyE
-583	!nllwNxAePFlmipofLp:localhost	$4n5kv-Dx_AP5g9Hik6DA8dg_U7a_7ODCLKLfXqqSyQ0
-589	!nllwNxAePFlmipofLp:localhost	$fUdK3DTPtcQEcg1ijdh6pZfX74-6cm2UPoXNMxuNtXc
-590	!nllwNxAePFlmipofLp:localhost	$vP6hBckAjg4T0KeC8keCMcrPxiqRbUaPXACkut9lsA4
-591	!nllwNxAePFlmipofLp:localhost	$HEGNYctTWcjafDIb9Upzym6b-ywaBMDs30a19bQtpEI
-592	!nllwNxAePFlmipofLp:localhost	$_1Tcp1ias0vribjAvFtpZiAMLaZbcOY41Cl6jpmaZVo
-593	!nllwNxAePFlmipofLp:localhost	$ihR0qfoi9rZpmMy9vQkpvOUbIVHuuwb0-8RMDQY4BIk
-594	!nllwNxAePFlmipofLp:localhost	$8gq45lOayic8W8QmYG9BdGVHAA9kpWW5bUcm4AReMPw
-595	!nllwNxAePFlmipofLp:localhost	$gbG_THuIiTaDXC9ULVzO17o059Y1kRxiGGd0JuUScPI
-596	!nllwNxAePFlmipofLp:localhost	$j3HlQENtqqGPlD3L9-a_6ytYGFOarZeCVeHsp6w6AfM
-597	!nllwNxAePFlmipofLp:localhost	$W02-kfcVxYkAADGkZ9dpTGf6nreQVtLg6lRDGbCZK5w
-598	!nllwNxAePFlmipofLp:localhost	$dT6ka5goQVJMQBHjxODIIKacAKIkORT3zgJ-OfPy_24
-599	!EofCjJlPqVGGkmiiRY:localhost	$lXTsitqg6rrOe5HJf1yp2C3cCboJht7MCNVmsB3FdN4
-600	!EofCjJlPqVGGkmiiRY:localhost	$A7rrnpp4tibV8Nquaj9qs592LbTUKV3fiqe-b5f5PnA
-606	!EofCjJlPqVGGkmiiRY:localhost	$B6p974GcipP0N7YQfoJsrd-wLnORiDWtchivzmV-MjY
-607	!EofCjJlPqVGGkmiiRY:localhost	$qexgXyptqqBq9kbz4fykr4Kmt5AwBbG-Ej5lcrFTDuw
-608	!EofCjJlPqVGGkmiiRY:localhost	$bDUARZR5EStr981x1Nbr-2ceqLgS-kl-i5U_syjGi7g
-609	!EofCjJlPqVGGkmiiRY:localhost	$d_alfV_1YnYGBU_66zqEaR6OndZjxj0BJK1PEljs29k
-610	!EofCjJlPqVGGkmiiRY:localhost	$fW-q08vItKYO22Zm8vpolBUUJJu3efmYen_wyng4-jw
-611	!EofCjJlPqVGGkmiiRY:localhost	$ObWjhA0Mk5HcnXl8rLeJL07y39Dibb-nE2Qc5KPz-ME
-612	!EofCjJlPqVGGkmiiRY:localhost	$pSSo7EeMcX65GYMu72fzjnpT8rZHbOydVUMFDlF-gg8
-613	!EofCjJlPqVGGkmiiRY:localhost	$E2BebmXNFLoaiwUaOOs2mtS9LILnGOpQiNxr-X5K6Gk
-614	!EofCjJlPqVGGkmiiRY:localhost	$yQvT6JP3MWEhFgE8gM0EXF7AOnDXwaJpNztyu57j9RM
-615	!FzTtpSkXWMPYBKHUQN:localhost	$WdJwDlSuVlQE-ESVd4_B-6qjGS-rqtSE0pDgclOuI9U
-616	!FzTtpSkXWMPYBKHUQN:localhost	$Xh31dlBYHWV3R-ikoMuqyAmMmF5X20cfj5IFCwaBcWM
-617	!FzTtpSkXWMPYBKHUQN:localhost	$zIglFINbUqyFP71mR096RrZNUHmMhETKivk5H-fEp6Y
-618	!EofCjJlPqVGGkmiiRY:localhost	$q9fuUDQlerJfM_e1O472V8KFOKssQfMlfp6jgo6sFwc
 628	!cZnmZQFBeDsHEQbFQs:localhost	$FnQqXCmSq5gPDy75-njSyGvB3RmXA3nDRmCsZ-Xac00
 629	!cZnmZQFBeDsHEQbFQs:localhost	$CDqSA8GzWEb5RwGBe258f_6iew0VyX49NQE_P4I5cQQ
 630	!cZnmZQFBeDsHEQbFQs:localhost	$p_t3gvqTLNwF9SNYbx2mVZRAEKhnTRmB_RQd8-SRc-0
@@ -16267,10 +16313,10 @@ COPY public.stream_ordering_to_exterm (stream_ordering, room_id, event_id) FROM 
 --
 
 COPY public.stream_positions (stream_name, instance_name, stream_id) FROM stdin;
+presence_stream	master	4265
 events	master	631
 receipts	master	169
 account_data	master	309
-presence_stream	master	4236
 \.
 
 
@@ -16578,6 +16624,12 @@ COPY public.user_daily_visits (user_id, device_id, "timestamp", user_agent) FROM
 @admin:localhost	OZJZGYFHKP	1687219200000	axios/1.3.2
 @user1.matrix:localhost	FCQBBFUIPA	1687219200000	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 @admin:localhost	LDIQRCMIBV	1687219200000	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+@admin:localhost	OZJZGYFHKP	1687305600000	axios/1.3.2
+@admin:localhost	DSQPBFJOFO	1687305600000	axios/1.3.2
+@admin:localhost	TAVYLDXJOV	1687305600000	axios/1.3.2
+@admin:localhost	VNFJGPMAFY	1687305600000	axios/1.3.2
+@admin:localhost	LDIQRCMIBV	1687392000000	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+@admin:localhost	OZJZGYFHKP	1687392000000	axios/1.3.2
 \.
 
 
@@ -16590,6 +16642,7 @@ COPY public.user_directory (user_id, room_id, display_name, avatar_url) FROM std
 @user1.matrix:localhost	\N	user1.matrix	\N
 @user2.matrix:localhost	\N	user2.matrix	\N
 @user3.matrix:localhost	\N	user3.matrix	\N
+@jan.ostgren:localhost	\N	Janne Östgren	\N
 \.
 
 
@@ -16602,6 +16655,7 @@ COPY public.user_directory_search (user_id, vector) FROM stdin;
 @user1.matrix:localhost	'localhost':2 'user1.matrix':1A,3B
 @user2.matrix:localhost	'localhost':2 'user2.matrix':1A,3B
 @user3.matrix:localhost	'localhost':2 'user3.matrix':1A,3B
+@jan.ostgren:localhost	'jan.ostgren':1A 'janne':3B 'localhost':2 'östgren':4B
 \.
 
 
@@ -16650,11 +16704,13 @@ COPY public.user_ips (user_id, access_token, device_id, ip, user_agent, last_see
 @mm_user1.mm:localhost	syt_bW1fdXNlcjEubW0_KrdeguCqPWHCtFMTmaGW_28zKbE	XTIKPCUMWP	172.16.238.1	axios/1.3.2	1686258913406
 @user1.matrix:localhost	syt_dXNlcjEubWF0cml4_HnULFylwLwepXKljvxxv_2YLZjK	SLHJTXHNPA	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	1686293522608
 @mm_user1.mm:localhost	syt_bW1fdXNlcjEubW0_oalwfHKDigHdYRgCoWSS_2hYrOl	QBVTBQBLYN	172.16.238.1	axios/1.3.2	1686249623264
-@user1.matrix:localhost	syt_dXNlcjEubWF0cml4_pWWMrLtfxcmYQjZuLNxi_0eq2ze	TZRSKYIQDS	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36	1684928500940
 @mm_user1.mm:localhost	syt_bW1fdXNlcjEubW0_sTlrdKilciBhPlICaKff_2uAqpk	VATIJWBDYJ	172.16.238.1	axios/1.3.2	1687272280131
-@admin:localhost	syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj	OZJZGYFHKP	172.16.238.1	axios/1.3.2	1687272291318
-@admin:localhost	syt_YWRtaW4_qyFsGYpHiEntNcOJHslc_1QATx7	LDIQRCMIBV	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	1687272466235
-@user1.matrix:localhost	syt_dXNlcjEubWF0cml4_pLLKjgtdPvyYXXuVrzDq_2xZ1s9	FCQBBFUIPA	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	1687275219893
+@user1.matrix:localhost	syt_dXNlcjEubWF0cml4_pLLKjgtdPvyYXXuVrzDq_2xZ1s9	FCQBBFUIPA	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	1687276785211
+@admin:localhost	syt_YWRtaW4_tKHrVhnbGxdHCSsmIqYK_2668LC	TAVYLDXJOV	172.16.238.1	axios/1.3.2	1687330913954
+@admin:localhost	syt_YWRtaW4_yHGGErwUCpVPApSNBdgA_2ewz6o	DSQPBFJOFO	172.16.238.1	axios/1.3.2	1687331125102
+@admin:localhost	syt_YWRtaW4_vwPEodothKmbUyWVQgwG_2VnarQ	VNFJGPMAFY	172.16.238.1	axios/1.3.2	1687332277979
+@admin:localhost	syt_YWRtaW4_ESjBoGLaWtscFgZHsBhJ_027WFj	OZJZGYFHKP	172.16.238.1	axios/1.3.2	1687416631721
+@admin:localhost	syt_YWRtaW4_qyFsGYpHiEntNcOJHslc_1QATx7	LDIQRCMIBV	172.16.238.1	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36	1687416937479
 \.
 
 
@@ -16681,6 +16737,7 @@ COPY public.user_stats_current (user_id, joined_rooms, completed_delta_stream_id
 @matterbot:localhost	11	610
 @user1.matrix:localhost	10	613
 @mm_user1.mm:localhost	6	630
+@jan.ostgren:localhost	0	630
 \.
 
 
@@ -16699,6 +16756,7 @@ COPY public.user_threepid_id_server (user_id, medium, address, id_server) FROM s
 COPY public.user_threepids (user_id, medium, address, validated_at, added_at) FROM stdin;
 @user2.matrix:localhost	email	user2.matrix@localhost.com	1678611289596	1678611291411
 @user3.matrix:localhost	email	user3.matrix@localhost.com	1679412826988	1679412827906
+@jan.ostgren:localhost	email	jan.ostgren@localhost.com	1687416938295	1687416938295
 \.
 
 
@@ -16714,6 +16772,7 @@ COPY public.users (name, password_hash, creation_ts, admin, upgrade_ts, is_guest
 @user2.matrix:localhost	$2b$12$dTZp5dCmXsdR2tyURjxHNOyQX6.Zh0.TrEVJOsRq4Iy3K7oDRpowm	1678611291	0	\N	0	\N	\N	\N	\N	0	f	\N	t
 @mm_user2.mm:localhost		1678611396	0	\N	0	xfbONb3M-hYO861rkzW7N0xUKm-6MII2M6sj-z8sdc0DaiXV1S25SXdr5ElIvatt	\N	\N	\N	0	f	\N	t
 @user3.matrix:localhost	$2b$12$hpPJtoegEb7YUHUFMy1en.lfhTDLTn5hfQB4lftPWwaEVG2aLnEIi	1679412827	0	\N	0	\N	\N	\N	\N	0	f	\N	t
+@jan.ostgren:localhost	$2b$12$3SirLGgtG.e2WRdF4.u6CuktZ/qTDiLWK1Rpf7MseGYI2MbzBXSri	1687416938	0	\N	0	\N	\N	\N	\N	0	f	\N	t
 \.
 
 
@@ -16793,7 +16852,7 @@ SELECT pg_catalog.setval('public.application_services_txn_id_seq', 547, true);
 -- Name: cache_invalidation_stream_seq; Type: SEQUENCE SET; Schema: public; Owner: synapse
 --
 
-SELECT pg_catalog.setval('public.cache_invalidation_stream_seq', 1705, true);
+SELECT pg_catalog.setval('public.cache_invalidation_stream_seq', 1717, true);
 
 
 --
@@ -16835,7 +16894,7 @@ SELECT pg_catalog.setval('public.instance_map_instance_id_seq', 1, false);
 -- Name: presence_stream_sequence; Type: SEQUENCE SET; Schema: public; Owner: synapse
 --
 
-SELECT pg_catalog.setval('public.presence_stream_sequence', 4236, true);
+SELECT pg_catalog.setval('public.presence_stream_sequence', 4265, true);
 
 
 --
@@ -16849,7 +16908,7 @@ SELECT pg_catalog.setval('public.receipts_sequence', 169, true);
 -- Name: state_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: synapse
 --
 
-SELECT pg_catalog.setval('public.state_group_id_seq', 582, true);
+SELECT pg_catalog.setval('public.state_group_id_seq', 630, true);
 
 
 --
