@@ -17,6 +17,8 @@ import { config } from '../Config';
 //import { joinMatrixRoom } from '../matrix/Utils';
 import { handlePostError, none } from '../utils/Functions';
 import { mattermostToMatrix, constructMatrixReply } from '../utils/Formatting';
+import * as emoji from 'node-emoji';
+
 
 const myLogger: log4js.Logger = getLogger('MattermostHandler');
 
@@ -98,7 +100,7 @@ export const MattermostUnbridgedHandlers = {
                         await this.onChannelCreated(m.broadcast.channel_id);
                         break
                     case 'P':
-                       
+
                         await mapPrivateChannel(this, m)
                         break
 
@@ -477,13 +479,13 @@ export const MattermostHandlers = {
     ): Promise<void> {
         // See the README for details on the logic.
         const post = JSON.parse(m.data.post);
-        const user=await User.findOne (
+        const user = await User.findOne(
             {
-                "where":{"mattermost_userid":post.user_id,"is_matrix_user":false}
+                "where": { "mattermost_userid": post.user_id, "is_matrix_user": false }
             }
         )
-        if(!user) {
-            return 
+        if (!user) {
+            return
         }
         const client = await this.main.mattermostUserStore.getOrCreateClient(
             post.user_id,
@@ -513,6 +515,20 @@ export const MattermostHandlers = {
             await Post.removeAll(this.main.dataSource, post.postid)
         }
     },
+    reaction_added: async function (
+        this: Channel,
+        m: MattermostMessage,
+    ): Promise<void> {
+       const reaction = JSON.parse(m.data.reaction)
+       
+        const post:Post = await Post.findOne(
+            {"where":{"postid":reaction.post_id}}
+        )
+        
+        const theEmoji = emoji.get(reaction.emoji_name)
+        myLogger.info(`Handler for ${m.event} not implemented. Emoji=${theEmoji}`)
+    },
+
 
     user_added: async function (
         this: Channel,
@@ -524,9 +540,9 @@ export const MattermostHandlers = {
             const owner = await this.main.mattermostUserStore.getOrCreateClient(
                 channel.creator_id)
             const user = User.findOne({
-               "where":{"mattermost_userid":m.data.user_id}
+                "where": { "mattermost_userid": m.data.user_id }
             })
-            await owner.invite(this.matrixRoom,(await user).matrix_userid)
+            await owner.invite(this.matrixRoom, (await user).matrix_userid)
 
         } else {
             const client = await this.main.mattermostUserStore.getOrCreateClient(
