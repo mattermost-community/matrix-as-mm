@@ -519,14 +519,22 @@ export const MattermostHandlers = {
         this: Channel,
         m: MattermostMessage,
     ): Promise<void> {
-       const reaction = JSON.parse(m.data.reaction)
-       
-        const post:Post = await Post.findOne(
-            {"where":{"postid":reaction.post_id}}
+        const reaction = JSON.parse(m.data.reaction)
+
+        const post: Post = await Post.findOne(
+            { "where": { "postid": reaction.post_id } }
         )
-        
+
         const theEmoji = emoji.get(reaction.emoji_name)
-        myLogger.info(`Handler for ${m.event} not implemented. Emoji=${theEmoji}`)
+        if (!theEmoji) {
+            myLogger.error(`Unknown emoji ${reaction.emoji_name} `)
+        }
+        else {
+            const client = await this.main.mattermostUserStore.getOrCreateClient(
+                reaction.user_id,
+            );
+            await client.sendReaction(this.matrixRoom, post.eventid, theEmoji)
+        }
     },
 
 

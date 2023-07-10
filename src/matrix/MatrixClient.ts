@@ -4,10 +4,11 @@ import { getLogger } from '../Logging';
 import * as axios from 'axios';
 import * as https from 'https';
 import * as http from 'http';
+import { string } from 'yargs';
 
 const TRACE_ENV_NAME = 'API_TRACE';
 
-export type Membership ='join' | 'leave' | 'invite' |'knock' | 'ban'
+export type Membership = 'join' | 'leave' | 'invite' | 'knock' | 'ban'
 
 
 export type RoomPreset =
@@ -58,6 +59,7 @@ export interface MessageContent {
     formatted_body?: string;
     [propName: string]: unknown;
 }
+
 
 /*
 export interface SendRoomContent {
@@ -188,15 +190,39 @@ export class MatrixClient {
 
     public async sendRedactEvent(
         roomId: string,
-        eventId:string,
-        reason: string='',
+        eventId: string,
+        reason: string = '',
     ): Promise<any> {
         let txnId: string = 'm' + Date.now();
-        return await this.doRequest( {
-            method:'PUT',
-            url:`_matrix/client/r0/rooms/${roomId}/redact/${eventId}/${txnId}`,
-            
-            data:{reason:reason}
+        return await this.doRequest({
+            method: 'PUT',
+            url: `_matrix/client/r0/rooms/${roomId}/redact/${eventId}/${txnId}`,
+
+            data: { reason: reason }
+        })
+    }
+
+    /* {"m.relates_to":{"rel_type":"m.annotation","event_id":"$8GRGY8kEapq5uZRR96qJGvE72vngB7PvGvgw2Zu20ag"
+,"key":"😀"}}
+*/
+
+    public async sendReaction(
+        roomId: string,
+        eventId: string,
+        key: string
+    ): Promise<any> {
+        let txnId: string = 'm' + Date.now();
+        return await this.doRequest({
+            method: 'PUT',
+            url: `_matrix/client/r0/rooms/${roomId}/send/m.reaction/${txnId}`,
+
+            data: {
+                "m.relates_to":
+                {
+                    "rel_type": "m.annotation", "event_id": eventId
+                    , "key": key
+                }
+            }
         })
     }
 
@@ -206,10 +232,10 @@ export class MatrixClient {
         stateKey: string,
         data?: any,
     ): Promise<any> {
-        return await this.doRequest( {
-            method:'PUT',
-            url:`_matrix/client/v3/rooms/${roomId}/state/${eventType}/${stateKey}`,
-            data:data
+        return await this.doRequest({
+            method: 'PUT',
+            url: `_matrix/client/v3/rooms/${roomId}/state/${eventType}/${stateKey}`,
+            data: data
         })
     }
     public async getRoomEvent(roomId: string, eventId: string): Promise<any> {
@@ -504,10 +530,9 @@ export class MatrixClient {
         };
         let method = options.method || 'GET';
         myOptions = Object.assign(myOptions, options);
-       
+
         this.myLogger.trace(
-            `${method} ${this.getBaseUrl()}/${options.url}. Active userId=${this.getUserId()}, Valid Session= ${
-                this.sessionIsValid
+            `${method} ${this.getBaseUrl()}/${options.url}. Active userId=${this.getUserId()}, Valid Session= ${this.sessionIsValid
             }`,
         );
         try {
@@ -521,7 +546,7 @@ export class MatrixClient {
                 return me;
             }
             if (me.error) {
-                
+
                 this.myLogger.error(
                     `${method} ${options.url} error: ${me.errcode}:${me.error} statusText= ${me.statusText}`,
                 );
@@ -531,7 +556,7 @@ export class MatrixClient {
                 );
 
             }
-            throw me.error ? me:e
+            throw me.error ? me : e
         }
     }
 
