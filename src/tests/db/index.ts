@@ -22,11 +22,11 @@ export const AppDataSource = new DataSource({
 
 export async function run(): Promise<any> {
     try {
-        let ds = await AppDataSource.initialize();
+        const ds = await AppDataSource.initialize();
         console.info(ds);
         let n = await User.count();
         console.log('Count users', n);
-        let u = await User.findOne({
+        const u = await User.findOne({
             where: { is_matrix_user: true },
         });
         console.log(u);

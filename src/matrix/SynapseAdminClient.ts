@@ -16,7 +16,7 @@ export class SynapseAdminClient {
     private client: axios.AxiosInstance;
     readonly apiTrace;
     private myLogger: log4js.Logger;
-    private isValid:boolean=false
+    private isValid: boolean = false;
 
     private constructor(matrixClient: MatrixClient) {
         this.client = matrixClient.getClient();
@@ -56,10 +56,10 @@ export class SynapseAdminClient {
     }
 
     private async doRequest(options: axios.AxiosRequestConfig): Promise<any> {
-        let method = options.method || 'GET';
+        const method = options.method || 'GET';
         this.myLogger.trace(`${method} ${options.url}`);
         try {
-            let response: axios.AxiosResponse = await this.client.request(
+            const response: axios.AxiosResponse = await this.client.request(
                 options,
             );
             return response.data;
@@ -75,20 +75,28 @@ export class SynapseAdminClient {
         }
     }
 
-    static async createClient (matrixClient: MatrixClient):Promise<SynapseAdminClient>{
-        const synapseClient = new SynapseAdminClient(matrixClient)
+    static async createClient(
+        matrixClient: MatrixClient,
+    ): Promise<SynapseAdminClient> {
+        const synapseClient = new SynapseAdminClient(matrixClient);
         try {
-            const isAdmin=await synapseClient.isAdmin(matrixClient.getUserId())
-            if(isAdmin.admin === true) {
-                synapseClient.isValid=true
-                synapseClient.myLogger.info("Synapse admin client created for %s",matrixClient.getUserId())
-                return synapseClient
+            const isAdmin = await synapseClient.isAdmin(
+                matrixClient.getUserId(),
+            );
+            if (isAdmin.admin === true) {
+                synapseClient.isValid = true;
+                synapseClient.myLogger.info(
+                    'Synapse admin client created for %s',
+                    matrixClient.getUserId(),
+                );
+                return synapseClient;
             }
+        } catch (error) {
+            synapseClient.myLogger.error(
+                'Not a Matrix Synapse admin client. Message=%s',
+                error.message,
+            );
         }
-        catch (error) {
-            synapseClient.myLogger.error("Not a Matrix Synapse admin client. Message=%s",error.message)
-        }
-        return undefined
-
+        return undefined;
     }
 }

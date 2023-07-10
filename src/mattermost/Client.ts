@@ -26,16 +26,16 @@ export class Client {
         this.domain = domain.replace(/\/*$/, '');
         this.joinTeamPromises = new Map();
 
-        let apiTraceEnv = process.env[TRACE_ENV_NAME];
+        const apiTraceEnv = process.env[TRACE_ENV_NAME];
         this.logLevel =
             apiTraceEnv && apiTraceEnv === 'true' ? 'trace' : 'debug';
         this.myLogger = log4js.getLogger('MM Client');
         this.myLogger.level = this.logLevel;
 
-        let httpsAgent = new https.Agent({
+        const httpsAgent = new https.Agent({
             keepAlive: true,
         });
-        let httpAgent = new http.Agent({
+        const httpAgent = new http.Agent({
             keepAlive: true,
         });
 
@@ -77,9 +77,9 @@ export class Client {
     ): ClientError {
         let message: string = error.message;
         let errName = 'ApiError';
-        let ae: boolean = axios.isAxiosError(error);
+        const ae: boolean = axios.isAxiosError(error);
         let errData: any = error.response?.data || {};
-        let errObject: ErrorObject = {
+        const errObject: ErrorObject = {
             is_oauth: false,
             id: '',
             request_id: '',
@@ -92,7 +92,7 @@ export class Client {
 
                 if (error.response.data) {
                     errData = error.response.data;
-                    let dm: any = error.response.data.message;
+                    const dm: any = error.response.data.message;
                     message += dm ? '. ' + dm : '';
                     errName = error.response.data.id || errName;
                     errObject.status_code = errData.status_code;
@@ -104,7 +104,7 @@ export class Client {
         } else {
         }
 
-        let clientError = new ClientError(
+        const clientError = new ClientError(
             message,
             method,
             endpoint,
@@ -121,9 +121,9 @@ export class Client {
         endpoint: string,
         data?: any | FormData,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        const url= `/api/v4${endpoint}`
+        const url = `/api/v4${endpoint}`;
         const options: axios.AxiosRequestConfig = {
             method: method,
             url: url,
@@ -134,18 +134,21 @@ export class Client {
         }
         if (!validateStatus) {
             options.validateStatus = function (status) {
-                return (status >= 200 && status < 300) || (status >= 400 && status <= 451);
-            }
+                return (
+                    (status >= 200 && status < 300) ||
+                    (status >= 400 && status <= 451)
+                );
+            };
         }
 
         this.myLogger.trace(`${method}  ${this.domain}${url} `);
         try {
-            let response: axios.AxiosResponse = await this.client.request(
+            const response: axios.AxiosResponse = await this.client.request(
                 options,
             );
-            return validateStatus ? response.data :response;
+            return validateStatus ? response.data : response;
         } catch (error: any) {
-            const fullEndpoint:string=`${this.domain}${url}`
+            const fullEndpoint: string = `${this.domain}${url}`;
             throw this.clientError(error, fullEndpoint, method);
         }
     }
@@ -155,52 +158,52 @@ export class Client {
         endpoint: string,
         data?: any,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        return await this.send_raw(method, endpoint, data, raw,validateStatus);
+        return await this.send_raw(method, endpoint, data, raw, validateStatus);
     }
 
     public async get(
         endpoint: string,
         data?: any,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        return await this.send('GET', endpoint, data, raw,validateStatus);
+        return await this.send('GET', endpoint, data, raw, validateStatus);
     }
     public async post(
         endpoint: string,
         data?: any,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        return await this.send('POST', endpoint, data, raw,validateStatus);
+        return await this.send('POST', endpoint, data, raw, validateStatus);
     }
     public async put(
         endpoint: string,
         data?: any,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        return await this.send('PUT', endpoint, data, raw,validateStatus);
+        return await this.send('PUT', endpoint, data, raw, validateStatus);
     }
 
     public async patch(
         endpoint: string,
         data?: any,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        return await this.send('PATCH', endpoint, data, raw,validateStatus);
+        return await this.send('PATCH', endpoint, data, raw, validateStatus);
     }
 
     public async delete(
         endpoint: string,
         data?: any,
         raw: boolean = false,
-        validateStatus: boolean = true
+        validateStatus: boolean = true,
     ): Promise<any> {
-        return await this.send('DELETE', endpoint, data, raw,validateStatus);
+        return await this.send('DELETE', endpoint, data, raw, validateStatus);
     }
 
     public websocket(): ClientWebsocket {
@@ -255,12 +258,12 @@ export class ClientWebsocket extends EventEmitter {
     public async open() {
         const parts = this.client.domain.split(':');
 
-        let wsProto = parts[0] === 'http' ? 'ws' : 'wss';
-       
-        let port= parts.length== 3 ? parts[2]:''
+        const wsProto = parts[0] === 'http' ? 'ws' : 'wss';
+
+        const port = parts.length == 3 ? parts[2] : '';
         let wsDomain = `${parts[1]}:${port}`;
-        if(!port) {
-          wsDomain = parts[1]
+        if (!port) {
+            wsDomain = parts[1];
         }
         const wsUrl = `${wsProto}:${wsDomain}/api/v4/websocket`;
         const options = {
@@ -339,10 +342,10 @@ export class ClientWebsocket extends EventEmitter {
         );
         return await new Promise(
             (resolve, reject) =>
-            (this.promises[this.seq] = {
-                resolve: resolve,
-                reject: reject,
-            }),
+                (this.promises[this.seq] = {
+                    resolve: resolve,
+                    reject: reject,
+                }),
         );
     }
 }

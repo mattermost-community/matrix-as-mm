@@ -5,7 +5,7 @@ import * as logLevel from 'loglevel';
 import * as mxClient from './matrix/MatrixClient';
 import { SynapseAdminClient } from './matrix/SynapseAdminClient';
 import * as util from 'util';
-import * as base64 from 'base-64'
+import * as base64 from 'base-64';
 
 import { Config, setConfig, config, RELOADABLE_CONFIG } from './Config';
 import { isDeepStrictEqual } from 'util';
@@ -32,7 +32,7 @@ import {
     loginAppService,
     registerAppService,
 } from './matrix/Utils';
-import { MatrixUnbridgedHandlers } from './matrix/MatrixHandler'
+import { MatrixUnbridgedHandlers } from './matrix/MatrixHandler';
 import MattermostUserStore from './mattermost/MattermostUserStore';
 import { joinMattermostChannel } from './mattermost/Utils';
 import Channel from './Channel';
@@ -43,8 +43,8 @@ import {
     MattermostMainHandlers,
     MattermostUnbridgedHandlers,
 } from './mattermost/MattermostHandler';
-import * as fs from 'fs'
-import * as path from 'path'
+import * as fs from 'fs';
+import * as path from 'path';
 
 interface TeamInfo {
     id: string;
@@ -64,11 +64,11 @@ export default class Main extends EventEmitter {
 
     public botClient: mxClient.MatrixClient;
     public adminClient: mxClient.MatrixClient;
-    public synapseClient: SynapseAdminClient = undefined as any
+    public synapseClient: SynapseAdminClient = undefined as any;
 
     public initialized: boolean;
     public killed: boolean;
-    private adminLoggedIn:boolean=false
+    private adminLoggedIn: boolean = false;
 
     public readonly client: Client;
 
@@ -87,39 +87,50 @@ export default class Main extends EventEmitter {
         registrationPath: string,
         private readonly exitOnFail: boolean = true,
         private readonly traceApi: boolean = false,
-        private readonly logDir: string = ''
+        private readonly logDir: string = '',
     ) {
         super();
         setConfig(config);
 
         const logConfigFile = `${__dirname}/../config/log4js.json`;
-        const loggerConfigPath = path.join(logConfigFile)
+        const loggerConfigPath = path.join(logConfigFile);
         try {
-            let logDir = this.logDir || process.cwd()
-            logDir = path.resolve(logDir)
-            if (!fs.existsSync(logDir) || !fs.lstatSync(logDir).isDirectory() || fs.accessSync(logDir, fs.constants.W_OK | fs.constants.R_OK)) {
-                throw new Error(`Log directory ${logDir} is not valid for write and read access`)
+            let logDir = this.logDir || process.cwd();
+            logDir = path.resolve(logDir);
+            if (
+                !fs.existsSync(logDir) ||
+                !fs.lstatSync(logDir).isDirectory() ||
+                fs.accessSync(logDir, fs.constants.W_OK | fs.constants.R_OK)
+            ) {
+                throw new Error(
+                    `Log directory ${logDir} is not valid for write and read access`,
+                );
             }
 
-            const content = fs.readFileSync(logConfigFile, { encoding: 'utf8', flag: 'r' })
-            let jsonContent = JSON.parse(content)
-            const appenders = jsonContent?.appenders
-            for (let appender of Object.values(appenders)) {
-                const app: any = appender
+            const content = fs.readFileSync(logConfigFile, {
+                encoding: 'utf8',
+                flag: 'r',
+            });
+            const jsonContent = JSON.parse(content);
+            const appenders = jsonContent?.appenders;
+            for (const appender of Object.values(appenders)) {
+                const app: any = appender;
                 if (app.filename) {
-                    app.filename = logDir + path.sep + app.filename
+                    app.filename = logDir + path.sep + app.filename;
                 }
             }
 
             log4js.configure(jsonContent);
             this.myLogger = getLogger('Main');
             logLevel.setLevel(config.logging);
-            this.myLogger.info("Logging to directory %s", logDir)
-
+            this.myLogger.info('Logging to directory %s', logDir);
         } catch (error) {
             this.myLogger = getLogger('Main');
-            this.myLogger.fatal("Error when configure logging. Error=%s", error.message)
-            process.exit(5)
+            this.myLogger.fatal(
+                'Error when configure logging. Error=%s',
+                error.message,
+            );
+            process.exit(5);
         }
         this.registration = loadYaml(registrationPath);
         this.appService = new AppService(this);
@@ -158,15 +169,15 @@ export default class Main extends EventEmitter {
     }
 
     private async getMyJoinedPublicRooms(client: MatrixClient): Promise<any[]> {
-        let myPublicRooms: any[] = [];
-        let publicRooms = await client.getPublicRooms(1000);
+        const myPublicRooms: any[] = [];
+        const publicRooms = await client.getPublicRooms(1000);
 
-        let publicRoomCount = publicRooms.total_room_count_estimate || 0
+        const publicRoomCount = publicRooms.total_room_count_estimate || 0;
 
         if (publicRoomCount > 0) {
-            let myRooms = await client.getJoinedRooms();
-            for (let room of publicRooms.chunk) {
-                let foundRoom = myRooms.joined_rooms.filter(
+            const myRooms = await client.getJoinedRooms();
+            for (const room of publicRooms.chunk) {
+                const foundRoom = myRooms.joined_rooms.filter(
                     joined => joined == room.room_id,
                 );
                 if (foundRoom.length > 0) {
@@ -174,7 +185,11 @@ export default class Main extends EventEmitter {
                 }
             }
         }
-        this.myLogger.debug("Number of public rooms=%d, Number of joined public rooms=%d", publicRoomCount, myPublicRooms.length)
+        this.myLogger.debug(
+            'Number of public rooms=%d, Number of joined public rooms=%d',
+            publicRoomCount,
+            myPublicRooms.length,
+        );
         return myPublicRooms;
     }
 
@@ -248,10 +263,9 @@ export default class Main extends EventEmitter {
                     });
                     return false;
                 } else {
-
                 }
             }
-            for (let room of myPublicRooms) {
+            for (const room of myPublicRooms) {
                 const alias: string = `#${channel.name}:${server_name}`;
                 if (
                     channel.display_name === room.name ||
@@ -355,7 +369,9 @@ export default class Main extends EventEmitter {
                 // We only map channels in the default team now
                 const teamId = myTeams[0].id;
                 this.defaultTeam = { id: teamId, name: myTeams[0].name };
-                this.myLogger.info(`Checking mattermost [${myTeams[0].name}] team with id ${teamId} for channels`)
+                this.myLogger.info(
+                    `Checking mattermost [${myTeams[0].name}] team with id ${teamId} for channels`,
+                );
                 const teamChannels = await this.client.get(
                     `/users/${myId}/teams/${teamId}/channels`,
                 );
@@ -363,7 +379,7 @@ export default class Main extends EventEmitter {
                 const publicChannels = teamChannels.filter(channel => {
                     return channel.type === 'O';
                 });
-                for (let channel of publicChannels) {
+                for (const channel of publicChannels) {
                     await this.mapMattermostToMatrix(channel, myPublicRooms);
                 }
             } else {
@@ -377,7 +393,7 @@ export default class Main extends EventEmitter {
                 'Found %d mappings in database table mappings for private Channels/Rooms',
                 dbMappings.length,
             );
-            for (let dbMap of dbMappings) {
+            for (const dbMap of dbMappings) {
                 this.myLogger.info(
                     '\tChannel id=%s, Room id=%s',
                     dbMap.mattermost_channel_id,
@@ -397,35 +413,45 @@ export default class Main extends EventEmitter {
 
     public async setupConfigDatabase(): Promise<void> {
         try {
-            await this.setupDataSource(true)
-            const countMappings = await dbMapping.Mapping.count()
-            const countUsers = await User.count()
-            this.myLogger.info("Number of users=%d, number of mappings=%d", countUsers, countMappings)
-
+            await this.setupDataSource(true);
+            const countMappings = await dbMapping.Mapping.count();
+            const countUsers = await User.count();
+            this.myLogger.info(
+                'Number of users=%d, number of mappings=%d',
+                countUsers,
+                countMappings,
+            );
+        } catch (error) {
+            this.myLogger.fatal(
+                'Failed to setup configuration db %s',
+                config().database.database,
+            );
         }
-        catch (error) {
-            this.myLogger.fatal("Failed to setup configuration db %s", config().database.database)
-        }
-
     }
     private async checkMattermostClient(): Promise<boolean> {
-        let ok: boolean = true
-        let message: string = ''
-        const me = await this.client.get('/users/me')
+        let ok: boolean = true;
+        let message: string = '';
+        const me = await this.client.get('/users/me');
         if (me.id != config().mattermost_bot_userid) {
-            message = `User_id for mattermost bot user must be ${me.id}. Id ${config().mattermost_bot_userid} not valid`
-        }
-        else if (!me.roles.includes('system_admin')) {
-            message = `User mattermost bot ${me.id} must have system admin role. Current role=${me.roles}`
+            message = `User_id for mattermost bot user must be ${me.id}. Id ${
+                config().mattermost_bot_userid
+            } not valid`;
+        } else if (!me.roles.includes('system_admin')) {
+            message = `User mattermost bot ${me.id} must have system admin role. Current role=${me.roles}`;
         } else {
-            const bot = await this.client.get(`/bots/${me.id}`, undefined, false, false)
+            const bot = await this.client.get(
+                `/bots/${me.id}`,
+                undefined,
+                false,
+                false,
+            );
             if (bot.status !== 404) {
-                message = `User mattermost bot ${me.id} can not be a bot`
+                message = `User mattermost bot ${me.id} can not be a bot`;
             }
         }
         if (message) {
-            this.myLogger.error(message)
-            ok = false
+            this.myLogger.error(message);
+            ok = false;
         }
 
         return ok;
@@ -451,29 +477,41 @@ export default class Main extends EventEmitter {
                 this.myLogger,
             );
         } catch (error) {
-            this.myLogger.fatal("Failed to register application service: access token=%s, message=%s", this.botClient.getAccessToken(), error.message)
-            await this.killBridge(5)
+            this.myLogger.fatal(
+                'Failed to register application service: access token=%s, message=%s',
+                this.botClient.getAccessToken(),
+                error.message,
+            );
+            await this.killBridge(5);
         }
-        let adminPassword = config().matrix_admin.password
+        const adminPassword = config().matrix_admin.password;
         if (adminPassword) {
             try {
-                this.myLogger.info(`Login with password. Admin: ${this.adminClient.getUserId()}  `)
+                this.myLogger.info(
+                    `Login with password. Admin: ${this.adminClient.getUserId()}  `,
+                );
                 await this.adminClient.loginWithPassword(
                     this.adminClient.getUserId(),
-                    base64.decode(adminPassword)
-                )
-                this.adminLoggedIn=true
-            }
-            catch (error) {
-                this.myLogger.error(`Login with password. Admin: ${this.adminClient.getUserId()} failed. Error= ${error.message} `)
-                this.killBridge(5)
-
-
+                    base64.decode(adminPassword),
+                );
+                this.adminLoggedIn = true;
+            } catch (error) {
+                this.myLogger.error(
+                    `Login with password. Admin: ${this.adminClient.getUserId()} failed. Error= ${
+                        error.message
+                    } `,
+                );
+                this.killBridge(5);
             }
         }
         if (config().homeserver.server_type === 'synapse') {
-            this.synapseClient = await SynapseAdminClient.createClient(this.adminClient)
-            this.myLogger.info("Synapse client created for %s", this.adminClient.getUserId())
+            this.synapseClient = await SynapseAdminClient.createClient(
+                this.adminClient,
+            );
+            this.myLogger.info(
+                'Synapse client created for %s',
+                this.adminClient.getUserId(),
+            );
         }
 
         try {
@@ -484,11 +522,13 @@ export default class Main extends EventEmitter {
 
         const clientOK = await this.checkMattermostClient();
         if (!clientOK) {
-            this.myLogger.error("Mattermost bot client is not valid");
+            this.myLogger.error('Mattermost bot client is not valid');
             await this.killBridge(5);
-
         } else {
-            this.myLogger.info("Mattermost bot client with user_id=%s is valid", this.client.userid);
+            this.myLogger.info(
+                'Mattermost bot client with user_id=%s is valid',
+                this.client.userid,
+            );
         }
 
         this.ws.on('error', e => {
@@ -536,7 +576,7 @@ export default class Main extends EventEmitter {
         );
         await this.doInitialMapping();
 
-        let rooms = await this.botClient.getJoinedRooms();
+        const rooms = await this.botClient.getJoinedRooms();
 
         const onChannelError = async (e: Error, channel: Channel) => {
             this.myLogger.error(
@@ -560,7 +600,7 @@ export default class Main extends EventEmitter {
                     },
                 });
                 if (count === 0) {
-                    let foundRoom = rooms.joined_rooms.find(room => {
+                    const foundRoom = rooms.joined_rooms.find(room => {
                         return room === channel.matrixRoom;
                     });
                     if (!foundRoom) {
@@ -576,11 +616,9 @@ export default class Main extends EventEmitter {
             } catch (e) {
                 await onChannelError(e, channel);
             }
-
         }
 
         for (const channel of this.channelsByMattermost.values()) {
-
             try {
                 const count = await dbMapping.Mapping.count({
                     where: {
@@ -606,8 +644,7 @@ export default class Main extends EventEmitter {
             'Number of channels bridged successfully=%d. Number of matrix puppet users=%d. Number of mattermost puppet users=%d',
             this.channelsByMattermost.size,
             this.matrixUserStore.byMatrixUserId.size,
-            this.mattermostUserStore.countUsers()
-
+            this.mattermostUserStore.countUsers(),
         );
 
         await appservice;
@@ -629,7 +666,7 @@ export default class Main extends EventEmitter {
             db.logger = 'advanced-console';
         }
 
-        let dataSource: DataSource = new DataSource(db);
+        const dataSource: DataSource = new DataSource(db);
 
         try {
             this.dataSource = await dataSource.initialize();
@@ -665,15 +702,16 @@ export default class Main extends EventEmitter {
             if (this.botClient.isSessionValid()) {
                 await this.botClient.logout();
             }
-            this.myLogger.info('Matrix bot client logged out. Session invalidated.');
-        } catch (ignore) { }
+            this.myLogger.info(
+                'Matrix bot client logged out. Session invalidated.',
+            );
+        } catch (ignore) {}
         // Logout matrix admin client if login used
-        if(this.adminLoggedIn) {
+        if (this.adminLoggedIn) {
             try {
-                await this.adminClient.logout()
+                await this.adminClient.logout();
                 this.myLogger.info('Matrix admin client logged out.');
-            } catch (ignore) { }
-
+            } catch (ignore) {}
         }
 
         // Destroy DataSource
@@ -796,25 +834,24 @@ export default class Main extends EventEmitter {
     }
 
     public async redoMatrixEvent(event: MatrixEvent) {
-        await this.onMatrixEvent(event)
+        await this.onMatrixEvent(event);
     }
 
     private async onMatrixEvent(event: MatrixEvent): Promise<void> {
-        this.myLogger.debug("Matrix event:\n",
-            util.inspect(event, { showHidden: false, depth: 5, colors: true }));
+        this.myLogger.debug(
+            'Matrix event:\n',
+            util.inspect(event, { showHidden: false, depth: 5, colors: true }),
+        );
         const channel = this.channelsByMatrix.get(event.room_id || '');
         if (channel !== undefined) {
             await channel.onMatrixEvent(event);
         } else {
-            const handler = MatrixUnbridgedHandlers[event.type]
+            const handler = MatrixUnbridgedHandlers[event.type];
             if (handler !== undefined) {
                 await handler.bind(this)(event);
-                return
+                return;
             }
-            this.myLogger.debug(
-                `Message for unknown room: ${event.room_id}`,
-            );
-
+            this.myLogger.debug(`Message for unknown room: ${event.room_id}`);
         }
     }
 

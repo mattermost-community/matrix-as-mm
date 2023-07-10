@@ -1,5 +1,9 @@
 import {
-    Entity, PrimaryColumn, Column, BaseEntity, CreateDateColumn,
+    Entity,
+    PrimaryColumn,
+    Column,
+    BaseEntity,
+    CreateDateColumn,
     UpdateDateColumn,
 } from 'typeorm';
 import { Client, ClientError } from '../mattermost/Client';
@@ -56,48 +60,49 @@ export class User extends BaseEntity {
         displayname: string,
         userInfo: any,
         email: string = undefined,
-
     ): Promise<User> {
-
-        let emailMatch: string = null
+        let emailMatch: string = null;
 
         if (!userInfo) {
             if (email) {
-                const emailUser = await client.get(`/users/email/${email}`, undefined, false, false)
+                const emailUser = await client.get(
+                    `/users/email/${email}`,
+                    undefined,
+                    false,
+                    false,
+                );
                 if (emailUser.status === 200) {
-                    emailMatch = email
-                    email=`duplicate_${email}`
+                    emailMatch = email;
+                    email = `duplicate_${email}`;
                 }
-
             } else {
                 email = config()
                     .mattermost_email_template.replace(
                         '[USERNAME]',
                         randomString(16),
                     )
-                    .replace('[RANDOM]', randomString(16))
-
+                    .replace('[RANDOM]', randomString(16));
             }
             userInfo = await client.post('/users', {
                 username: username,
                 password: randomString(45) + 'aA#2',
                 first_name: displayname,
-                email: email
+                email: email,
             });
 
             const verifyEmail = await client.post(
                 `/users/${userInfo.id}/email/verify/member`,
             );
-
         } else {
-            const tokens = await client.get(`/users/${userInfo.id}/tokens`)
+            const tokens = await client.get(`/users/${userInfo.id}/tokens`);
             for (const userToken of tokens) {
-                if (userToken.description === PERSONAL_ACCESS_TOKEN_NAME && userToken.is_active) {
-                    await client.post('/users/tokens/revoke',
-                        {
-                            "token_id": userToken.id
-                        }
-                    )
+                if (
+                    userToken.description === PERSONAL_ACCESS_TOKEN_NAME &&
+                    userToken.is_active
+                ) {
+                    await client.post('/users/tokens/revoke', {
+                        token_id: userToken.id,
+                    });
                 }
             }
         }
@@ -112,8 +117,7 @@ export class User extends BaseEntity {
             is_matrix_user: true,
             mattermost_username: username,
             matrix_displayname: displayname,
-            email_match: emailMatch
-
+            email_match: emailMatch,
         });
         await user.save();
         return user;
@@ -129,14 +133,14 @@ export class User extends BaseEntity {
         const myTokens: any = await client.get(
             `/users/${mattermost_userid}/tokens`,
         );
-        let haveToken = myTokens.find(token => {
+        const haveToken = myTokens.find(token => {
             return (
                 token.description === PERSONAL_ACCESS_TOKEN_NAME &&
                 token.is_active
             );
         });
         if (haveToken) {
-            let user = await User.findOne({
+            const user = await User.findOne({
                 //mattermost_userid: userid,
                 where: { mattermost_username: username },
             });
@@ -145,7 +149,7 @@ export class User extends BaseEntity {
             }
         }
 
-        let token: any = await client.post(
+        const token: any = await client.post(
             `/users/${mattermost_userid}/tokens`,
             {
                 description: PERSONAL_ACCESS_TOKEN_NAME,

@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Page} from '@playwright/test';
+import { Page } from '@playwright/test';
 
-import {waitUntil} from '@e2e-support/test_action';
-import {components} from '@e2e-support/ui/mm/components';
-import {duration, isSmallScreen} from '@e2e-support/functions/pwHelper';
+import { waitUntil } from '@e2e-support/test_action';
+import { components } from '@e2e-support/ui/mm/components';
+import { duration, isSmallScreen } from '@e2e-support/functions/pwHelper';
 
 export default class ChannelsPage {
     readonly channels = 'Channels';
@@ -18,11 +18,19 @@ export default class ChannelsPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.postCreate = new components.ChannelsPostCreate(page.locator('#post-create'));
-        this.globalHeader = new components.GlobalHeader(page.locator('#global-header'));
-        this.header = new components.ChannelsHeader(page.locator('.channel-header'));
+        this.postCreate = new components.ChannelsPostCreate(
+            page.locator('#post-create'),
+        );
+        this.globalHeader = new components.GlobalHeader(
+            page.locator('#global-header'),
+        );
+        this.header = new components.ChannelsHeader(
+            page.locator('.channel-header'),
+        );
         this.appBar = new components.ChannelsAppBar(page.locator('.app-bar'));
-        this.sidebarRight = new components.ChannelsSidebarRight(page.locator('#sidebar-right'));
+        this.sidebarRight = new components.ChannelsSidebarRight(
+            page.locator('#sidebar-right'),
+        );
     }
 
     async goto(teamName = '', channelName = '') {
@@ -86,11 +94,15 @@ export default class ChannelsPage {
                 const content = await post.container.textContent();
                 return content?.includes(text);
             },
-            {timeout}
+            { timeout },
         );
     }
 
-    async waitUntilPostWithIdContains(id: string, text: string, timeout = duration.ten_sec) {
+    async waitUntilPostWithIdContains(
+        id: string,
+        text: string,
+        timeout = duration.ten_sec,
+    ) {
         await waitUntil(
             async () => {
                 const post = await this.getPostById(id);
@@ -98,9 +110,9 @@ export default class ChannelsPage {
 
                 return content?.includes(text);
             },
-            {timeout}
+            { timeout },
         );
     }
 }
 
-export {ChannelsPage};
+export { ChannelsPage };

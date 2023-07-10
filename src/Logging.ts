@@ -1,5 +1,5 @@
 import * as log4js from 'log4js';
-import {inProductionMode} from './utils/Functions'
+import { inProductionMode } from './utils/Functions';
 
 // This is the same logger as the one used by matrix-js-sdk
 const log = log4js.getLogger('bridge.default');
@@ -26,6 +26,6 @@ export function getLogger(
     level: string = 'debug',
 ): log4js.Logger {
     const logger: log4js.Logger = log4js.getLogger(name);
-    logger.level = inProductionMode() ?"info":level;
+    logger.level = inProductionMode() ? 'info' : level;
     return logger;
 }

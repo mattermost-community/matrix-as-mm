@@ -19,9 +19,9 @@ export async function getMatrixUsers(
     );
     */
     const allMatrixUsers: string[] = [];
-    let resp = await main.botClient.getJoinedMembers(roomid);
-    let members = Object.keys(resp.joined);
-    for (let member of members) {
+    const resp = await main.botClient.getJoinedMembers(roomid);
+    const members = Object.keys(resp.joined);
+    for (const member of members) {
         allMatrixUsers.push(member);
     }
 
@@ -58,7 +58,7 @@ export async function registerAppService(
     logger: log4js.Logger,
 ): Promise<string> {
     try {
-        let ret = await client.registerService(username);
+        const ret = await client.registerService(username);
         logger.debug(
             'Register app service username:%s by userId:%s returns %s',
             username,
@@ -71,7 +71,7 @@ export async function registerAppService(
             'Register app service username:%s by userId:%s failed %s. Token =%s',
             username,
             client.getUserId(),
-            client.getAccessToken()
+            client.getAccessToken(),
         );
         throw e;
     }

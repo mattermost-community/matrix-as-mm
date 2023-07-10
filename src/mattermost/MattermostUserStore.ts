@@ -31,14 +31,14 @@ export default class MattermostUserStore {
     }
 
     public countUsers(): number {
-        return this.users.size
+        return this.users.size;
     }
 
     public async getOrCreate(
         userid: string,
         sync: boolean = false,
     ): Promise<User> {
-        let mutexTimeout = inDebugger() ? 60000 : 3000;
+        const mutexTimeout = inDebugger() ? 60000 : 3000;
         const mutex: MutexInterface = withTimeout(new Mutex(), mutexTimeout);
         const release = await mutex.acquire();
         try {
@@ -48,7 +48,7 @@ export default class MattermostUserStore {
                 return user;
             }
 
-            let count = await User.count({
+            const count = await User.count({
                 //mattermost_userid: userid,
                 where: { mattermost_userid: userid },
             });
@@ -64,25 +64,26 @@ export default class MattermostUserStore {
                 }
             }
             if (count === 0 || user) {
-
                 const data = await this.main.client.get(`/users/${userid}`);
                 const server_name = config().homeserver.server_name;
-                const username = `${config().matrix_localpart_prefix}${data.username
-                    }`;
-                const matrix_userId: string = `@${username}:${server_name}` || '';
+                const username = `${config().matrix_localpart_prefix}${
+                    data.username
+                }`;
+                const matrix_userId: string =
+                    `@${username}:${server_name}` || '';
                 if (!matrix_userId) {
-                    this.myLogger.error('Can not create a valid matrix user id for %s. username %s ,server name %s',
+                    this.myLogger.error(
+                        'Can not create a valid matrix user id for %s. username %s ,server name %s',
                         userid,
                         username || 'empty or undefined not valid',
-                        server_name || 'empty or undefined not valid'
-
-                    )
-                    throw 'Matrix user id not valid'
+                        server_name || 'empty or undefined not valid',
+                    );
+                    throw 'Matrix user id not valid';
                 } else {
-                    this.myLogger.debug("Matrix userid=%s",matrix_userId)
+                    this.myLogger.debug('Matrix userid=%s', matrix_userId);
                 }
 
-                let info = await registerAppService(
+                const info = await registerAppService(
                     this.main.botClient,
                     username,
                     this.myLogger,
@@ -104,17 +105,16 @@ export default class MattermostUserStore {
                     this.users.set(userid, user);
                     return user;
                 }
-
             }
         } catch (error) {
             if (error == E_TIMEOUT) {
             } else {
                 this.myLogger.error(
-                    `Get or creating Matrix puppet user ${userid} failed . Error=${error.message}`
+                    `Get or creating Matrix puppet user ${userid} failed . Error=${error.message}`,
                 );
             }
         } finally {
-            release()
+            release();
         }
         // throw `Failed to create new Matrix puppet user for Mattermost userid ${userid}`;
     }
@@ -178,7 +178,7 @@ export default class MattermostUserStore {
 
             await loginAppService(client, client.getUserId(), true);
             this.clients.set(user.matrix_userid, client);
-            let me = await client.whoAmI();
+            const me = await client.whoAmI();
             this.myLogger.debug('Matrix client user = %s', me);
         }
         return client;

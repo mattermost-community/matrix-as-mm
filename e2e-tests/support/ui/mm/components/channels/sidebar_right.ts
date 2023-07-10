@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {expect, Locator} from '@playwright/test';
+import { expect, Locator } from '@playwright/test';
 
 export default class ChannelsSidebarRight {
     readonly container: Locator;
@@ -15,4 +15,4 @@ export default class ChannelsSidebarRight {
     }
 }
 
-export {ChannelsSidebarRight};
+export { ChannelsSidebarRight };

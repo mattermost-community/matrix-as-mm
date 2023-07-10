@@ -21,21 +21,21 @@ export default class MatrixUserStore {
     }
 
     public get(matrix_userid: string): User | undefined {
-        let user=this.byMatrixUserId.get(matrix_userid);
-        return user
+        const user = this.byMatrixUserId.get(matrix_userid);
+        return user;
     }
 
     public async getOrCreate(
         matrix_userid: string,
         sync: boolean = false,
     ): Promise<User> {
-        let mutexTimeout = inDebugger() ? 120000 : 3000;
+        const mutexTimeout = inDebugger() ? 120000 : 3000;
         const mutex: MutexInterface = withTimeout(new Mutex(), mutexTimeout);
         const release = await mutex.acquire();
         try {
             let user = this.get(matrix_userid);
             if (user !== undefined) {
-              return user
+                return user;
             }
             user = await User.findOne({
                 //matrix_userid,
@@ -51,7 +51,8 @@ export default class MatrixUserStore {
                 );
                 if (
                     info.status === 200 &&
-                    info.data.username == user.mattermost_username && this.get(matrix_userid) == undefined
+                    info.data.username == user.mattermost_username &&
+                    this.get(matrix_userid) == undefined
                 ) {
                     this.myLogger.debug(
                         `Mapping mattermost puppet user id: ${user.mattermost_userid} name: ${user.mattermost_username} to matrix user: ${matrix_userid}`,
@@ -60,7 +61,6 @@ export default class MatrixUserStore {
                     this.byMattermostUserId.set(user.mattermost_userid, user);
                     return user;
                 }
-
             }
             const client = this.main.client;
             const localpart_ = localpart(matrix_userid);
@@ -85,11 +85,10 @@ export default class MatrixUserStore {
                 .replace('[DISPLAY]', displayname)
                 .replace('[LOCALPART]', localpart_);
 
-            let userInfo = undefined
-            const info = await client.post('/users/usernames', [username])
+            let userInfo = undefined;
+            const info = await client.post('/users/usernames', [username]);
             if (info.length > 0) {
-                userInfo = info[0]
-
+                userInfo = info[0];
             }
             const email = await this.getUserEmail(matrix_userid);
 
@@ -158,7 +157,7 @@ export default class MatrixUserStore {
             return cached;
         }
 
-        let count = await User.count({
+        const count = await User.count({
             where: { mattermost_userid: mattermostUserId },
         });
         if (count > 0) {

@@ -40,7 +40,7 @@ async function uploadFile(
     const main = this.main;
     const client = main.botClient;
     const mxc: string = event.content.url;
-    let parts = mxc.split('/');
+    const parts = mxc.split('/');
 
     const body = await client.download(parts[2], parts[3], event.content.body);
 
@@ -315,7 +315,7 @@ const MatrixHandlers = {
                 }
             }
         }
-        let msgType: string = content.msgtype || 'not found';
+        const msgType: string = content.msgtype || 'not found';
         let handler = MatrixMessageHandlers[msgType];
         if (handler === undefined) {
             handler = MatrixMessageHandlers['m.text'];
@@ -335,14 +335,13 @@ const MatrixHandlers = {
             );
             return undefined;
         }
-        const relatesTo= content['m.relates_to']
-        const eventId= relatesTo.event_id
-        let emojiName= emoji.unemojify(relatesTo.key)
+        const relatesTo = content['m.relates_to'];
+        const eventId = relatesTo.event_id;
+        let emojiName = emoji.unemojify(relatesTo.key);
         if (!emojiName) {
-            emojiName="+1"
+            emojiName = '+1';
         } else {
-            emojiName=emojiName.substring(1,emojiName.length-1)
-
+            emojiName = emojiName.substring(1, emojiName.length - 1);
         }
         const post = await Post.findOne({
             //eventid: relatesTo.event_id,
@@ -461,7 +460,7 @@ export const MatrixUnbridgedHandlers = {
         const mmUsers: string[] = [];
         let localMembers: number = 0;
 
-        for (let member of roomMembers) {
+        for (const member of roomMembers) {
             if (member.displayName == botDisplayName) {
                 mmUsers.push(config().mattermost_bot_userid);
             } else if (!this.skipMatrixUser(member.userId)) {

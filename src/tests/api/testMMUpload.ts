@@ -18,9 +18,9 @@ function saveFile(file,dir, content: Buffer) {
 }
 
 
-let logger=log4js.getLogger('testMMUpload')
+const logger=log4js.getLogger('testMMUpload')
 logger.level='debug'
-let configYaml=loadYaml('config.yaml')
+const configYaml=loadYaml('config.yaml')
 conf.validate(configYaml)
 conf.setConfig(configYaml,true)
 const config:conf.Config=conf.config()
@@ -31,7 +31,7 @@ const client:mmClient.Client = new mmClient.Client(
 )
 
 async function run() {
-    let resultDir = process.argv[2] 
+    const resultDir = process.argv[2] 
     if (!fs.existsSync(resultDir) || !fs.lstatSync(resultDir).isDirectory()){
         logger.error("Result dir %s is not valid", resultDir)
         return false
@@ -41,10 +41,10 @@ async function run() {
     try {
 
         for (let i = 3; i < process.argv.length; i++) {
-            let fileId: string = process.argv[i]
-            let fileInfo=await client.get(`/files/${fileId}/info`)
+            const fileId: string = process.argv[i]
+            const fileInfo=await client.get(`/files/${fileId}/info`)
             console.info(fileInfo.name)
-            let content:Buffer=await client.getFile(fileId)
+            const content:Buffer=await client.getFile(fileId)
             saveFile(fileInfo.name,resultDir,content)
         }
     }

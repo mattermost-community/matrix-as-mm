@@ -8,8 +8,7 @@ import { string } from 'yargs';
 
 const TRACE_ENV_NAME = 'API_TRACE';
 
-export type Membership = 'join' | 'leave' | 'invite' | 'knock' | 'ban'
-
+export type Membership = 'join' | 'leave' | 'invite' | 'knock' | 'ban';
 
 export type RoomPreset =
     | 'public_chat'
@@ -60,7 +59,6 @@ export interface MessageContent {
     [propName: string]: unknown;
 }
 
-
 /*
 export interface SendRoomContent {
     content:MessageContent;
@@ -83,7 +81,7 @@ export class MatrixClient {
         //super()
         this.apiTrace = options.apiTrace || false;
         if (!this.apiTrace) {
-            let apiTraceEnv = process.env[TRACE_ENV_NAME];
+            const apiTraceEnv = process.env[TRACE_ENV_NAME];
             this.apiTrace = apiTraceEnv && apiTraceEnv === 'true';
         }
         this.myLogger = getLogger(
@@ -93,10 +91,10 @@ export class MatrixClient {
 
         this.accessToken = options.accessToken || '';
         (this.userId = options.userId), (this.baseUrl = options.baseUrl);
-        let httpsAgent = new https.Agent({
+        const httpsAgent = new https.Agent({
             keepAlive: true,
         });
-        let httpAgent = new http.Agent({
+        const httpAgent = new http.Agent({
             keepAlive: true,
         });
 
@@ -193,13 +191,13 @@ export class MatrixClient {
         eventId: string,
         reason: string = '',
     ): Promise<any> {
-        let txnId: string = 'm' + Date.now();
+        const txnId: string = 'm' + Date.now();
         return await this.doRequest({
             method: 'PUT',
             url: `_matrix/client/r0/rooms/${roomId}/redact/${eventId}/${txnId}`,
 
-            data: { reason: reason }
-        })
+            data: { reason: reason },
+        });
     }
 
     /* {"m.relates_to":{"rel_type":"m.annotation","event_id":"$8GRGY8kEapq5uZRR96qJGvE72vngB7PvGvgw2Zu20ag"
@@ -209,21 +207,21 @@ export class MatrixClient {
     public async sendReaction(
         roomId: string,
         eventId: string,
-        key: string
+        key: string,
     ): Promise<any> {
-        let txnId: string = 'm' + Date.now();
+        const txnId: string = 'm' + Date.now();
         return await this.doRequest({
             method: 'PUT',
             url: `_matrix/client/r0/rooms/${roomId}/send/m.reaction/${txnId}`,
 
             data: {
-                "m.relates_to":
-                {
-                    "rel_type": "m.annotation", "event_id": eventId
-                    , "key": key
-                }
-            }
-        })
+                'm.relates_to': {
+                    rel_type: 'm.annotation',
+                    event_id: eventId,
+                    key: key,
+                },
+            },
+        });
     }
 
     public async sendStateEvent(
@@ -235,8 +233,8 @@ export class MatrixClient {
         return await this.doRequest({
             method: 'PUT',
             url: `_matrix/client/v3/rooms/${roomId}/state/${eventType}/${stateKey}`,
-            data: data
-        })
+            data: data,
+        });
     }
     public async getRoomEvent(roomId: string, eventId: string): Promise<any> {
         return await this.doRequest({
@@ -462,7 +460,7 @@ export class MatrixClient {
         eventType: string,
         content: MessageContent,
     ): Promise<any> {
-        let txnId: string = 'm' + Date.now();
+        const txnId: string = 'm' + Date.now();
         //this.myLogger.debug('send Message: ', content);
         return await this.doRequest({
             method: 'PUT',
@@ -498,7 +496,7 @@ export class MatrixClient {
             };
         }
         try {
-            let content = await this.doRequest({
+            const content = await this.doRequest({
                 method: 'POST',
                 url: '_matrix/media/v3/upload',
                 //responseType: responseType,
@@ -528,15 +526,18 @@ export class MatrixClient {
                 return status >= 200 && status < 300; // default
             },
         };
-        let method = options.method || 'GET';
+        const method = options.method || 'GET';
         myOptions = Object.assign(myOptions, options);
 
         this.myLogger.trace(
-            `${method} ${this.getBaseUrl()}/${options.url}. Active userId=${this.getUserId()}, Valid Session= ${this.sessionIsValid
+            `${method} ${this.getBaseUrl()}/${
+                options.url
+            }. Active userId=${this.getUserId()}, Valid Session= ${
+                this.sessionIsValid
             }`,
         );
         try {
-            let response: axios.AxiosResponse = await this.client.request(
+            const response: axios.AxiosResponse = await this.client.request(
                 myOptions,
             );
             return response.data;
@@ -546,7 +547,6 @@ export class MatrixClient {
                 return me;
             }
             if (me.error) {
-
                 this.myLogger.error(
                     `${method} ${options.url} error: ${me.errcode}:${me.error} statusText= ${me.statusText}`,
                 );
@@ -554,15 +554,14 @@ export class MatrixClient {
                 this.myLogger.error(
                     `${method} ${options.url} error message: ${e.message}`,
                 );
-
             }
-            throw me.error ? me : e
+            throw me.error ? me : e;
         }
     }
 
     public static getMatrixError(error: any): any {
-        let er = error?.response;
-        let me: any = {};
+        const er = error?.response;
+        const me: any = {};
         if (er) {
             me.data = er.data;
             me.status = er.status;
