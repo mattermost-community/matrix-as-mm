@@ -43,10 +43,10 @@ async function retryJoinMattermostChannel(
     let retry = 10;
     while (true) {
         try {
-            const post = await client.post(`/channels/${channelid}/members`, {
+            const member = await client.post(`/channels/${channelid}/members`, {
                 user_id: userid,
             });
-            return post;
+            return member;
         } catch (e: any) {
             if (
                 retry > 1280 ||

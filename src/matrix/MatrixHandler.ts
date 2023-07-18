@@ -3,7 +3,7 @@ import Channel from '../Channel';
 import { User } from '../entities/User';
 import { Post } from '../entities/Post';
 import { Mapping } from '../entities/Mapping';
-import { ClientError } from '../mattermost/Client';
+import { Client, ClientError } from '../mattermost/Client';
 import {
     joinMattermostChannel,
     leaveMattermostChannel,
@@ -26,19 +26,35 @@ interface RoomMember {
     userId: string;
 }
 
-interface CreatedRoom {
-    roomId: string;
-    name: string;
-    alias?: string;
-}
 
 const myLogger: log4js.Logger = getLogger('MatrixHandler');
-const createdRooms: Map<string, CreatedRoom> = new Map<string, CreatedRoom>();
+const TEAM_NAME = 'MatrixRooms'
+
 
 interface Metadata {
     edits?: string;
     root_id?: string;
 }
+
+
+async function getOrCreateTeam(client: Client, userId: string): Promise<any> {
+    const myTeams: any[] = await client.get(`/users/${userId}/teams`);
+    let theTeam = myTeams.find(team => { return team.name === TEAM_NAME.toLocaleLowerCase() }
+    )
+    if (!theTeam) {
+        theTeam = await client.post('/teams',
+
+            {
+                name: TEAM_NAME.toLowerCase(),
+                display_name: TEAM_NAME,
+                type: "I"
+            }
+
+        )
+    }
+    return theTeam
+}
+
 async function uploadFile(
     this: Channel,
     user: User,
@@ -373,15 +389,43 @@ const MatrixHandlers = {
             where: { matrix_room_id: event.room_id },
         });
 
-        const membership: string = event.content.membership || 'not found';
-        const handler = MatrixMembershipHandler[membership];
-        if (handler === undefined) {
-            myLogger.warn(
-                `Invalid membership state: ${event.content.membership}`,
-            );
-            return;
+        if (findMapping) {
+            const user = await this.main.matrixUserStore.get(event.sender);
+            const team = await getOrCreateTeam(user.client, user.mattermost_userid)
+            const mmUser = await User.findOne({
+                where: { matrix_userid: event.state_key }
+            })
+            
+            let info=await user.client.get(`/teams/${team.id}/members/${mmUser.mattermost_userid}`,undefined,false,false)
+            if(info.status=== 404) {
+                await user.client.post(`/teams/${team.id}/members`,
+                {
+                    user_id: mmUser.mattermost_userid,
+                    team_id: team.id
+
+                }
+            )
+
+            }
+            await user.client.post(`/channels/${findMapping.mattermost_channel_id}/members`,
+                {
+                    user_id: mmUser.mattermost_userid,
+
+                }
+            )
+
+        } else {
+
+            const membership: string = event.content.membership || 'not found';
+            const handler = MatrixMembershipHandler[membership];
+            if (handler === undefined) {
+                myLogger.warn(
+                    `Invalid membership state: ${event.content.membership}`,
+                );
+                return;
+            }
+            await handler.bind(this)(event.state_key);
         }
-        await handler.bind(this)(event.state_key);
     },
     'm.room.redaction': async function (
         this: Channel,
@@ -426,37 +470,7 @@ const MatrixHandlers = {
 };
 
 export const MatrixUnbridgedHandlers = {
-    'm.room.create': async function (
-        this: main,
-        event: MatrixEvent,
-    ): Promise<void> {
-        const room_id = event.room_id;
-        const createdRoom: CreatedRoom = {
-            roomId: room_id,
-            name: '',
-            alias: '',
-        };
-        createdRooms.set(room_id, createdRoom);
-        let x = 1;
-    },
-    'm.room.canonical_alias': async function (
-        this: main,
-        event: MatrixEvent,
-    ): Promise<void> {
-        const room_id = event.room_id;
-        let createdRoom = createdRooms.get(room_id);
-        createdRoom.alias = event.content.alias;
-        let x = 1;
-    },
-    'm.room.name': async function (
-        this: main,
-        event: MatrixEvent,
-    ): Promise<void> {
-        const room_id = event.room_id;
-        let createdRoom = createdRooms.get(room_id);
-        createdRoom.name = event.content.name;
-        let x = 1;
-    },
+
     'm.room.member': async function (
         this: main,
         event: MatrixEvent,
@@ -495,6 +509,12 @@ export const MatrixUnbridgedHandlers = {
         const botDisplayName = config().matrix_bot?.display_name;
         const memberships: Membership[] = ['join', 'invite'];
         const roomMembers: RoomMember[] = [];
+        let roomName = ''
+        let canonicalAlias = ''
+        const user = await this.matrixUserStore.get(event.sender);
+
+
+
         for (const membership of memberships) {
             const response = await this.botClient.getRoomMembers(
                 event.room_id,
@@ -510,12 +530,14 @@ export const MatrixUnbridgedHandlers = {
             }
         }
 
+
         const mmUsers: string[] = [];
         let localMembers: number = 0;
 
         for (const member of roomMembers) {
             if (member.displayName == botDisplayName) {
                 mmUsers.push(config().mattermost_bot_userid);
+
             } else if (!this.skipMatrixUser(member.userId)) {
                 const mmUser = await User.findOne({
                     where: { matrix_userid: member.userId },
@@ -528,29 +550,96 @@ export const MatrixUnbridgedHandlers = {
             }
         }
 
-        const user = await this.matrixUserStore.get(event.sender);
-        const createdRoom: CreatedRoom = createdRooms.get(event.room_id);
-        const states=await this.botClient.getRoomStateAll(event.room_id)
-        if (createdRoom) {
-            myLogger.debug("Creating federated private/public rooms not yet supported. Room=%s",createdRoom)
+        const states = await this.botClient.getRoomStateAll(event.room_id)
+
+        for (const state of states) {
+            switch (state.type) {
+                case 'm.room.create':
+                    break
+                case 'm.room.name':
+                    roomName = state.content.name
+                    break
+                case 'm.room.canonical_alias':
+                    canonicalAlias = state.content.alias
+                    break
+                case 'm.room.member':
+
+            }
+        }
+        const remoteUsers = mmUsers.length - localMembers - 1;
+        if (remoteUsers < 1 || (!roomName && remoteUsers > 7)) {
+            const message = `<strong>No mapping to Mattermost channel done</strong>. No remote users invited or to many users invited. Invited remote users=${remoteUsers}, local users=${localMembers}.`;
+            await this.botClient.sendMessage(
+                event.room_id,
+                'm.room.message',
+                {
+                    format: 'org.matrix.custom.html',
+                    msgtype: 'm.notice',
+                    body: 'A notice',
+                    formatted_body: message,
+                },
+            );
+            await this.botClient.leave(event.room_id);
+            return;
+        }
+
+
+        if (roomName) {
+            myLogger.debug("Creating federated private/public Room=%s", roomName)
+
+            const team = await getOrCreateTeam(user.client, user.mattermost_userid)
+            const teamMembers: any[] = await user.client.get(`/teams/${team.id}/members`)
+
+            const channel = await user.client.post('/channels',
+
+                {
+                    team_id: team.id,
+                    name: roomName.toLocaleLowerCase(),
+                    display_name: roomName,
+                    purpose: "Matrix integration",
+                    header: user.matrix_displayname,
+                    type: canonicalAlias ? 'O' : 'P'
+                }
+
+            )
+            for (let mmUser of mmUsers) {
+                if (mmUser !== user.mattermost_userid) {
+                    const inTeam = teamMembers.find(member => { return member.user_id === mmUser })
+                    if (!inTeam) {
+                        await user.client.post(`/teams/${team.id}/members`,
+                            {
+                                user_id: mmUser,
+                                team_id: team.id
+
+                            }
+                        )
+
+                    }
+
+                    await user.client.post(`/channels/${channel.id}/members`,
+                        {
+                            user_id: mmUser,
+
+                        }
+                    )
+
+                }
+            }
+            this.doOneMapping(channel.id, event.room_id);
+
+            const mapping = new Mapping();
+            mapping.is_direct = false;
+            mapping.is_private = !canonicalAlias;
+            mapping.from_mattermost = false;
+            mapping.matrix_room_id = event.room_id;
+            mapping.mattermost_channel_id = channel.id;
+            mapping.info = `Channel display name: ${channel.display_name}`;
+            await mapping.save();
+            await this.redoMatrixEvent(event);
+
         }
         else {
-            const remoteUsers = mmUsers.length - localMembers - 1;
-            if (remoteUsers < 1 || remoteUsers > 7) {
-                const message = `<strong>No mapping to Mattermost channel done</strong>. No remote users invited or to many users invited. Invited remote users=${remoteUsers}, local users=${localMembers}.`;
-                await this.botClient.sendMessage(
-                    event.room_id,
-                    'm.room.message',
-                    {
-                        format: 'org.matrix.custom.html',
-                        msgtype: 'm.notice',
-                        body: 'A notice',
-                        formatted_body: message,
-                    },
-                );
-                await this.botClient.leave(event.room_id);
-                return;
-            }
+
             const channel = await user.client.post('/channels/group', mmUsers);
             const findMapping = await Mapping.findOne({
                 where: { mattermost_channel_id: channel.id },
@@ -574,6 +663,7 @@ export const MatrixUnbridgedHandlers = {
             mapping.mattermost_channel_id = channel.id;
             mapping.info = `Channel display name: ${channel.display_name}`;
             await mapping.save();
+            await this.redoMatrixEvent(event);
 
             try {
                 await this.redoMatrixEvent(event);

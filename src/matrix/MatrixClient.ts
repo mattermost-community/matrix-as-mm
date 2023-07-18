@@ -174,10 +174,9 @@ export class MatrixClient {
     }
 
     public async getRoomStateAll(roomId: string): Promise<any> {
-        const resp: axios.AxiosResponse = await this.client.get(
-            `_matrix/client/v3/rooms/${roomId}/state`,
-        );
-        return resp.data;
+        return await this.doRequest({
+            url: `_matrix/client/v3/rooms/${roomId}/state`,
+        });
     }
 
     public async getRoomState(roomId: string, state: string): Promise<any> {
@@ -199,10 +198,6 @@ export class MatrixClient {
             data: { reason: reason },
         });
     }
-
-    /* {"m.relates_to":{"rel_type":"m.annotation","event_id":"$8GRGY8kEapq5uZRR96qJGvE72vngB7PvGvgw2Zu20ag"
-,"key":"😀"}}
-*/
 
     public async sendReaction(
         roomId: string,
@@ -519,7 +514,7 @@ export class MatrixClient {
         }
     }
 
-    private async doRequest(options: axios.AxiosRequestConfig): Promise<any> {
+    private async doRequest(options: axios.AxiosRequestConfig) {
         let myOptions: axios.AxiosRequestConfig = {
             headers: { Authorization: `Bearer ${this.accessToken}` },
             validateStatus: function (status) {

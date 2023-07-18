@@ -17,6 +17,7 @@ import {
 } from './utils/Functions';
 import { User } from './entities/User';
 import { Post } from './entities/Post';
+import { Mapping } from './entities/Mapping';
 import * as dbMapping from './entities/Mapping';
 import { MatrixClient } from './matrix/MatrixClient';
 import * as log4js from 'log4js';
@@ -197,27 +198,33 @@ export default class Main extends EventEmitter {
         const botId = config().mattermost_bot_userid;
         try {
             const channel = await this.client.get(`/channels/${channelId}`);
-            if (channel.team_id != this.defaultTeam.id) {
-                const message = `Only channels in default team ${this.defaultTeam.name} can be mapped to Matrix room`;
-                this.myLogger.info(message);
-                await this.client.delete(
-                    `/channels/${channelId}/members/${botId}`,
-                );
-                await this.client.post('/posts', {
-                    channel_id: channel.id,
-                    message: message,
-                });
+            const mapping: Mapping = await Mapping.findOne(
+                { "where": { "mattermost_channel_id": channelId } }
+            )
+            this.myLogger.debug(`Mapping found for ${channel.name} %s`, mapping ? "true" : "false")
+            if (!mapping) {
+                if (channel.team_id != this.defaultTeam.id) {
+                    const message = `Only channels in default team ${this.defaultTeam.name} can be mapped to Matrix room`;
+                    this.myLogger.info(message);
+                    await this.client.delete(
+                        `/channels/${channelId}/members/${botId}`,
+                    );
+                    await this.client.post('/posts', {
+                        channel_id: channel.id,
+                        message: message,
+                    });
 
-                return false;
+                    return false;
+                }
+                const myPublicRooms: any[] = await this.getMyJoinedPublicRooms(
+                    this.adminClient,
+                );
+                return await this.mapMattermostToMatrix(
+                    channel,
+                    myPublicRooms,
+                    true,
+                );
             }
-            const myPublicRooms: any[] = await this.getMyJoinedPublicRooms(
-                this.adminClient,
-            );
-            return await this.mapMattermostToMatrix(
-                channel,
-                myPublicRooms,
-                true,
-            );
         } catch (error) {
             this.myLogger.error(
                 'Error in getting channel for mapping %s',
@@ -433,9 +440,8 @@ export default class Main extends EventEmitter {
         let message: string = '';
         const me = await this.client.get('/users/me');
         if (me.id != config().mattermost_bot_userid) {
-            message = `User_id for mattermost bot user must be ${me.id}. Id ${
-                config().mattermost_bot_userid
-            } not valid`;
+            message = `User_id for mattermost bot user must be ${me.id}. Id ${config().mattermost_bot_userid
+                } not valid`;
         } else if (!me.roles.includes('system_admin')) {
             message = `User mattermost bot ${me.id} must have system admin role. Current role=${me.roles}`;
         } else {
@@ -497,8 +503,7 @@ export default class Main extends EventEmitter {
                 this.adminLoggedIn = true;
             } catch (error) {
                 this.myLogger.error(
-                    `Login with password. Admin: ${this.adminClient.getUserId()} failed. Error= ${
-                        error.message
+                    `Login with password. Admin: ${this.adminClient.getUserId()} failed. Error= ${error.message
                     } `,
                 );
                 this.killBridge(5);
@@ -705,13 +710,13 @@ export default class Main extends EventEmitter {
             this.myLogger.info(
                 'Matrix bot client logged out. Session invalidated.',
             );
-        } catch (ignore) {}
+        } catch (ignore) { }
         // Logout matrix admin client if login used
         if (this.adminLoggedIn) {
             try {
                 await this.adminClient.logout();
                 this.myLogger.info('Matrix admin client logged out.');
-            } catch (ignore) {}
+            } catch (ignore) { }
         }
 
         // Destroy DataSource

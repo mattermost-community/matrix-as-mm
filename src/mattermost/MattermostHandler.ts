@@ -67,7 +67,7 @@ async function sendMatrixMessage(
 
         try {
             original = await client.getRoomEvent(room, replyTo.matrix);
-        } catch (e) {}
+        } catch (e) { }
         if (original !== undefined) {
             constructMatrixReply(original, message);
         }
@@ -92,7 +92,7 @@ export const MattermostUnbridgedHandlers = {
             if (
                 (post.type || '') === 'system_add_to_channel' &&
                 (post.props?.addedUserId || '') ===
-                    config().mattermost_bot_userid
+                config().mattermost_bot_userid
             ) {
                 switch (m.data.channel_type) {
                     case 'O':
@@ -612,7 +612,10 @@ export const MattermostMainHandlers = {
         this: Main,
         m: MattermostMessage,
     ): Promise<void> {
+
+
         const ok = await this.onChannelCreated(m.data.channel_id);
+
     },
     direct_added: async function (
         this: Main,

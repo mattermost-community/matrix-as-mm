@@ -112,7 +112,7 @@ const parser = yargs(process.argv.slice(2))
                         exclusive: true,
                         regex: `@${config.matrix_localpart_prefix}.*:${config.homeserver.server_name}`,
                     },
-                ],
+                ]
             },
             url: `${config.appservice.schema}://${config.appservice.hostname}:${config.appservice.port}`,
             sender_localpart: config.matrix_bot.username,
