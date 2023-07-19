@@ -612,10 +612,7 @@ export const MattermostMainHandlers = {
         this: Main,
         m: MattermostMessage,
     ): Promise<void> {
-
-
         const ok = await this.onChannelCreated(m.data.channel_id);
-
     },
     direct_added: async function (
         this: Main,

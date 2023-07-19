@@ -17,7 +17,6 @@ import {
 } from './utils/Functions';
 import { User } from './entities/User';
 import { Post } from './entities/Post';
-import { Mapping } from './entities/Mapping';
 import * as dbMapping from './entities/Mapping';
 import { MatrixClient } from './matrix/MatrixClient';
 import * as log4js from 'log4js';
@@ -44,6 +43,7 @@ import {
     MattermostMainHandlers,
     MattermostUnbridgedHandlers,
 } from './mattermost/MattermostHandler';
+import {getMatrixIntegrationTeam} from './mattermost/Utils'
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -58,6 +58,7 @@ export default class Main extends EventEmitter {
     public readonly registration: Registration;
     public dataSource: DataSource = undefined as any;
     private defaultTeam: TeamInfo = {} as any;
+    private matrixIntegrationTeam = {} as any
 
     private matrixQueue: EventQueue<MatrixEvent> = undefined as any;
     private mattermostQueue: EventQueue<MattermostMessage> = undefined as any;
@@ -198,11 +199,8 @@ export default class Main extends EventEmitter {
         const botId = config().mattermost_bot_userid;
         try {
             const channel = await this.client.get(`/channels/${channelId}`);
-            const mapping: Mapping = await Mapping.findOne(
-                { "where": { "mattermost_channel_id": channelId } }
-            )
-            this.myLogger.debug(`Mapping found for ${channel.name} %s`, mapping ? "true" : "false")
-            if (!mapping) {
+            
+            if (channel.team_id != this.matrixIntegrationTeam.id) {
                 if (channel.team_id != this.defaultTeam.id) {
                     const message = `Only channels in default team ${this.defaultTeam.name} can be mapped to Matrix room`;
                     this.myLogger.info(message);
@@ -535,6 +533,8 @@ export default class Main extends EventEmitter {
                 this.client.userid,
             );
         }
+        this.matrixIntegrationTeam=await getMatrixIntegrationTeam(this.client)
+        this.myLogger.info(`Matrix Integration team id=${this.matrixIntegrationTeam.id}, name=${this.matrixIntegrationTeam.name}`)
 
         this.ws.on('error', e => {
             this.myLogger.error(

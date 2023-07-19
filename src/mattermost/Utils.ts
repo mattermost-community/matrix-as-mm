@@ -5,6 +5,7 @@ import Channel from '../Channel';
 import { getLogger } from '../Logging';
 
 const MAX_MEMBERS: number = 10000;
+const MATRIX_INTEGRATION_TEAM = 'MatrixRooms'
 
 const myLogger: log4js.Logger = getLogger('Mattermost.Utils');
 
@@ -176,4 +177,38 @@ export async function leaveMattermostChannel(
                 throw e;
         }
     }
+}
+
+export async function getMatrixIntegrationTeam(client: Client, userId?: string): Promise<any> {
+
+    const myTeams: any[] = await client.get(`/users/${client.userid}/teams`);
+    let team = myTeams.find(team => { return team.name === MATRIX_INTEGRATION_TEAM.toLocaleLowerCase() }
+    )
+    let isMember: boolean = false
+    if (!team) {
+        team = await client.post('/teams',
+
+            {
+                name: MATRIX_INTEGRATION_TEAM.toLowerCase(),
+                display_name: MATRIX_INTEGRATION_TEAM,
+                type: "I"
+            }
+
+        )
+    }
+    else if (userId){
+        let info = await client.get(`/teams/${team.id}/members/${userId}`, undefined, false, false)
+        isMember = info.status=== 200
+    }
+    if(!isMember && userId) {
+        await client.post(`/teams/${team.id}/members`,
+                {
+                    user_id: userId,
+                    team_id: team.id
+
+                }
+            )
+
+    }
+    return team
 }

@@ -111,3 +111,19 @@ export async function joinMatrixRoom(
     }
     await client.joinRoom(roomId, reason);
 }
+
+export type NoticeType= 'Info' | 'Error' | 'Fatal' | 'Warning'
+
+export async function sendNotice (type:NoticeType,client:mxClient.MatrixClient,roomId:string,message:string) {
+    await client.sendMessage(
+        roomId,
+        'm.room.message',
+        {
+            format: 'org.matrix.custom.html',
+            msgtype: 'm.notice',
+            formatted_body: `[<strong>${type}</strong>] ${message}`,
+            body: 'A notice',
+        },
+    );
+} 
+
