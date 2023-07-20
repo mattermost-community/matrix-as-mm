@@ -609,7 +609,7 @@ export const MatrixUnbridgedHandlers = {
             mapping.mattermost_channel_id = channel.id;
             mapping.info = `Channel display name: ${channel.display_name}`;
             await mapping.save();
-            const message=`Room mapped to Mattermost channel <strong>${channel.name} </strong> in team <strong>${team.name}</strong>`
+            const message=`Room mapped to Mattermost channel <strong>${channel.display_name} </strong> in team <strong>${team.name}</strong>`
             await sendNotice('Info',this.botClient,event.room_id,message)
             await this.redoMatrixEvent(event);
         }

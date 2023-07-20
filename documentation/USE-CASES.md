@@ -71,6 +71,12 @@
 - The federated private rooms work exactly as normal private rooms.
 - 🙁 You cannot create a private federated from Element in this release of the connector.
 
+### Create private/public federated room
+
+![element create private](./images/element-priv-room.png)
+
+![element invite to room](./images/element-invite-to-room.png)
+
 ### EMail federation
 
 ![email federation](./images/mm-email.png)
