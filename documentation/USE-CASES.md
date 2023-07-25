@@ -4,10 +4,10 @@
 
 ![Bridge uses cases in Mattermost](./images/mm-ui.jpg)
 
-- Users will use the UI to work with distributed channels exactly in the same ways as working with ordinary public channels and group channels.
-- Public channels for communication with Matrix will be created by admin users in Mattermost. Only admin users can create these channels.
+- Users will use the UI to work with distributed federated channels exactly in the same ways as working with ordinary public channels and group channels.
+- Public channels for communication with Matrix will be created by admin users in Mattermost. Only admin users and team administrators of default team  can create these channels.
 - The public channels for federation with Matrix must be created in the *default* team.
-- The default team is created when first admin users is created in Mattermost. The does not need to be default.
+- The default team is created when first admin users is created in Mattermost. The does not need to be named default.
 - All users can create group channels for direct messaging with Matrix users.
 - All users can create private channels for communicating with Matrix users.
 - Group channels for direct messaging and private distributed channels must include the _matrix.bridge_ user. It is required for communication with Matrix users.
@@ -59,8 +59,8 @@
 
 ![element invite](./images/element-invite-to-chat.png)
 
-- You must invite mattermost users and the the special user _Mattermost Bridge_.
-- Mattermost users begins with the \_mm\_\_ prefix mm_user2.mm is user2.mm in mattermost.
+- You must invite mattermost users and the special bot user _Mattermost Bridge_.
+- Mattermost users begins with the **mm\_** prefix mm_user2.mm is user2.mm in mattermost.
 
 ### Join federated public rooms
 
@@ -75,31 +75,39 @@
 
 - You will get an invitation from the creator of the 🔐 private room.
 - The federated private rooms work exactly as normal private rooms.
-- 🙁 You cannot create a private federated from Element in this release of the connector.
+  
 
 ### Create private/public federated room
+
+#### Create a private federated room
 
 ![element create private](./images/element-priv-room.png)
 - You create a new room in the Element UI. 
 - It can be a private or public room. 
-- For a private room you will need to disable the end-to-end encryption option.
+- For a private room you will need to disable the **end-to-end encryption** option.
 - For public room you need to set an unique room alias. Good practice is to use small letters of the room name for the alias.
 - Both public and private rooms need invitations of members.
 
+#### Invite users to the federated room
+
 ![element invite to room](./images/element-invite-to-room.png)
-- For a room to be federated to Mattermost the **Mattermost Bridge** user and Mattermost puppet users need to be invited.
+- For a room to be federated to Mattermost the **Mattermost Bridge** bot user and Mattermost puppet users need to be invited.
 - You can invite several Mattermost users and several local users to the federated room.
 
+#### First message to federated room
+
 ![element first room message](./images/element-first-message.png)
-- The mapped channel in Mattermost is created when the first message is sent to the room.
+- The mapped channel in Mattermost is created when the first message is sent to the room. It means that you must create a message in the room.
 - You will see a notice message that the channel is created on the **matrixrooms** team in Mattermost.
+
+#### The federated mapped channel in Mattermost
 
 ![mm on first channel message](./images/mm-on-first-message.png)
 - The mapped federated channel is now available in Mattermost for the invited users.
-- All features for post and respond to messages are available. 
+- All features for posting messages are available in the channel. 
 - You can see that we now supports reactions and emojis in both directions. 
 
-
+#### The federated room in Element after posts from Mattermost
 ![element after first room message](./images/element-after-first-message.png)
 - Messages from the mapped Mattermost channel is available in the room
 - You can invite more local and puppet users to the room from the UI.
