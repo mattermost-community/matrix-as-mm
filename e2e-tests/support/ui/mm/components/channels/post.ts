@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {expect, Locator} from '@playwright/test';
+import { expect, Locator } from '@playwright/test';
 
 export default class ChannelsPost {
     readonly container: Locator;
@@ -15,7 +15,7 @@ export default class ChannelsPost {
 
         this.body = container.locator('.post__body');
         this.profileIcon = container.locator('.profile-icon');
-        this.replyButton = container.getByRole('button', {name: 'reply'});
+        this.replyButton = container.getByRole('button', { name: 'reply' });
     }
 
     async toBeVisible() {
@@ -39,4 +39,4 @@ export default class ChannelsPost {
     }
 }
 
-export {ChannelsPost};
+export { ChannelsPost };

@@ -1,9 +1,9 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {expect, Page} from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 
-import {components} from '@e2e-support/ui/mm/components';
+import { components } from '@e2e-support/ui/mm/components';
 
 export default class BoardsCreatePage {
     readonly boards = 'Boards';
@@ -17,10 +17,18 @@ export default class BoardsCreatePage {
 
     constructor(page: Page) {
         this.page = page;
-        this.globalHeader = new components.GlobalHeader(this.page.locator('#global-header'));
-        this.createBoardHeading = page.getByRole('heading', {name: 'Create a board'});
-        this.createEmptyBoardButton = page.getByRole('button', {name: ' Create an empty board'});
-        this.useTemplateButton = page.getByRole('button', {name: 'Use this template'});
+        this.globalHeader = new components.GlobalHeader(
+            this.page.locator('#global-header'),
+        );
+        this.createBoardHeading = page.getByRole('heading', {
+            name: 'Create a board',
+        });
+        this.createEmptyBoardButton = page.getByRole('button', {
+            name: ' Create an empty board',
+        });
+        this.useTemplateButton = page.getByRole('button', {
+            name: 'Use this template',
+        });
     }
 
     async goto(teamId = '') {
@@ -44,4 +52,4 @@ export default class BoardsCreatePage {
     }
 }
 
-export {BoardsCreatePage};
+export { BoardsCreatePage };

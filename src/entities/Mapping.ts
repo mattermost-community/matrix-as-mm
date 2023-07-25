@@ -13,6 +13,6 @@ export class Mapping extends BaseEntity {
     public is_direct!: boolean;
     @Column('boolean', { nullable: false, default: true })
     public from_mattermost!: boolean;
-    @Column('varchar', { length:255,nullable:true })
+    @Column('varchar', { length: 255, nullable: true })
     public info!: string;
 }

@@ -47,7 +47,7 @@ services:
       #   - PUBLIC_URL=/synapse-admin
       #   - REACT_APP_SERVER="https://matrix.example.com"
     ports:
-      - "8081:80"
+      - '8081:80'
     networks:
       - my_net
     restart: unless-stopped

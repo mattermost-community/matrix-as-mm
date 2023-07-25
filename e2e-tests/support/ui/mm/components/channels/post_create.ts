@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {expect, Locator} from '@playwright/test';
+import { expect, Locator } from '@playwright/test';
 
 export default class ChannelsPostCreate {
     readonly container: Locator;
@@ -28,4 +28,4 @@ export default class ChannelsPostCreate {
     }
 }
 
-export {ChannelsPostCreate};
+export { ChannelsPostCreate };

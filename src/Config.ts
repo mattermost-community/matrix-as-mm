@@ -86,7 +86,7 @@ export interface Config {
     matrix_admin: {
         username: string;
         access_token: string;
-        password?:string;
+        password?: string;
     };
     mattermost_bot_userid: string;
     mattermost_bot_access_token: string;

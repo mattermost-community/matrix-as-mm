@@ -1,11 +1,4 @@
-import {
-    BaseEntity,
-    Entity,
-    PrimaryColumn,
-    Column,
-    DataSource
-
-} from 'typeorm';
+import { BaseEntity, Entity, PrimaryColumn, Column, DataSource } from 'typeorm';
 
 /**
  * An row in Post corresponds to an event/post that exists on both sides of the
@@ -25,17 +18,24 @@ export class Post extends BaseEntity {
     @Column('character', { length: '26', nullable: false })
     public rootid!: string;
 
-    public static async removeAll(ds:DataSource, postid: string): Promise<void> {
+    public static async removeAll(
+        ds: DataSource,
+        postid: string,
+    ): Promise<void> {
         /*
         await getConnection().query(
             'DELETE FROM posts WHERE postid = $1 OR rootid = $1',
             [postid],
         );
         */
-        await ds.createQueryBuilder()
-    .delete()
-    .from(Post)
-    .where("postid = :postid or rootid = :rootid", { postid: postid, rootid:postid })
-    .execute()
+        await ds
+            .createQueryBuilder()
+            .delete()
+            .from(Post)
+            .where('postid = :postid or rootid = :rootid', {
+                postid: postid,
+                rootid: postid,
+            })
+            .execute();
     }
 }

@@ -55,7 +55,6 @@ export default class Channel {
                 mattermostUsers.delete(user.mattermost_userid);
                 await joinMattermostChannel(this, user);
             }
-
         }
 
         for (const userid of mattermostUsers.values()) {
@@ -80,13 +79,10 @@ export default class Channel {
             }
         }
 
-
         for (const matrix_userid of matrixUsers.remote.values()) {
-            let user = this.main.mattermostUserStore.get(matrix_userid);
+            const user = this.main.mattermostUserStore.get(matrix_userid);
             if (user) {
-                const client = await this.main.mattermostUserStore.client(
-                    user,
-                );
+                const client = await this.main.mattermostUserStore.client(user);
                 await client.leave(this.matrixRoom);
             }
         }

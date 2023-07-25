@@ -113,6 +113,7 @@ export interface Registration {
             exclusive: boolean;
             regex: string;
         }[];
+      
     };
     url: string;
     sender_localpart: string;

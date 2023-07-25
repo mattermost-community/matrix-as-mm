@@ -12,6 +12,9 @@ e2e-tests/test-results/
 e2e-tests/playwright-report/
 e2e-tests/playwright/.cache/
 e2e-tests/node_modules
+e2e-tests/tmp
+e2e-tests/tests-examples
+e2e-tests/e2e
 *.tgz
 *.zip
 tmp

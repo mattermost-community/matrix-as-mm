@@ -4,6 +4,7 @@ import { replaceAsync } from './Functions';
 import { config } from '../Config';
 import { marked } from 'marked';
 import * as Turndown from 'turndown';
+import * as emoji from 'node-emoji';
 
 const MARKED_OPTIONS = {
     gfm: true,
@@ -101,8 +102,10 @@ export async function mattermostToMatrix(
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '');
 
-    const formatted_body = await translateMattermostUsername(format0, true);
-
+    const formatted_body = await translateMattermostUsername(
+        emoji.emojify(format0),
+        true,
+    );
     if (formatted_body === body) {
         return {
             msgtype,
@@ -127,7 +130,7 @@ export function constructMatrixReply(
             event_id: original.event_id,
         },
     };
-    let content = original.type;
+    const content = original.type;
     const block = `<mx-reply><blockquote><a href="https://matrix.to/#/${
         original.room_id
     }/${original.event_id}?via=${

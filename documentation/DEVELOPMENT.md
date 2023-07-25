@@ -37,11 +37,11 @@ $ npm run test
 While attempts have been made to make the code more modular, hence more unit-testable, most of the code is not really amenable to unit testing. Instead, most of it is covered under integration tests.
 
 ## Integration tests
-Integration test are implemented with Microsoft Playwright Test. 
+
+Integration test are implemented with Microsoft Playwright Test.
 See https://playwright.dev/
 
-Detailed information about the integration tests can be found in the link:  [More information about playwright integration tests](../e2e-tests/README.md)
-
+Detailed information about the integration tests can be found in the link: [More information about playwright integration tests](../e2e-tests/README.md)
 
 # Docker containers
 
@@ -57,17 +57,18 @@ The tables are pre-populated with values extracted from live instances in our de
 ### Backup of Postgres databases
 
 Scripts are located under the _scripts_ directory in the _docker_ directory.
+
 - Run script ./scripts/do-dump.sh
 - Database dumps are located in the _backup_ directory.
 
-``` shell
-janostgren@MBPsomtllhorJan docker % ./scripts/do-dump.sh 
+```shell
+janostgren@MBPsomtllhorJan docker % ./scripts/do-dump.sh
 Dumping databases to ./backup.
 total 7176
 -rw-r--r--  1 janostgren  staff  1588747 20 Jun 17:34 mattermost.sql
 -rw-r--r--  1 janostgren  staff    44567 20 Jun 17:34 mm-matrix-bridge.sql
 -rw-r--r--  1 janostgren  staff  2036095 20 Jun 17:34 synapse.sql
-janostgren@MBPsomtllhorJan docker % 
+janostgren@MBPsomtllhorJan docker %
 
 ```
 
@@ -77,9 +78,10 @@ This installs synapse from the alpine repositories. It uses `nc` to wait until `
 Synapse is the only container which access the bridge through http. It should use the special host called host.docker.internal. See https://docs.docker.com/desktop/networking/
 
 ### Application Service registration file
-The  registration file __registration.yaml__ is required for setting up the application service used be the connector.
 
-Example of the registration file in docker. It is generated from the information in configuration file __config.yaml__.
+The registration file **registration.yaml** is required for setting up the application service used be the connector.
+
+Example of the registration file in docker. It is generated from the information in configuration file **config.yaml**.
 
 ```yaml
 id: xfbONb3M-hYO861rkzW7N0xUKm-6MII2M6sj-z8sdc0DaiXV1S25SXdr5ElIvatt
@@ -95,14 +97,16 @@ rate_limited: true
 protocols:
   - mattermost
 ```
+
 ### Predefined users
-|user|authentication|usage|
-|----|--------------|-----|
-| admin| Admin..123456 | Default admin user. Used by the connector. Defined in config file. Do not login with this user.|
- user_admin| Admin..123456 | Admin user used in synapse admin. |
-| matterbot| Access Token | The application service users. |
-| user1.matrix | User..1234 | A normal user which can be used for testing |
-| mm_user1.mm |N/A | Puppet user for user1.mm in Mattermost |
+
+| user         | authentication | usage                                                                                           |
+| ------------ | -------------- | ----------------------------------------------------------------------------------------------- |
+| admin        | Admin..123456  | Default admin user. Used by the connector. Defined in config file. Do not login with this user. |
+| user_admin   | Admin..123456  | Admin user used in synapse admin.                                                               |
+| matterbot    | Access Token   | The application service users.                                                                  |
+| user1.matrix | User..1234     | A normal user which can be used for testing                                                     |
+| mm_user1.mm  | N/A            | Puppet user for user1.mm in Mattermost                                                          |
 
 ## Mattermost
 
@@ -110,15 +114,14 @@ This performs a standard Mattermost 7.9.1 install on alpine.
 
 This again uses `nc` to wait until `postgres` is up. While Mattermost has built in support for retrying connecting to the database, it waits for 10 seconds between retries, which is generally too much.
 
-### Predefined users 
+### Predefined users
 
-|user|authentication|usage|
-|----|--------------|-----|
-| admin| Admin..123456 | Default admin user. Not used by the connector.|
-| matrix.bridge| Admin..123456 and Access Token| The system user used by the connector. Defined in config file. You must define the personal acess token to this user in __config.yaml__.|
-| user1.mm | User..1234 | A normal user which can be used for testing |
-|matrix_user1.matrix | | Puppet user from matrix for user1.matrix |
-
+| user                | authentication                 | usage                                                                                                                                    |
+| ------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| admin               | Admin..123456                  | Default admin user. Not used by the connector.                                                                                           |
+| matrix.bridge       | Admin..123456 and Access Token | The system user used by the connector. Defined in config file. You must define the personal acess token to this user in **config.yaml**. |
+| user1.mm            | User..1234                     | A normal user which can be used for testing                                                                                              |
+| matrix_user1.matrix |                                | Puppet user from matrix for user1.matrix                                                                                                 |
 
 ## Element
 
@@ -143,6 +146,6 @@ A simple SNMP server for testing of email. An installation of the MailHog docker
 for additional information.
 
 ## Synapse Admin
+
 A user interface for administration of a Synapse Matrix Server
 See here for details https://github.com/Awesome-Technologies/synapse-admin
-

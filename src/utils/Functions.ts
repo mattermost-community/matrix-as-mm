@@ -5,7 +5,7 @@ import { spawn } from 'child_process';
 import { EventEmitter } from 'events';
 import { load } from 'js-yaml';
 import { readFileSync } from 'fs';
-import {DataSource} from 'typeorm'
+import { DataSource } from 'typeorm';
 
 export function remove<T>(a: T[], x: T): void {
     const index = a.indexOf(x, 0);
@@ -74,9 +74,9 @@ export function sanitizeMattermostUsername(s: string): string {
 }
 
 export async function handlePostError(
-    ds:DataSource,
+    ds: DataSource,
     e: unknown,
-    postid: string
+    postid: string,
 ): Promise<void> {
     if (
         e instanceof ClientError &&
@@ -86,14 +86,14 @@ export async function handlePostError(
                 e.m.id === 'store.sql_post.get.app_error'))
     ) {
         // The post we are replying to no longer exists. Delete the post from the database.
-        await Post.removeAll(ds,postid);
+        await Post.removeAll(ds, postid);
     } else {
         throw e;
     }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-export async function none(): Promise<void> { }
+export async function none(): Promise<void> {}
 
 // Generates a random string of length n.
 export function randomString(n: number): string {
@@ -184,13 +184,13 @@ export function getPackageInfo() {
 }
 
 export function inProductionMode(): boolean {
-    const prod = process.env["NODE_ENV"]
-    return prod && prod.toLocaleLowerCase() === 'production'
+    const prod = process.env['NODE_ENV'];
+    return prod && prod.toLocaleLowerCase() === 'production';
 }
 
 // This implementation is based on an environment variable value. No correct way of doing it.
 export function inDebugger() {
-    const envDebug=process.env["_DEBUG_"]
-    const isDebug = envDebug && envDebug === 'true'
-    return isDebug
+    const envDebug = process.env['_DEBUG_'];
+    const isDebug = envDebug && envDebug === 'true';
+    return isDebug;
 }

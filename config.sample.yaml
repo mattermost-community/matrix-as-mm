@@ -66,7 +66,7 @@ matrix_bot:
 #
 mattermost_bot_userid: 'geds3gxhdf81dccdrm8bfx37ry'
 mattermost_bot_access_token: 'bxfcapjqiina9xayxw6y65ubwh'
-# If password is defined it will be used. 
+# If password is defined it will be used.
 # Password is a bas64 encoded string of the users password.
 matrix_admin:
   username: '@admin:localhost'
