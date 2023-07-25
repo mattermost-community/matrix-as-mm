@@ -5,7 +5,7 @@ import Channel from '../Channel';
 import { getLogger } from '../Logging';
 
 const MAX_MEMBERS: number = 10000;
-const MATRIX_INTEGRATION_TEAM = 'MatrixRooms'
+const MATRIX_INTEGRATION_TEAM = 'MatrixRooms';
 
 const myLogger: log4js.Logger = getLogger('Mattermost.Utils');
 
@@ -159,10 +159,14 @@ export async function leaveMattermostChannel(
     channel: string,
     userid: string,
 ): Promise<void> {
-    try {
-        await client.delete(`/channels/${channel}/members/${userid}`);
-    } catch (e) {
-        switch (e.m?.id) {
+    const info = await client.delete(
+        `/channels/${channel}/members/${userid}`,
+        undefined,
+        false,
+        false,
+    );
+    if (info.status !== 200) {
+        switch (info.data?.id) {
             case 'api.channel.remove.default.app_error':
                 myLogger.debug(
                     `Cannot remove user ${userid} from default town-square channel`,
@@ -173,42 +177,46 @@ export async function leaveMattermostChannel(
                     `User ${userid} already removed from channel ${channel}`,
                 );
                 break;
+
             default:
-                throw e;
+                throw info.data;
         }
     }
 }
 
-export async function getMatrixIntegrationTeam(client: Client, userId?: string): Promise<any> {
-
+export async function getMatrixIntegrationTeam(
+    client: Client,
+    userId?: string,
+): Promise<any> {
     const myTeams: any[] = await client.get(`/users/${client.userid}/teams`);
-    let team = myTeams.find(team => { return team.name === MATRIX_INTEGRATION_TEAM.toLocaleLowerCase() }
-    )
-    let isMember: boolean = false
+    let team = myTeams.find(team => {
+        return team.name === MATRIX_INTEGRATION_TEAM.toLocaleLowerCase();
+    });
+    let isMember: boolean = false;
     if (!team) {
-        team = await client.post('/teams',
+        team = await client.post(
+            '/teams',
 
             {
                 name: MATRIX_INTEGRATION_TEAM.toLowerCase(),
                 display_name: MATRIX_INTEGRATION_TEAM,
-                type: "I"
-            }
-
-        )
+                type: 'I',
+            },
+        );
+    } else if (userId) {
+        let info = await client.get(
+            `/teams/${team.id}/members/${userId}`,
+            undefined,
+            false,
+            false,
+        );
+        isMember = info.status === 200;
     }
-    else if (userId){
-        let info = await client.get(`/teams/${team.id}/members/${userId}`, undefined, false, false)
-        isMember = info.status=== 200
+    if (!isMember && userId) {
+        await client.post(`/teams/${team.id}/members`, {
+            user_id: userId,
+            team_id: team.id,
+        });
     }
-    if(!isMember && userId) {
-        await client.post(`/teams/${team.id}/members`,
-                {
-                    user_id: userId,
-                    team_id: team.id
-
-                }
-            )
-
-    }
-    return team
+    return team;
 }

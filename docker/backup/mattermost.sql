@@ -3710,6 +3710,7 @@ kk3y6hoftpy4fnxt186e1ppkrw	1687332278115	geds3gxhdf81dccdrm8bfx37ry	/api/v4/chan
 5iakugyq4frwuegwpj4bcbnwny	1687332278213	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
 x7gzn9bbtbgkfe8dqdfatqe4se	1687332278227	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
 yaeo89yribnbjxsxzn84nanibe	1687332278294	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+o6ryqtweu3n59gic9sa7gf87ey	1687854448659		/api/v4/users/login	attempt - login_id=admin	172.16.238.1	
 gcguuy8s73bntn4rkpjd57q1ne	1687332278320	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
 54a9bxofcbfrief9hr7sgid1oe	1687332278364	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
 etzkbzayhffe9gxd781kc4rmuy	1687332278561	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
@@ -3784,6 +3785,7 @@ rsh1gdx81i8ybc39u6uk5ncymw	1687416753212	u53sd36877djmjrqfo9n5e1p3o	/api/v4/user
 kwai5ao5ujru3jks9gr4frhs3c	1687417053015	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 ajq4n3ihytyizec1yecwjumu6a	1687417053048	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 zmai3dq61jddibkb7g79pcwg5o	1687417053082	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
+8iiu951fhjrh5d9z4okqj54j6o	1687854448753	whida44gqpyfierua1wfrnbxtr	/api/v4/users/login	authenticated	172.16.238.1	
 iz5nesbew3dape5mqo8xz8zapy	1687417053131	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 5xtum6ai8tyuddeyrqhb74grde	1687417053290	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 89iimj3espydzdp74shhzae5bo	1687417053358	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
@@ -3817,6 +3819,7 @@ h41a3iij6igypyir8xxb7zj1uw	1687418187364	geds3gxhdf81dccdrm8bfx37ry	/api/v4/chan
 n99m4msiq7b83dd31cwc1pxa7h	1687418187397	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 cfzjtpjrnfrxjdum1ehc4jgbba	1687418187425	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 j75rpnre678ednqqaqxaht733r	1687418187459	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
+g7ymdt6mcibr3y1fc4e4b9gopc	1690280974116		/api/v4/users/login	attempt - login_id=matrix.bridge	172.16.238.1	
 9ya6gjfz7jfmfjw39kzt6s5fdc	1687418187627	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 bzgb1fbrejyt9rabp8nixfhtmw	1687418187698	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 eyhjkehgei88jp9kxbwkt9sw9r	1687418187786	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
@@ -4055,6 +4058,7 @@ upu4d3abffbxj8gbxtbkfn5mgo	1687769022370	geds3gxhdf81dccdrm8bfx37ry	/api/v4/chan
 noxm5xkokjnezytcy1kz8kbncy	1687769022769	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 n8dh4th8btyomj51cuzahcbtnw	1687769022784	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 o33xii6g1tdqx8xasz5exqonqw	1687769022796	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
+kxgzr84n57nijroi8qgi4wxmpo	1690280974249	geds3gxhdf81dccdrm8bfx37ry	/api/v4/users/login	authenticated	172.16.238.1	
 igszcx83jbg59nqpjt646eodpy	1687769022824	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=stmjik91m7rsdg6q4fcjtitfhr	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 j7j8rpubfffxigfrye4np1y4hh	1687769022851	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=o1y7dsw4rbrg5xrrtpeqezhwqr	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 1fyf1d9e4pdz3m61fijao5rkxw	1687769023146	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
@@ -5179,8 +5183,6 @@ ynwf4edchpd3xc3ou8x354prth	1687854421900	geds3gxhdf81dccdrm8bfx37ry	/api/v4/chan
 e8ks31qf6tyqjn1b3xscnu1zje	1687854422052	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 t9ygfrmpcino3kd1i5tayay46r	1687854422066	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 bqmfjw1q6bn3jjz6ze1sxqebxo	1687854422078	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
-o6ryqtweu3n59gic9sa7gf87ey	1687854448659		/api/v4/users/login	attempt - login_id=admin	172.16.238.1	
-8iiu951fhjrh5d9z4okqj54j6o	1687854448753	whida44gqpyfierua1wfrnbxtr	/api/v4/users/login	authenticated	172.16.238.1	
 ukag1m56j7yyfp3gbbohco81yc	1687854448777	whida44gqpyfierua1wfrnbxtr	/api/v4/users/login	success session_user=whida44gqpyfierua1wfrnbxtr	172.16.238.1	coigoi96eibbjbmuzm6d41w7de
 buumg34wa7na5mkyke6b1s8q9h	1687854455760		/api/v4/users/login	attempt - login_id=user1.mm	172.16.238.1	
 fp88fi9sr7ghdfk48s58prr54a	1687854455918	ygmycw6rnff7igko8gwbqchujr	/api/v4/users/login	authenticated	172.16.238.1	
@@ -6114,6 +6116,7 @@ wq3z8sq7dirgpmaboahozg79th	1688973601592	geds3gxhdf81dccdrm8bfx37ry	/api/v4/chan
 j1by3o7sp3nw7nk7m75kabm35w	1688973601875	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 jwmwfxmbnfrxje5uxhko97hw4e	1688973602008	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 s55ddc5x1tb5xjtpmncyxe51hr	1688973602020	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
+1tddd14hn7bxjdckhcbrp1ijho	1690280974263	geds3gxhdf81dccdrm8bfx37ry	/api/v4/users/login	success session_user=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	4oo18rgaiibcfjcj77t33j7rir
 n6q3x4erpinoiq8mooqxh35gwe	1688973602032	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 a3rixzd4epypfbifhfgdrtfjjh	1688974755927	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 1ow67dojijnw7bszr6bz8tzyto	1688974755963	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
@@ -6339,6 +6342,32 @@ hyu3zo7ifbbbxpnrmrznna1dio	1689494202158	geds3gxhdf81dccdrm8bfx37ry	/api/v4/chan
 6qbxwnwx4brh8kuk59muirot7c	1689494202363	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 sxfc5x1t8jrp586qg6i7iq7cpw	1689494202378	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
 upiyi4ckwjnxjgywrmqogfukpa	1689494202392	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
+5ier5r74dffr9fuu4bh858ma6o	1690280950762	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+mum1q63e5jgizrkfg7ib37fcto	1690280950789	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+irej1mbnufgo5fukjibqb1id8y	1690280950805	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+n11846gngf8s7gwogrwhyrnfkr	1690280950819	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+ykohxz8ny7fz7dydxcobeabeaa	1690280950900	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+onur84nn9tra9bf1115i5xqp9c	1690280950935	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+gfhzdcuz63bepdb3yz85ho8z7r	1690280950969	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/9wp7xhh6f7namrfm1asziaf9nh/members	name=after-work user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+oxjr17cw7tgqtxn9cw3azyosgw	1690280951273	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+6zicj6bhmb8dxk857cbfbzrfpw	1690280951286	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+rk1hyfzmofbxdgjpd38roe376w	1690280951296	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+eojiw5p6hpn8mfct3x8f4rurph	1690280951330	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=stmjik91m7rsdg6q4fcjtitfhr	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+cq89g3kbz3rrzbrgd1318t486h	1690280951358	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/giyj94p1fp86p8zs9z6u5b3ujh/members	name=off-topic user_id=o1y7dsw4rbrg5xrrtpeqezhwqr	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+w8f3oqp9ybbzuq7ak63zkj7t4a	1690280951632	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+rk8t8im5tby1prfxx58fs4s5fc	1690280951645	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hb8cxm688f86zgrejdmgdr7qsc/members	name=stockholm-office user_id=o1y7dsw4rbrg5xrrtpeqezhwqr	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+w5zhhyjqgpfr9k7fig3fsypg6y	1690280951833	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+8mbkcn4b8fnhbmbmmg4cw7ebaa	1690280951843	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=wq6i7sbf4tnqzbssbn7gy7cjcc	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+9as4nodx7tgtiq344uo3jskg1y	1690280951855	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/p7retz8iwtgzdrdceqw13fwmbr/members	name=town-square user_id=596q88qz87nbzbddntjm5xi6fh	172.16.238.1	y978n4jxf7b79ph3ccwfoproeh
+jkkn77w6xpfxu8b9rpbf7ruo4c	1690281079744	geds3gxhdf81dccdrm8bfx37ry	/api/v4/users/logout		172.16.238.1	4oo18rgaiibcfjcj77t33j7rir
+74x9ipddqjfbuc4npcehc4ptee	1690281095167		/api/v4/users/login	attempt - login_id=jan.ostgren	172.16.238.1	
+p8m3sferkpgb3eixcqq3k1bw1e	1690281095300		/api/v4/users/login	failure - login_id=jan.ostgren	172.16.238.1	
+rdw6wkx17t8gi8cdet3xtwwq3a	1690281109709		/api/v4/users/login	attempt - login_id=jan.ostgren	172.16.238.1	
+oxpby5hqhiykuq5kzbdcjzz6qo	1690281109831	u53sd36877djmjrqfo9n5e1p3o	/api/v4/users/login	authenticated	172.16.238.1	
+3dm54c9w1bd3u8ktqcgsmu1noe	1690281109836	u53sd36877djmjrqfo9n5e1p3o	/api/v4/users/login	success session_user=u53sd36877djmjrqfo9n5e1p3o	172.16.238.1	hnmbwyk3bfrw3xmbrhiq34ag6h
+raff15qhfjdju89h1xnpuehdsh	1690281142404	u53sd36877djmjrqfo9n5e1p3o	/api/v4/channels	name=federation-demo-by-team-admin	172.16.238.1	hnmbwyk3bfrw3xmbrhiq34ag6h
+1om8zf7mbbn87c84xisxfqqmpw	1690281229022	geds3gxhdf81dccdrm8bfx37ry	/api/v4/channels/hy8pwwz663gmtj1gefzu7wwn6y/members	name=federation-demo-by-team-admin user_id=bgct5icpib883fx619bh3cfu6h	172.16.238.1	fo4846aaei8i38kq9kmhb86xnr
+ra88k1ccrirgudk8nbqbgc1rde	1690281151861	u53sd36877djmjrqfo9n5e1p3o	/api/v4/channels/hy8pwwz663gmtj1gefzu7wwn6y/members	name=federation-demo-by-team-admin user_id=geds3gxhdf81dccdrm8bfx37ry	172.16.238.1	hnmbwyk3bfrw3xmbrhiq34ag6h
 \.
 
 
@@ -6439,6 +6468,11 @@ w1bem8ojdidaxjt9uzznhc186y	e343y5ecu7dyujwqm7yfimh1je	1688979134365	\N
 w1bem8ojdidaxjt9uzznhc186y	geds3gxhdf81dccdrm8bfx37ry	1688979157029	\N
 w1bem8ojdidaxjt9uzznhc186y	o1y7dsw4rbrg5xrrtpeqezhwqr	1688979157161	\N
 w1bem8ojdidaxjt9uzznhc186y	u53sd36877djmjrqfo9n5e1p3o	1688979349443	\N
+91z6b3s1xtre9jxuh5u7r9tqnw	geds3gxhdf81dccdrm8bfx37ry	1690280950545	\N
+zph73ud6hjfymftacz4w68wxma	geds3gxhdf81dccdrm8bfx37ry	1690280950597	\N
+hy8pwwz663gmtj1gefzu7wwn6y	u53sd36877djmjrqfo9n5e1p3o	1690281142384	\N
+hy8pwwz663gmtj1gefzu7wwn6y	geds3gxhdf81dccdrm8bfx37ry	1690281151859	\N
+hy8pwwz663gmtj1gefzu7wwn6y	bgct5icpib883fx619bh3cfu6h	1690281229017	\N
 \.
 
 
@@ -6467,7 +6501,6 @@ xnbbfxbs1i87z8xp5mc5pxo3yw	e343y5ecu7dyujwqm7yfimh1je		1679416148565	8	0	{"push"
 k17btosn9bbniczjj96ttnzido	bgct5icpib883fx619bh3cfu6h		0	0	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1679415348881	t	f	f	0	0	\N
 rk4gdc4whjnupqoad46hwa9cme	ygmycw6rnff7igko8gwbqchujr		1678033959731	2	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1678033959731	t	t	f	0	2	0
 p7retz8iwtgzdrdceqw13fwmbr	whida44gqpyfierua1wfrnbxtr		1684830979420	320	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1684830979420	t	t	f	0	236	0
-p7retz8iwtgzdrdceqw13fwmbr	geds3gxhdf81dccdrm8bfx37ry		1684830979420	320	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1684830979420	t	t	f	0	236	0
 k17btosn9bbniczjj96ttnzido	geds3gxhdf81dccdrm8bfx37ry		1686249530263	3	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1686249530263	t	f	f	0	3	0
 giyj94p1fp86p8zs9z6u5b3ujh	geds3gxhdf81dccdrm8bfx37ry		1686249589730	48	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1686249589730	t	f	f	0	48	0
 giyj94p1fp86p8zs9z6u5b3ujh	bgct5icpib883fx619bh3cfu6h		1686260296516	53	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1686260296516	t	f	f	0	53	0
@@ -6499,7 +6532,6 @@ p7retz8iwtgzdrdceqw13fwmbr	stmjik91m7rsdg6q4fcjtitfhr		0	0	0	{"push": "default",
 giyj94p1fp86p8zs9z6u5b3ujh	stmjik91m7rsdg6q4fcjtitfhr		1687419670839	55	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687419670839	t	f	f	0	55	0
 1qmxjp1cbtnrixwgj3xbyose5y	stmjik91m7rsdg6q4fcjtitfhr		0	0	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687419731395	t	f	f	0	0	0
 1qmxjp1cbtnrixwgj3xbyose5y	u53sd36877djmjrqfo9n5e1p3o		0	0	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	0	t	f	f	0	0	0
-p7retz8iwtgzdrdceqw13fwmbr	u53sd36877djmjrqfo9n5e1p3o		1687419433482	320	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687419433482	t	f	f	0	236	0
 giyj94p1fp86p8zs9z6u5b3ujh	u53sd36877djmjrqfo9n5e1p3o		1687420364955	56	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687420364955	t	f	f	0	56	0
 hb8cxm688f86zgrejdmgdr7qsc	ygmycw6rnff7igko8gwbqchujr		1687271934874	7	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687271934874	t	f	f	0	7	0
 p7retz8iwtgzdrdceqw13fwmbr	bgct5icpib883fx619bh3cfu6h		1687854483880	325	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687854483880	t	f	f	0	240	0
@@ -6517,6 +6549,13 @@ w1bem8ojdidaxjt9uzznhc186y	e343y5ecu7dyujwqm7yfimh1je		1688979228364	2	0	{"push"
 c66na98stfrs7goij6gc1hdbzw	ygmycw6rnff7igko8gwbqchujr		1687420674572	3	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687420674572	t	f	f	0	3	0
 c66na98stfrs7goij6gc1hdbzw	u53sd36877djmjrqfo9n5e1p3o		1687420674572	3	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687420674572	t	t	f	0	3	0
 w1bem8ojdidaxjt9uzznhc186y	u53sd36877djmjrqfo9n5e1p3o		1688979407877	3	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1688979407877	t	f	f	0	3	0
+91z6b3s1xtre9jxuh5u7r9tqnw	geds3gxhdf81dccdrm8bfx37ry		0	0	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1690280950535	t	t	f	0	0	0
+zph73ud6hjfymftacz4w68wxma	geds3gxhdf81dccdrm8bfx37ry		0	0	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1690280950588	t	t	f	0	0	0
+p7retz8iwtgzdrdceqw13fwmbr	geds3gxhdf81dccdrm8bfx37ry		1687854483880	325	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687854483880	t	t	f	0	240	0
+p7retz8iwtgzdrdceqw13fwmbr	u53sd36877djmjrqfo9n5e1p3o		1687854483880	325	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1687854483880	t	f	f	0	240	0
+hy8pwwz663gmtj1gefzu7wwn6y	bgct5icpib883fx619bh3cfu6h		1690281265910	3	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1690281265910	t	f	f	0	3	0
+hy8pwwz663gmtj1gefzu7wwn6y	geds3gxhdf81dccdrm8bfx37ry		1690281153239	1	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1690281153239	t	f	f	0	1	0
+hy8pwwz663gmtj1gefzu7wwn6y	u53sd36877djmjrqfo9n5e1p3o		1690281265910	3	0	{"push": "default", "email": "default", "desktop": "default", "mark_unread": "all", "ignore_channel_mentions": "default"}	1690281265910	t	t	f	0	3	0
 \.
 
 
@@ -6545,6 +6584,9 @@ w1bem8ojdidaxjt9uzznhc186y	1688979134331	1688979134331	0	ebxg8q3pzbdrdjo7xx1qqw3
 imj88twwh7rzz84sa66akb4ssa	1687419800298	1687419800298	0		G	jan.ostgren, matrix.bridge, matrix_jan.ostgren	4cbeac36f12938ed679f94bc6446179bcf280a0d			1687419838335	2	0		\N	\N	\N	2	1687419838335
 giyj94p1fp86p8zs9z6u5b3ujh	1675955722056	1675955722056	0	ebxg8q3pzbdrdjo7xx1qqw3guy	O	Off-Topic	off-topic			1688977381119	129	0		\N	\N	\N	123	1688977381119
 hb8cxm688f86zgrejdmgdr7qsc	1681112027795	1681112027795	0	ebxg8q3pzbdrdjo7xx1qqw3guy	O	Stockholm Office	stockholm-office			1688978375201	11	0	whida44gqpyfierua1wfrnbxtr		f	\N	10	1688978161044
+91z6b3s1xtre9jxuh5u7r9tqnw	1690280950466	1690280950466	0	a3qrt43qkbbhj816b6c5cmw8bh	O	Town Square	town-square			1690280950551	0	0		\N	\N	\N	0	1690280950551
+zph73ud6hjfymftacz4w68wxma	1690280950477	1690280950477	0	a3qrt43qkbbhj816b6c5cmw8bh	O	Off-Topic	off-topic			1690280950600	0	0		\N	\N	\N	0	1690280950600
+hy8pwwz663gmtj1gefzu7wwn6y	1690281142365	1690281142365	0	ebxg8q3pzbdrdjo7xx1qqw3guy	O	Federation Demo by Team Admin	federation-demo-by-team-admin			1690281265910	3	0	u53sd36877djmjrqfo9n5e1p3o		f	\N	3	1690281265910
 \.
 
 
@@ -6720,6 +6762,7 @@ COPY public.drafts (createat, updateat, deleteat, userid, channelid, rootid, mes
 1688902085870	1688970749525	0	e343y5ecu7dyujwqm7yfimh1je	giyj94p1fp86p8zs9z6u5b3ujh	7ggmcxj9opr83mx575z6mjpdww		{}	[]	null
 1681136400750	1688972258963	1688972258963	e343y5ecu7dyujwqm7yfimh1je	giyj94p1fp86p8zs9z6u5b3ujh		:+1: k	{}	[]	null
 1688972671950	1688972673660	1688972673660	ygmycw6rnff7igko8gwbqchujr	giyj94p1fp86p8zs9z6u5b3ujh	htbtyzmrc7gjjr95moc88aoaia	hi	{}	[]	null
+1690281182684	1690281196657	1690281196657	u53sd36877djmjrqfo9n5e1p3o	hy8pwwz663gmtj1gefzu7wwn6y		The room is created.	{}	[]	null
 \.
 
 
@@ -7876,10 +7919,10 @@ COPY public.ir_timelineevent (id, incidentid, createat, deleteat, eventat, event
 
 COPY public.ir_userinfo (id, lastdailytododmat, digestnotificationsettingsjson) FROM stdin;
 whida44gqpyfierua1wfrnbxtr	1686224366337	{"disable_daily_digest":false,"disable_weekly_digest":false}
-geds3gxhdf81dccdrm8bfx37ry	1686224419229	{"disable_daily_digest":false,"disable_weekly_digest":false}
 e343y5ecu7dyujwqm7yfimh1je	1688967501860	{"disable_daily_digest":false,"disable_weekly_digest":false}
 ygmycw6rnff7igko8gwbqchujr	1688972633081	{"disable_daily_digest":false,"disable_weekly_digest":false}
-u53sd36877djmjrqfo9n5e1p3o	1689165086193	{"disable_daily_digest":false,"disable_weekly_digest":false}
+geds3gxhdf81dccdrm8bfx37ry	1690280975081	{"disable_daily_digest":false,"disable_weekly_digest":false}
+u53sd36877djmjrqfo9n5e1p3o	1690281110431	{"disable_daily_digest":false,"disable_weekly_digest":false}
 \.
 
 
@@ -10216,6 +10259,7 @@ erns351mftgibp641gfp7jk5th	install_plugin_notify_admin	0	1686249302672	168624931
 uy6cjqyb3bn88ps9xo7ij63nah	install_plugin_notify_admin	0	1686249542700	1686249555653	1686249555657	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 7awagdmcmfy3jdiat3p53monsr	install_plugin_notify_admin	0	1686258050477	1686258057277	1686258057281	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 o5yywcsbkpr3xy9ah4n7qj8wda	install_plugin_notify_admin	0	1685522925340	1685522935519	1685522935524	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+hckoye3isfy8xyyxnr3thpxr4w	expiry_notify	0	1687839668047	1687842319383	1687842320887	success	100	null
 bd3hm7k4gt8ybrq4r8jiz8roqr	install_plugin_notify_admin	0	1686262947458	1686262958030	1686262958034	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 5ci6zti7d3bsdys87r47jakg9h	install_plugin_notify_admin	0	1686224198220	1686224209844	1686224209850	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 bf56ugfe9fbp5rtrn6tmpxse1w	expiry_notify	0	1685522985350	1685522995528	1685522995538	success	100	null
@@ -10248,6 +10292,7 @@ tg45zuaffjyd5rq51415pggu4a	expiry_notify	0	1686245006809	1686245018856	168624501
 izhc7ognpjyaprby7q473fjhfh	install_plugin_notify_admin	0	1686246266965	1686246279106	1686246279110	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 iowhx1ijcidexrugm1m33b8yxy	install_plugin_notify_admin	0	1686246386988	1686246399130	1686246399134	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 pnagemj1dig8uq8q1ahwkac54y	install_plugin_notify_admin	0	1685523525397	1685523535631	1685523535635	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+jye1ycsdzjg53e61ifjagwezoh	expiry_notify	0	1687274489519	1687274503145	1687274503156	success	100	null
 m6zdj3dmrjfmjcxm45qqjocjze	install_plugin_notify_admin	0	1686224438247	1686224449948	1686224449953	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 rowb8yhsf7no5rfgby3mmjt34y	install_plugin_notify_admin	0	1685523645406	1685523655652	1685523655657	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 z8j46wsebpnffygi6x4q8uttgr	expiry_notify	0	1686224498264	1686224509962	1686224509969	success	100	null
@@ -10348,6 +10393,7 @@ oh7p8iu33fgaf83juegi3enhby	install_plugin_notify_admin	0	1685540056706	168554007
 i9tywdzq9fy6pqo9awxhcyxsiw	install_plugin_notify_admin	0	1686225743714	1686225753501	1686225753507	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 kkicmnqes7yrpqxx4aah6zc5ra	install_plugin_notify_admin	0	1686226223812	1686226233632	1686226233636	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 fa7c164fe3b9ijgxr1rgtj6n4h	install_plugin_notify_admin	0	1686226463819	1686226473704	1686226473711	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+iyg5ofnzoid5tyh6ux7n1d5xzy	product_notices	0	1687839668583	1687842319381	1687842322401	success	100	null
 nkphpeium78dtg4ah9xnrc5jor	install_plugin_notify_admin	0	1686226703982	1686226713906	1686226713939	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 d9a4wj9jgbys5xaqm6uojq846a	install_plugin_notify_admin	0	1686230424832	1686230434995	1686230434999	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 je3u4ut1y7rtx8t8i9hzr7djta	install_plugin_notify_admin	0	1686241346314	1686241357831	1686241357835	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10446,6 +10492,7 @@ a7ie1nar638q3jdcrqeic9zs8w	install_plugin_notify_admin	0	1685554558545	168555457
 u5esitas7tyr9rpyp836k83rah	install_plugin_notify_admin	0	1686231144934	1686231155203	1686231155207	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 u7jdqehmgtdoxnwrbsofj8tomy	install_plugin_notify_admin	0	1685554678558	1685554693522	1685554693526	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 xq388an9k3gkiqyiuqnx4ebrda	expiry_notify	0	1686231144942	1686231155203	1686231155214	success	100	null
+uazxib4463g13bng3ozf8sbxya	expiry_notify	0	1687857333054	1687857335265	1687857335280	success	100	null
 kgewzwreriyzunr53oswjten8c	install_plugin_notify_admin	0	1685556358707	1685556358886	1685556358890	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 3pkz95opz78tuji177df8du14o	expiry_notify	0	1685554738569	1685554753537	1685554753547	success	100	null
 yd89u4zq9bd6mcpzkuinuat84e	install_plugin_notify_admin	0	1685554798578	1685554813552	1685554813556	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10713,6 +10760,7 @@ i9y8iy5dkjrtpdj8cmu8kqj7ky	install_plugin_notify_admin	0	1686258650613	168625865
 mocw1xdan7bbixkqondzs3d19r	install_plugin_notify_admin	0	1686263547553	1686263558243	1686263558249	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 mo3w4pmrkt8up8kp4i93h8379w	install_plugin_notify_admin	0	1686272633893	1686272648829	1686272648837	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 ruixfufcgin8xbun7uxcewuhdw	expiry_notify	0	1686263547560	1686263558243	1686263558256	success	100	null
+x4xogwkzitfi3dzmhfh9ao8pne	expiry_notify	0	1687421113005	1687421123806	1687421123814	success	100	null
 hgrtxt67ajdxmgquxtbwi7rwor	install_plugin_notify_admin	0	1686263667570	1686263678302	1686263678346	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 ikzcgoua5jd5xy3wb8obnb5wha	install_plugin_notify_admin	0	1686264027617	1686264038469	1686264038474	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 fco45ktgitdut8u9p5hzjqus3c	install_plugin_notify_admin	0	1686264507744	1686264518619	1686264518624	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10745,6 +10793,7 @@ m78d1b1szinwjeay8hwtswkhfe	install_plugin_notify_admin	0	1686265707930	168626571
 1gne1fy46jfniek5pf9qj7woiy	install_plugin_notify_admin	0	1686266308045	1686266319067	1686266319072	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 kmpadbkx43rhmqnrpudsh79sra	install_plugin_notify_admin	0	1686266548081	1686266559126	1686266559130	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 6pw4doz3dfra9b3gonuck4gzxw	install_plugin_notify_admin	0	1686267388181	1686267399345	1686267399351	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+oecn1xnnwb8digrwi4ksacngxr	expiry_notify	0	1687876608226	1687876621700	1687876621727	success	100	null
 dhdei31x5fymfefdbgoa8ryn3y	install_plugin_notify_admin	0	1686267628212	1686267639443	1686267639458	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 nb9s9y1b5fgdiywdakrhbn31gw	install_plugin_notify_admin	0	1686267748225	1686267759491	1686267759495	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 tnpwg3wzxiygunh3qkywwrppay	install_plugin_notify_admin	0	1686267988272	1686267999574	1686267999578	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10781,6 +10830,7 @@ gnpf1agqa3b5dxc9bsw4p6w1nr	install_plugin_notify_admin	0	1686291442158	168629145
 xa561jbezffrin4ztj8y1wbkic	expiry_notify	0	1686291442596	1686291457451	1686291457461	success	100	null
 try6otdhpjy9ufrnsfrpez9xwo	install_plugin_notify_admin	0	1686259706904	1686259717053	1686259717058	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 mmbaubqurpy3bmejpprku4xzth	install_plugin_notify_admin	0	1686260066936	1686260077139	1686260077144	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+6fxguqhrwpb85g3g9u7h9rh67a	product_notices	0	1687876668487	1687876681713	1687876681982	success	100	null
 wzn6hjx7ypdxmps9cnwuid5a1a	install_plugin_notify_admin	0	1686264747772	1686264758677	1686264758682	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 99x4nauxb78j7nsiuk8jyi4tee	install_plugin_notify_admin	0	1686260186949	1686260197168	1686260197175	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 gpqz1gucuf84zqb6ob9oor1aww	install_plugin_notify_admin	0	1686265827944	1686265838928	1686265838932	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10884,8 +10934,6 @@ irtx1y3idj8ztjgudkx8g68m4c	install_plugin_notify_admin	0	1687274129457	168727414
 gx7ambjambdyfn5x7yug8h8iaw	install_plugin_notify_admin	0	1687274249473	1687274263027	1687274263045	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 9e4aayun57be3xtbqdn7f1updy	install_plugin_notify_admin	0	1687274369501	1687274383106	1687274383110	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 y5996gsret83jmapg8o611zosr	install_plugin_notify_admin	0	1687806611180	1687806626119	1687806626125	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
-hckoye3isfy8xyyxnr3thpxr4w	expiry_notify	0	1687839668047	1687842319383	1687842320887	success	100	null
-jye1ycsdzjg53e61ifjagwezoh	expiry_notify	0	1687274489519	1687274503145	1687274503156	success	100	null
 mrpneiyz13gk5pkaraogohwi1r	install_plugin_notify_admin	0	1687274729554	1687274743244	1687274743247	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 hy7wt53s5fdfifw3ec67ayepce	install_plugin_notify_admin	0	1687842566316	1687842581264	1687842581282	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 nw43u5ocxtr1umzahkiqzeeota	install_plugin_notify_admin	0	1687842809591	1687842809683	1687842809687	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10919,7 +10967,6 @@ h9ahs86e1j88jkidfzzb4ax6rc	expiry_notify	0	1687870005947	1687870020816	168787002
 tf31iyidnt8edrogkh8a6k7c3a	expiry_notify	0	1687806611595	1687806626119	1687806626148	success	100	null
 rdg5fabp67rzze34jszscwaozr	install_plugin_notify_admin	0	1687274609544	1687274623193	1687274623197	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 uicpdktm8fytme5w3mcu4o3s3w	product_notices	0	1687806611467	1687806626119	1687806626464	success	100	null
-iyg5ofnzoid5tyh6ux7n1d5xzy	product_notices	0	1687839668583	1687842319381	1687842322401	success	100	null
 xwcmxk8oujdhjdpjor3our1bkw	install_plugin_notify_admin	0	1687842320656	1687842331586	1687842331593	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 x5wxfnhgft8opkemuixe96x3ha	install_plugin_notify_admin	0	1687842443713	1687842454504	1687842454570	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 g3pa8h18rtgnte9c48iwg5so8c	install_plugin_notify_admin	0	1687842689578	1687842704647	1687842704651	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -10990,6 +11037,7 @@ jzjsrcsr4jg5xnqq9i368c96zo	install_plugin_notify_admin	0	1687275209577	168727522
 99p7ubhsm3fnjj89uzr7gwyhdy	install_plugin_notify_admin	0	1687275449603	1687275463518	1687275463524	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 etcdhsdn93d1drhxyqs7yxkyxw	install_plugin_notify_admin	0	1687276289736	1687276303851	1687276303856	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 gpfgch8n17fytgh87rfeus1hur	product_notices	0	1687275449611	1687275463518	1687275463807	success	100	null
+c54c6eit37dtpq8bhxb1wbefgr	product_notices	0	1688079470482	1688086675438	1688086676297	success	100	null
 wgeocnu95pfp3pyoj5umzzkw5a	install_plugin_notify_admin	0	1687275569609	1687275583560	1687275583566	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 ypz86nxm47f78gihpteupb3uwo	install_plugin_notify_admin	0	1687275689627	1687275703584	1687275703588	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 7go3apbtnjbd8b6xxesc6ib4jr	install_plugin_notify_admin	0	1687275809639	1687275823657	1687275823663	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -11090,6 +11138,7 @@ udbgnhjjoibfdbhrcs6tzor4yh	install_plugin_notify_admin	0	1687331635702	168733164
 w8dh7ecny3frfq4zmb5bs98f7y	install_plugin_notify_admin	0	1687849171345	1687849172709	1687849172715	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 m37obw1wpbfjzf4x3safrjniye	install_plugin_notify_admin	0	1687849651442	1687849652823	1687849652829	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 8f7yxzuytbfspr48crq9jwid8w	expiry_notify	0	1687850071560	1687850072924	1687850072931	success	100	null
+8ggte65h9jyamjg13b61sj9poy	product_notices	0	1689218986307	1689219001328	1689219001426	success	100	null
 hr6ho6c867ruuy9pdekieo771c	install_plugin_notify_admin	0	1687855052760	1687855054574	1687855054578	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 54381x9qsprmfqkem3upedtwfw	install_plugin_notify_admin	0	1687855412806	1687855414757	1687855414762	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 7h89hs3mob8cddx8jdqu8xj4mh	install_plugin_notify_admin	0	1687855652829	1687855654811	1687855654816	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -11189,6 +11238,7 @@ w7qo98t8bjbdxp4knedp9y48zh	install_plugin_notify_admin	0	1687856612939	168785661
 zyjppiuwyidmuygb9d1amrwhoh	install_plugin_notify_admin	0	1687862373870	1687862376953	1687862376957	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 jmp4awntjbfadxk4z8khzygnxc	install_plugin_notify_admin	0	1687862733913	1687862737067	1687862737077	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 wejnqaghajn3xmmqi15ug3qf4y	install_plugin_notify_admin	0	1687862853927	1687862857094	1687862857125	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+uixnn5up3bbxtk1ezwk4cttwbo	plugins	0	1689439271470	1689439286261	1689439286304	success	0	null
 s7d3bmtt7bb4bgyekjp3djhg5e	install_plugin_notify_admin	0	1687862973939	1687862977192	1687862977197	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 4tk57qrju3y6dyx3qjm1nbdbee	install_plugin_notify_admin	0	1687875945898	1687875959523	1687875959528	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 gafyre4h9pyfzg1tbkkoq38yda	expiry_notify	0	1687875945957	1687875959523	1687875959533	success	100	null
@@ -11256,7 +11306,6 @@ t6wwo7bp47d8zgaj3sig1gtfjc	install_plugin_notify_admin	0	1687851451888	168785145
 5xwto7dr3bbw8pkoobsb36r35o	install_plugin_notify_admin	0	1687856972992	1687856975157	1687856975162	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 hzg7mmo83brypcdwa1txismupo	install_plugin_notify_admin	0	1687857333047	1687857335265	1687857335271	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 b91e7ypdr3y4mxnwbtpe4usfph	product_notices	0	1687857693185	1687857695446	1687857695699	success	100	null
-uazxib4463g13bng3ozf8sbxya	expiry_notify	0	1687857333054	1687857335265	1687857335280	success	100	null
 jtsh7u9gdf88jefyb8d6967z9h	install_plugin_notify_admin	0	1687857573163	1687857575414	1687857575418	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 adtttwtrtpfm7gxu3ct8q8t9jr	install_plugin_notify_admin	0	1687857693178	1687857695446	1687857695451	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 7bcpbenkm3do3fwphqzr1zjg6r	install_plugin_notify_admin	0	1687863214058	1687863217372	1687863217389	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -11290,7 +11339,6 @@ g58awo8mg3g53njhqgcwod6zie	install_plugin_notify_admin	0	1687420632906	168742064
 oqbdgfdyijnp3c4hzeb1qhrkuy	install_plugin_notify_admin	0	1687420992931	1687421003760	1687421003764	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 d3k9fwrh53ytmen761br67ek1h	install_plugin_notify_admin	0	1687421112999	1687421123806	1687421123810	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 zwa5xnbq83yj3ngy1b6sr6skpo	install_plugin_notify_admin	0	1687421473054	1687421483887	1687421483891	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
-x4xogwkzitfi3dzmhfh9ao8pne	expiry_notify	0	1687421113005	1687421123806	1687421123814	success	100	null
 m6ccdm1qpbru8pfi4qjt49p1wo	install_plugin_notify_admin	0	1687421233014	1687421243831	1687421243836	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 ntudgifx6jbnfde5qzewere6re	install_plugin_notify_admin	0	1687421353026	1687421363858	1687421363863	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 191muegwsfb8dfq18t7q3ogb4a	install_plugin_notify_admin	0	1687421593071	1687421603920	1687421603924	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -11358,6 +11406,7 @@ ss8bsfesgbfomrewpubnjnma1o	install_plugin_notify_admin	0	1687424713588	168742472
 17t1z3oh7bybig1j8a94kmjy5w	install_plugin_notify_admin	0	1687424833606	1687424845115	1687424845119	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 ggtrfjog7tfixbto5bw9mggecr	install_plugin_notify_admin	0	1687424953633	1687424965138	1687424965143	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 oapawqxrybdi9pi87nb94344ca	expiry_notify	0	1687425013642	1687425025150	1687425025159	success	100	null
+y3973iqmfbbbxffq6ho49k8ktw	product_notices	0	1689439273239	1689439286260	1689439286937	success	100	null
 shrfgn75str1tx5mpe3afex5wo	install_plugin_notify_admin	0	1687425073652	1687425085165	1687425085170	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 qx6kk9i9ciraicof7464fex1sa	install_plugin_notify_admin	0	1687425193703	1687425205196	1687425205218	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 f6czx694iidzpfkcf7k6bn1ote	install_plugin_notify_admin	0	1687425313753	1687425325211	1687425325216	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -11392,8 +11441,6 @@ e5p7usmyx78hjde8bucr1hpuyr	install_plugin_notify_admin	0	1687865974528	168786597
 m1tdocmo9jn7xebcprhyndjiyo	expiry_notify	0	1687865914520	1687865918514	1687865918525	success	100	null
 8bp3s1rr7prpjy5i3keshqw3rc	install_plugin_notify_admin	0	1687866094539	1687866098581	1687866098586	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 r8yxnq9sgpyuff6fztfz1estqo	install_plugin_notify_admin	0	1687876608455	1687876621700	1687876621708	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
-oecn1xnnwb8digrwi4ksacngxr	expiry_notify	0	1687876608226	1687876621700	1687876621727	success	100	null
-6fxguqhrwpb85g3g9u7h9rh67a	product_notices	0	1687876668487	1687876681713	1687876681982	success	100	null
 rp9ygk54dbdybc4gk316855pkw	install_plugin_notify_admin	0	1687876728507	1687876741739	1687876741750	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 hdz8q1p3yibdtbazc634wdw3iy	install_plugin_notify_admin	0	1687877809497	1687877823022	1687877823027	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 st4cc17mstdij8au5wcahxefrh	expiry_notify	0	1687877809507	1687877823022	1687877823038	success	100	null
@@ -11460,7 +11507,6 @@ ji9gufw88tbx7ybtfscpgpgy9c	install_plugin_notify_admin	0	1687878649891	168787866
 f7dsbgfgwb8dxciijyrkm9zu8o	install_plugin_notify_admin	0	1688079470468	1688086675438	1688086675463	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 oi9rumfmniydmkuweoggio1zow	install_plugin_notify_admin	0	1688890358399	1688890358825	1688890358830	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 i84apnp5rtgbuj8htjszzb3pkc	expiry_notify	0	1688079470499	1688086675437	1688086675471	success	100	null
-c54c6eit37dtpq8bhxb1wbefgr	product_notices	0	1688079470482	1688086675438	1688086676297	success	100	null
 5ch57tb19f8f7y7tibi3izq34a	install_plugin_notify_admin	0	1688892278619	1688892279274	1688892279278	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 esohqk4n8bbuikc6t6i1k8mjdr	install_plugin_notify_admin	0	1688892398627	1688892399301	1688892399304	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 mx16sk5j57nrictpqt9cay4ioo	install_plugin_notify_admin	0	1688892638617	1688892639365	1688892639369	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
@@ -11592,6 +11638,7 @@ rntg9w163bb43f4146fbpb9n5o	install_plugin_notify_admin	0	1687770350725	168777035
 uxhng5u7gjn6d86ikor39pr85y	install_plugin_notify_admin	0	1687770470741	1687770475621	1687770475626	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 icas5uc7gtbefmufgjkzhu9xcr	install_plugin_notify_admin	0	1687770590758	1687770595649	1687770595654	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 9oxueyontpgnmn5prozabhasoc	install_plugin_notify_admin	0	1687771670935	1687771676168	1687771676174	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+q1rajgnqri8mirz5w6p7jjasza	import_delete	0	1689439272697	1689439286261	1689439286346	success	100	null
 h4qe5jh5zpn83jdsi1tzec3bsc	install_plugin_notify_admin	0	1687771790959	1687771796212	1687771796223	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 ochy71ine3y7drians8tns5n8y	expiry_notify	0	1687832464649	1687839668072	1687839668384	success	100	null
 iouiq3j387r7mcrgz95adckk3c	expiry_notify	0	1687859313385	1687859315868	1687859315879	success	100	null
@@ -12071,14 +12118,13 @@ skewjixqg7fg9rtoojrppptihy	install_plugin_notify_admin	0	1689211782842	168921898
 m35yftb6yt8jfxsc5fi3xfyf5o	expiry_notify	0	1689211782880	1689218986324	1689218986344	success	100	null
 68jct8736tbsmpixgpnksih7xa	install_plugin_notify_admin	0	1689218986346	1689219001328	1689219001331	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 pdjitfxzxpde5d39gtgyzceyxw	expiry_notify	0	1689218986359	1689219001328	1689219001339	success	100	null
-8ggte65h9jyamjg13b61sj9poy	product_notices	0	1689218986307	1689219001328	1689219001426	success	100	null
-uixnn5up3bbxtk1ezwk4cttwbo	plugins	0	1689439271470	1689439286261	1689439286304	success	0	null
-y3973iqmfbbbxffq6ho49k8ktw	product_notices	0	1689439273239	1689439286260	1689439286937	success	100	null
-q1rajgnqri8mirz5w6p7jjasza	import_delete	0	1689439272697	1689439286261	1689439286346	success	100	null
 1cxghxub3tdfdm8d1fic7689oy	install_plugin_notify_admin	0	1689439271809	1689439286260	1689439286358	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 jcshsi8xejrsurtpkn1bqoyrth	export_delete	0	1689439273156	1689439286263	1689439286366	success	100	null
 smwgzi7maid9mezzbbpc3sdz6c	expiry_notify	0	1689439272278	1689439286262	1689439286384	success	100	null
 njyyq4wnkp8d3bwzup31ow3pbr	install_plugin_notify_admin	0	1689494152289	1689494164086	1689494164172	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+jm6swapmub83dqbms9zsduwoty	install_plugin_notify_admin	0	1690281038018	1690281040796	1690281040800	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+134getguftdnzquccwwinzmrze	install_plugin_notify_admin	0	1690281158030	1690281160825	1690281160830	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
+sj43xy8k1fdgxbpubc5mmx5uhw	install_plugin_notify_admin	0	1690281278122	1690281280926	1690281280931	error	-1	{"error": "Error during job execution. — DoCheckForAdminNotifications: Unable to send notification post., No license found"}
 \.
 
 
@@ -12479,6 +12525,7 @@ ub55b7frt7n4ud6aixucdwfaco	1682438314050	1682438314050	0	bgct5icpib883fx619bh3cf
 nopp9ejhx7djfmeigmkdbtzrkh	1682438939046	1682438939046	0	bgct5icpib883fx619bh3cfu6h	p7retz8iwtgzdrdceqw13fwmbr			URL=http://localhost:8080 risky Browser=false 		{}		[]	[]	f	0	f	\N
 mm7fncq8epga7yt1ammq5fki7w	1682438939875	1682438939875	0	bgct5icpib883fx619bh3cfu6h	p7retz8iwtgzdrdceqw13fwmbr			Timestamp=1682438934477		{}		[]	[]	f	0	f	\N
 nqimzhsuapnsfxt5r9a7zxfeua	1682438456799	1682438456799	0	ygmycw6rnff7igko8gwbqchujr	p7retz8iwtgzdrdceqw13fwmbr	6wz6uwawb7g8883ieyyrkry5rw		I have seen the strange message		{}		[]	[]	f	0	f	\N
+gtnx3ngcn7f4tgseboq4o9bayo	1688043016281	1688043062893	0	o1y7dsw4rbrg5xrrtpeqezhwqr	giyj94p1fp86p8zs9z6u5b3ujh			Hej react		{}		[]	[]	t	0	f	\N
 6wz6uwawb7g8883ieyyrkry5rw	1682438456127	1682438456799	0	bgct5icpib883fx619bh3cfu6h	p7retz8iwtgzdrdceqw13fwmbr			Strange message seen:\nTry to copy the HDD transmitter, maybe it will parse the open-source program!\n from Kamryn.Bins@yahoo.com		{}		[]	[]	f	0	f	\N
 mkubmxam9jy5zg8cbir4xczhba	1682438475447	1682438475447	0	bgct5icpib883fx619bh3cfu6h	p7retz8iwtgzdrdceqw13fwmbr			Playwright Test - Message from Element 		{}		[]	[]	f	0	f	\N
 cffunsi6u7y7xgaj84te64mjie	1682438480094	1682438480094	0	bgct5icpib883fx619bh3cfu6h	p7retz8iwtgzdrdceqw13fwmbr			URL=http://localhost:8080 risky Browser=false 		{}		[]	[]	f	0	f	\N
@@ -12690,7 +12737,6 @@ a4rwc3mrwp8fdbgot311wxiz4w	1687854483880	1687854483880	0	bgct5icpib883fx619bh3cf
 8qy8hamxop8y9qnf6e3tbmrq7o	1688896802776	1688897165670	0	o1y7dsw4rbrg5xrrtpeqezhwqr	giyj94p1fp86p8zs9z6u5b3ujh			klkl		{}		[]	[]	t	0	f	\N
 rdydzknsjty8j873o3mcsj46oa	1688042701898	1688042701898	0	e343y5ecu7dyujwqm7yfimh1je	giyj94p1fp86p8zs9z6u5b3ujh			:smiley: 		{"disable_group_highlight": true}		[]	[]	f	0	f	\N
 t3fc1ia693yctk9nnrzsqmmewy	1688042777517	1688042777517	0	o1y7dsw4rbrg5xrrtpeqezhwqr	giyj94p1fp86p8zs9z6u5b3ujh			😀		{}		[]	[]	f	0	f	\N
-gtnx3ngcn7f4tgseboq4o9bayo	1688043016281	1688043062893	0	o1y7dsw4rbrg5xrrtpeqezhwqr	giyj94p1fp86p8zs9z6u5b3ujh			Hej react		{}		[]	[]	t	0	f	\N
 3frx6rdd5fbg5nq3sqwsj4qiec	1688042945163	1688043140449	0	e343y5ecu7dyujwqm7yfimh1je	giyj94p1fp86p8zs9z6u5b3ujh			:smiley: 		{"disable_group_highlight": true}		[]	[]	t	0	f	\N
 yorgjogprfnh5g8bcw4nywfash	1688043203038	1688043203038	0	e343y5ecu7dyujwqm7yfimh1je	giyj94p1fp86p8zs9z6u5b3ujh			Hi		{"disable_group_highlight": true}		[]	[]	f	0	f	\N
 nwz4zk5qqbgxif4kb3byh754jo	1688888151833	1688888151833	0	e343y5ecu7dyujwqm7yfimh1je	giyj94p1fp86p8zs9z6u5b3ujh			Hi smile :grinning: 		{"disable_group_highlight": true}		[]	[]	f	0	f	\N
@@ -12766,6 +12812,14 @@ rze167a517rw5drshqkrb6ydpr	1688979162515	1688979191063	0	e343y5ecu7dyujwqm7yfimh
 su11q7dbt7r85ci6nfwaq8pnmw	1688979228364	1688979228364	0	o1y7dsw4rbrg5xrrtpeqezhwqr	w1bem8ojdidaxjt9uzznhc186y			ok		{}		[]	[]	f	0	f	\N
 q1rgpdkjt3dzbn665cs4kre7rr	1688979349449	1688979349449	0	e343y5ecu7dyujwqm7yfimh1je	w1bem8ojdidaxjt9uzznhc186y			jan.ostgren added to the channel by user2.mm.	system_add_to_channel	{"userId": "e343y5ecu7dyujwqm7yfimh1je", "username": "user2.mm", "addedUserId": "u53sd36877djmjrqfo9n5e1p3o", "addedUsername": "jan.ostgren"}		[]	[]	f	0	f	\N
 dwsa7mnizpb6jfuhnrf5sap47a	1688979407877	1688979580829	0	u53sd36877djmjrqfo9n5e1p3o	w1bem8ojdidaxjt9uzznhc186y			ok		{"disable_group_highlight": true}		[]	[]	t	0	f	\N
+kuegb5frofdb3eeo9axk717a4y	1690280950551	1690280950551	0	geds3gxhdf81dccdrm8bfx37ry	91z6b3s1xtre9jxuh5u7r9tqnw			matrix.bridge joined the team.	system_join_team	{"username": "matrix.bridge"}		[]	[]	f	0	f	\N
+njbq96cootgbpdokjtmynxt6wa	1690280950600	1690280950600	0	geds3gxhdf81dccdrm8bfx37ry	zph73ud6hjfymftacz4w68wxma			matrix.bridge joined the channel.	system_join_channel	{"username": "matrix.bridge"}		[]	[]	f	0	f	\N
+7ja4nsw637rop8yuceiztxo5ia	1690281142389	1690281142389	0	u53sd36877djmjrqfo9n5e1p3o	hy8pwwz663gmtj1gefzu7wwn6y			jan.ostgren joined the channel.	system_join_channel	{"username": "jan.ostgren"}		[]	[]	f	0	f	\N
+z8o1umx8ofnedpex1uatcc97tr	1690281151865	1690281151865	0	u53sd36877djmjrqfo9n5e1p3o	hy8pwwz663gmtj1gefzu7wwn6y			matrix.bridge added to the channel by jan.ostgren.	system_add_to_channel	{"userId": "u53sd36877djmjrqfo9n5e1p3o", "username": "jan.ostgren", "addedUserId": "geds3gxhdf81dccdrm8bfx37ry", "addedUsername": "matrix.bridge"}		[]	[]	f	0	f	\N
+dww9b4m87pgs8rqtwtciebyu6e	1690281153239	1690281153239	0	geds3gxhdf81dccdrm8bfx37ry	hy8pwwz663gmtj1gefzu7wwn6y			New matrix room Federation Demo by Team Admin with alias federation-demo-by-team-admin mapped to the channel.		{}		[]	[]	f	0	f	\N
+hfsdse3bbjdyjygygkatooztna	1690281196619	1690281196619	0	u53sd36877djmjrqfo9n5e1p3o	hy8pwwz663gmtj1gefzu7wwn6y			The room is created.		{"disable_group_highlight": true}		[]	[]	f	0	f	\N
+7cqz3wnyyfd8udpet6khjx9qzh	1690281229053	1690281229053	0	geds3gxhdf81dccdrm8bfx37ry	hy8pwwz663gmtj1gefzu7wwn6y			matrix_user1.matrix added to the channel by matrix.bridge.	system_add_to_channel	{"userId": "geds3gxhdf81dccdrm8bfx37ry", "username": "matrix.bridge", "addedUserId": "bgct5icpib883fx619bh3cfu6h", "addedUsername": "matrix_user1.matrix"}		[]	[]	f	0	f	\N
+rm7gkr417p8xumw8unrumnew7a	1690281265910	1690281265910	0	bgct5icpib883fx619bh3cfu6h	hy8pwwz663gmtj1gefzu7wwn6y			okokk		{}		[]	[]	f	0	f	\N
 \.
 
 
@@ -12823,7 +12877,6 @@ e343y5ecu7dyujwqm7yfimh1je	crt_thread_pane_step	e343y5ecu7dyujwqm7yfimh1je	999
 ygmycw6rnff7igko8gwbqchujr	drafts	drafts_tour_tip_showed	{"drafts_tour_tip_showed":true}
 ygmycw6rnff7igko8gwbqchujr	crt_thread_pane_step	ygmycw6rnff7igko8gwbqchujr	999
 geds3gxhdf81dccdrm8bfx37ry	group_channel_show	xnbbfxbs1i87z8xp5mc5pxo3yw	true
-geds3gxhdf81dccdrm8bfx37ry	channel_approximate_view_time		1686249427366
 geds3gxhdf81dccdrm8bfx37ry	group_channel_show	k17btosn9bbniczjj96ttnzido	true
 geds3gxhdf81dccdrm8bfx37ry	channel_open_time	k17btosn9bbniczjj96ttnzido	1686249526596
 u53sd36877djmjrqfo9n5e1p3o	tutorial_step	u53sd36877djmjrqfo9n5e1p3o	0
@@ -12844,9 +12897,11 @@ o1y7dsw4rbrg5xrrtpeqezhwqr	recommended_next_steps	hide	false
 o1y7dsw4rbrg5xrrtpeqezhwqr	tutorial_step	o1y7dsw4rbrg5xrrtpeqezhwqr	0
 o1y7dsw4rbrg5xrrtpeqezhwqr	insights	insights_tutorial_state	{"insights_modal_viewed":true}
 e343y5ecu7dyujwqm7yfimh1je	channel_approximate_view_time		1688978343030
-u53sd36877djmjrqfo9n5e1p3o	channel_approximate_view_time		1688979410796
 e343y5ecu7dyujwqm7yfimh1je	recent_emojis	e343y5ecu7dyujwqm7yfimh1je	[{"name":"smiling_face_with_tear","usageCount":1},{"name":"kissing","usageCount":1},{"name":"kissing_heart","usageCount":1},{"name":"slightly_smiling_face","usageCount":1},{"name":"shushing_face","usageCount":1},{"name":"black_heart","usageCount":1},{"name":"grin","usageCount":1},{"name":"sunglasses","usageCount":1},{"name":"smiling_face_with_3_hearts","usageCount":2},{"name":"sweat_smile","usageCount":2},{"name":"face_with_rolling_eyes","usageCount":2},{"name":"wink","usageCount":2},{"name":"yum","usageCount":2},{"name":"rolling_on_the_floor_laughing","usageCount":2},{"name":"grinning","usageCount":3},{"name":"female_zombie","usageCount":4},{"name":"heart_eyes","usageCount":5},{"name":"joy","usageCount":5},{"name":"heart","usageCount":5},{"name":"smiley","usageCount":16},{"name":"innocent","usageCount":17},{"name":"+1","usageCount":30}]
 ygmycw6rnff7igko8gwbqchujr	recent_emojis	ygmycw6rnff7igko8gwbqchujr	[{"name":"+1","usageCount":2}]
+geds3gxhdf81dccdrm8bfx37ry	group_channel_show	imj88twwh7rzz84sa66akb4ssa	true
+geds3gxhdf81dccdrm8bfx37ry	channel_approximate_view_time		1690281034804
+u53sd36877djmjrqfo9n5e1p3o	channel_approximate_view_time		1690281112460
 \.
 
 
@@ -12929,6 +12984,9 @@ bk454rpi9byk9nqgbebmsyxd6o	0	rjartdbsbtrfjfk9k9argymhqw	Town Square	town-square
 j8kwoszonigs8n4cogz7567w8w	0	6mje8n89nj843jfzixpfctmgcw	Town Square	town-square		
 5uqbnih797n9pyt46muk9361jw	0	6mje8n89nj843jfzixpfctmgcw	Off-Topic	off-topic		
 ipzauhk38ir93qtm6x39b6r9ba	0	ebxg8q3pzbdrdjo7xx1qqw3guy	Secret Channel - Demo	secret-channel---demo		
+91z6b3s1xtre9jxuh5u7r9tqnw	0	a3qrt43qkbbhj816b6c5cmw8bh	Town Square	town-square		
+zph73ud6hjfymftacz4w68wxma	0	a3qrt43qkbbhj816b6c5cmw8bh	Off-Topic	off-topic		
+hy8pwwz663gmtj1gefzu7wwn6y	0	ebxg8q3pzbdrdjo7xx1qqw3guy	Federation Demo by Team Admin	federation-demo-by-team-admin		
 \.
 
 
@@ -13120,13 +13178,15 @@ qdruafkzp3bf5cjbyesa3wg4ne	ze3koqgme3njijemwmmy1g165e	1687416575996	0	1687416575
 hp3qbfb8itry3rogskedeeoc5y	xmy3bxaye3nyuyj47sn417cbee	1689164947281	0	1689164947281	nphyqs6wq3f4xb317o5eifbzeh			f	{}	f
 km13p9hjrbnojb8cwod5hi4t9h	eudpxytzrpdx3xwknzuwgkgoce	1688039827644	0	1688039827644	nphyqs6wq3f4xb317o5eifbzeh			f	{}	f
 m7mpzyxb478ojkcurz9u5qiczh	83xxctcyc3bx8y6n5e8arwqcwa	1688979386217	1691757088618	1689439272087	u53sd36877djmjrqfo9n5e1p3o		system_user	f	{"os": "Mac OS", "csrf": "1ouqrtw1sf8aud43z5fodri84w", "isSaml": "false", "browser": "Chrome/114.0", "isMobile": "false", "is_guest": "false", "platform": "Macintosh", "isOAuthUser": "false"}	f
-fo4846aaei8i38kq9kmhb86xnr	bxfcapjqiina9xayxw6y65ubwh	1676646213929	4830246213929	1689494200706	geds3gxhdf81dccdrm8bfx37ry		system_user system_admin	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "smw3ipoqajyrdxie69w464cy9e"}	f
-17qdxa1ps3b9zxtg81mhsmrttc	zbobs1dw5jgrtby9hkcz3dkpjy	1678032959918	4831632959918	1689494201089	bgct5icpib883fx619bh3cfu6h		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "gbrc7c89sbfepjfxyijj5bkwyh"}	f
-nw4w8ecnz7gy9rt3wm4k68ziqe	i8bz3eaobffm7rgwfrohhjobwa	1678611372912	4832211372912	1689494201132	wq6i7sbf4tnqzbssbn7gy7cjcc		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "nqkt9swge3n87xo18tsdutbryr"}	f
-3q5kzouzsj8epp6pchjzuwx6io	ikt4wiy53brdzyt7hn4dad77ch	1679412934949	4833012934949	1689494201186	596q88qz87nbzbddntjm5xi6fh		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "fymei7fmxtfwpqc89g6a4egubc"}	f
-ia1xd9umypyt5nebyhznkun83w	kt6uhnoqs3bu8kumq8wp3r86so	1687419474267	4841019474267	1689494201755	stmjik91m7rsdg6q4fcjtitfhr		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "yg36s39ybjyzjpkkofarbzwbdo"}	f
-gsabf1qpybbmie8k6mbexqt8ya	s11ug9ysmf8qzjmiijoq617kwo	1687420364940	4841020364940	1689494201797	o1y7dsw4rbrg5xrrtpeqezhwqr		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "egp8q69e13878b8u4knzzfmtoy"}	f
-y978n4jxf7b79ph3ccwfoproeh	bxfcapjqiina9xayxw6y65ubwh	1676646213933	4830246213933	1687425672197	geds3gxhdf81dccdrm8bfx37ry		system_user system_admin	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "smw3ipoqajyrdxie69w464cy9e"}	f
+o13odb73ytyr7pg9uezkqjhtyo	fkjeyor9kjbh5c5jqyzigx1s4o	1690280917691	0	1690280917691	nphyqs6wq3f4xb317o5eifbzeh			f	{}	f
+fo4846aaei8i38kq9kmhb86xnr	bxfcapjqiina9xayxw6y65ubwh	1676646213929	4830246213929	1690280950443	geds3gxhdf81dccdrm8bfx37ry		system_user system_admin	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "smw3ipoqajyrdxie69w464cy9e"}	f
+y978n4jxf7b79ph3ccwfoproeh	bxfcapjqiina9xayxw6y65ubwh	1676646213933	4830246213933	1690280950692	geds3gxhdf81dccdrm8bfx37ry		system_user system_admin	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "smw3ipoqajyrdxie69w464cy9e"}	f
+nw4w8ecnz7gy9rt3wm4k68ziqe	i8bz3eaobffm7rgwfrohhjobwa	1678611372912	4832211372912	1690280950921	wq6i7sbf4tnqzbssbn7gy7cjcc		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "nqkt9swge3n87xo18tsdutbryr"}	f
+3q5kzouzsj8epp6pchjzuwx6io	ikt4wiy53brdzyt7hn4dad77ch	1679412934949	4833012934949	1690280950959	596q88qz87nbzbddntjm5xi6fh		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "fymei7fmxtfwpqc89g6a4egubc"}	f
+ia1xd9umypyt5nebyhznkun83w	kt6uhnoqs3bu8kumq8wp3r86so	1687419474267	4841019474267	1690280951314	stmjik91m7rsdg6q4fcjtitfhr		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "yg36s39ybjyzjpkkofarbzwbdo"}	f
+gsabf1qpybbmie8k6mbexqt8ya	s11ug9ysmf8qzjmiijoq617kwo	1687420364940	4841020364940	1690280951346	o1y7dsw4rbrg5xrrtpeqezhwqr		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "egp8q69e13878b8u4knzzfmtoy"}	f
+hnmbwyk3bfrw3xmbrhiq34ag6h	g158oe551tgdpd1pjmthx4t3sw	1690281109833	1692873109833	1690281109833	u53sd36877djmjrqfo9n5e1p3o		system_user	f	{"os": "Mac OS", "csrf": "ckcjut3aotn38dkom9188wjtpc", "isSaml": "false", "browser": "Chrome/114.0", "isMobile": "false", "is_guest": "false", "platform": "Macintosh", "isOAuthUser": "false"}	f
+17qdxa1ps3b9zxtg81mhsmrttc	zbobs1dw5jgrtby9hkcz3dkpjy	1678032959918	4831632959918	1690281266075	bgct5icpib883fx619bh3cfu6h		system_user	f	{"type": "UserAccessToken", "is_guest": "false", "user_access_token_id": "gbrc7c89sbfepjfxyijj5bkwyh"}	f
 \.
 
 
@@ -13201,8 +13261,11 @@ direct_messages_stmjik91m7rsdg6q4fcjtitfhr_ebxg8q3pzbdrdjo7xx1qqw3guy	stmjik91m7
 favorites_o1y7dsw4rbrg5xrrtpeqezhwqr_ebxg8q3pzbdrdjo7xx1qqw3guy	o1y7dsw4rbrg5xrrtpeqezhwqr	ebxg8q3pzbdrdjo7xx1qqw3guy	0		favorites	Favorites	f	f
 channels_o1y7dsw4rbrg5xrrtpeqezhwqr_ebxg8q3pzbdrdjo7xx1qqw3guy	o1y7dsw4rbrg5xrrtpeqezhwqr	ebxg8q3pzbdrdjo7xx1qqw3guy	10		channels	Channels	f	f
 direct_messages_o1y7dsw4rbrg5xrrtpeqezhwqr_ebxg8q3pzbdrdjo7xx1qqw3guy	o1y7dsw4rbrg5xrrtpeqezhwqr	ebxg8q3pzbdrdjo7xx1qqw3guy	20	recent	direct_messages	Direct Messages	f	f
-channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	u53sd36877djmjrqfo9n5e1p3o	ebxg8q3pzbdrdjo7xx1qqw3guy	10		channels	Channels	f	f
 channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	e343y5ecu7dyujwqm7yfimh1je	ebxg8q3pzbdrdjo7xx1qqw3guy	10		channels	Channels	f	f
+favorites_geds3gxhdf81dccdrm8bfx37ry_a3qrt43qkbbhj816b6c5cmw8bh	geds3gxhdf81dccdrm8bfx37ry	a3qrt43qkbbhj816b6c5cmw8bh	0		favorites	Favorites	f	f
+channels_geds3gxhdf81dccdrm8bfx37ry_a3qrt43qkbbhj816b6c5cmw8bh	geds3gxhdf81dccdrm8bfx37ry	a3qrt43qkbbhj816b6c5cmw8bh	10		channels	Channels	f	f
+direct_messages_geds3gxhdf81dccdrm8bfx37ry_a3qrt43qkbbhj816b6c5cmw8bh	geds3gxhdf81dccdrm8bfx37ry	a3qrt43qkbbhj816b6c5cmw8bh	20	recent	direct_messages	Direct Messages	f	f
+channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	u53sd36877djmjrqfo9n5e1p3o	ebxg8q3pzbdrdjo7xx1qqw3guy	10		channels	Channels	f	f
 \.
 
 
@@ -13222,15 +13285,17 @@ rk4gdc4whjnupqoad46hwa9cme	ygmycw6rnff7igko8gwbqchujr	channels_ygmycw6rnff7igko8
 9wp7xhh6f7namrfm1asziaf9nh	ygmycw6rnff7igko8gwbqchujr	channels_ygmycw6rnff7igko8gwbqchujr_ebxg8q3pzbdrdjo7xx1qqw3guy	30
 giyj94p1fp86p8zs9z6u5b3ujh	ygmycw6rnff7igko8gwbqchujr	channels_ygmycw6rnff7igko8gwbqchujr_ebxg8q3pzbdrdjo7xx1qqw3guy	40
 p7retz8iwtgzdrdceqw13fwmbr	ygmycw6rnff7igko8gwbqchujr	channels_ygmycw6rnff7igko8gwbqchujr_ebxg8q3pzbdrdjo7xx1qqw3guy	50
-c66na98stfrs7goij6gc1hdbzw	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	0
-giyj94p1fp86p8zs9z6u5b3ujh	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	10
-p7retz8iwtgzdrdceqw13fwmbr	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	20
 w1bem8ojdidaxjt9uzznhc186y	e343y5ecu7dyujwqm7yfimh1je	channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	0
 8tmxnejrb3fhxb6p91b7358y3c	e343y5ecu7dyujwqm7yfimh1je	channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	10
 hb8cxm688f86zgrejdmgdr7qsc	e343y5ecu7dyujwqm7yfimh1je	channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	20
 9wp7xhh6f7namrfm1asziaf9nh	e343y5ecu7dyujwqm7yfimh1je	channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	30
 giyj94p1fp86p8zs9z6u5b3ujh	e343y5ecu7dyujwqm7yfimh1je	channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	40
 p7retz8iwtgzdrdceqw13fwmbr	e343y5ecu7dyujwqm7yfimh1je	channels_e343y5ecu7dyujwqm7yfimh1je_ebxg8q3pzbdrdjo7xx1qqw3guy	50
+hy8pwwz663gmtj1gefzu7wwn6y	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	0
+w1bem8ojdidaxjt9uzznhc186y	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	10
+c66na98stfrs7goij6gc1hdbzw	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	20
+giyj94p1fp86p8zs9z6u5b3ujh	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	30
+p7retz8iwtgzdrdceqw13fwmbr	u53sd36877djmjrqfo9n5e1p3o	channels_u53sd36877djmjrqfo9n5e1p3o_ebxg8q3pzbdrdjo7xx1qqw3guy	40
 \.
 
 
@@ -13245,10 +13310,10 @@ e343y5ecu7dyujwqm7yfimh1je	offline	f	1688979372958	0
 wq6i7sbf4tnqzbssbn7gy7cjcc	offline	f	1679416093741	0	
 whida44gqpyfierua1wfrnbxtr	offline	f	1686224407156	0	
 stmjik91m7rsdg6q4fcjtitfhr	offline	f	1687419838424	0	
-bgct5icpib883fx619bh3cfu6h	offline	f	1687854461985	0	
 ygmycw6rnff7igko8gwbqchujr	offline	f	1688972681937	0	
-u53sd36877djmjrqfo9n5e1p3o	away	f	1689439272074	0	
-geds3gxhdf81dccdrm8bfx37ry	offline	f	1689494246458	0	
+u53sd36877djmjrqfo9n5e1p3o	online	f	1690281110296	0	
+bgct5icpib883fx619bh3cfu6h	online	f	1690281266062	0	
+geds3gxhdf81dccdrm8bfx37ry	offline	f	1690281333200	0	
 \.
 
 
@@ -13308,7 +13373,7 @@ FirstAdminSetupComplete	true
 custom_groups_permission_restore	true
 PostPriorityConfigDefaultTrueMigrationComplete	true
 INACTIVITY	true
-LastSecurityTime	1689439269991
+LastSecurityTime	1690280908841
 \.
 
 
@@ -13326,9 +13391,10 @@ ebxg8q3pzbdrdjo7xx1qqw3guy	e343y5ecu7dyujwqm7yfimh1je		0	t	f	f	1678611396619
 ebxg8q3pzbdrdjo7xx1qqw3guy	596q88qz87nbzbddntjm5xi6fh		0	t	f	f	1679412884640
 rjartdbsbtrfjfk9k9argymhqw	e343y5ecu7dyujwqm7yfimh1je		0	t	t	f	1681299111133
 6mje8n89nj843jfzixpfctmgcw	ygmycw6rnff7igko8gwbqchujr		0	t	t	f	1682408849830
-ebxg8q3pzbdrdjo7xx1qqw3guy	u53sd36877djmjrqfo9n5e1p3o		0	t	f	f	1687416764149
 ebxg8q3pzbdrdjo7xx1qqw3guy	stmjik91m7rsdg6q4fcjtitfhr		0	t	f	f	1687419433431
 ebxg8q3pzbdrdjo7xx1qqw3guy	o1y7dsw4rbrg5xrrtpeqezhwqr		0	t	f	f	1687420349951
+a3qrt43qkbbhj816b6c5cmw8bh	geds3gxhdf81dccdrm8bfx37ry		0	t	t	f	1690280950483
+ebxg8q3pzbdrdjo7xx1qqw3guy	u53sd36877djmjrqfo9n5e1p3o		0	t	t	f	1687416764149
 \.
 
 
@@ -13340,6 +13406,7 @@ COPY public.teams (id, createat, updateat, deleteat, displayname, name, descript
 ebxg8q3pzbdrdjo7xx1qqw3guy	1675955722030	1675955743965	0	Default	default		admin@localhost.com	O			mxwqwnwjg3fbbr3o3xpfuw6a3y	\N	t	0	\N	f
 rjartdbsbtrfjfk9k9argymhqw	1681299111059	1681299111059	0	MyTeam	myteam		user2.mm@localhost.com	O			oguqzkyto3ns5nospbqae346or	\N	f	0	\N	f
 6mje8n89nj843jfzixpfctmgcw	1682408849618	1682408983281	0	TestDev	dev		user1.mm@localhost.com	O			fywbzr8p5br7fxaaxk3a79wmko	\N	f	0	\N	f
+a3qrt43qkbbhj816b6c5cmw8bh	1690280950463	1690280950463	0	MatrixRooms	matrixrooms		matrix.bridge@localhost.com	I			7ofmccui5jnhbnsjmccnwroete	\N	f	0	\N	f
 \.
 
 
@@ -13701,14 +13768,14 @@ wq6i7sbf4tnqzbssbn7gy7cjcc	1678611367465	1679130437827	0	matrix_user2.matrix	$2a
 bgct5icpib883fx619bh3cfu6h	1676646214332	1679130437807	0	matrix_user1.matrix	$2a$10$q9SUFyaY6Lra0k7p8YK0YOqT9gP0GS3qw1X8dELNq2PrkEYPBilsW	\N		devnull-t6oqx2s4cgfznyuj@localhost	t		user1.matrix		system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1676646214332	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 596q88qz87nbzbddntjm5xi6fh	1679412883811	1679412884652	0	matrix_user3.matrix	$2a$10$1PR83y8Vz991yrid/eIEme/gpB/zalgryAHDTHXzNd91uGwYYeElO	\N		user3.matrix@localhost.com	t				system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1679412883811	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 nphyqs6wq3f4xb317o5eifbzeh	1680689074277	1680689074277	0	calls		\N		calls@localhost	f		Calls		system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1680689074277	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
-geds3gxhdf81dccdrm8bfx37ry	1675956108535	1675956222140	0	matrix.bridge	$2a$10$JXCrzoCJTcpdLmjN1XYghuFiZOizqFjNvlAoSCjt5mhkgJl6owVhu	\N		matrix.bridge@localhost.com	f				system_user system_admin	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675956108535	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
-uzpc4t1qkjbt3gspmrtmuzrimw	1675955407698	1687271815461	0	appsbot		\N		appsbot@localhost	f		Mattermost Apps		system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675955407698	1687271815461	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
-nm4raj8trpgetcnutzc8icka7r	1675955408397	1687271815544	0	playbooks		\N		playbooks@localhost	f		Playbooks		system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675955408397	1687271815544	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 e343y5ecu7dyujwqm7yfimh1je	1678611392548	1681299111165	0	user2.mm	$2a$10$vBYh6HG1k6KG50zVq05mW.5XanoPoJ.G6pbypi5.1cImTp0QtGKky	\N		user2.mm@localhost.com	f				system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1678611392548	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 whida44gqpyfierua1wfrnbxtr	1675955707161	1675955722081	0	admin	$2a$10$F/SOv8pg1NY3p9ZH6USjxOLr02DqMH4SgTEUnKVZlqPLtrkL.lNEK	\N		admin@localhost.com	f				system_admin system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675955707161	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 ygmycw6rnff7igko8gwbqchujr	1675956418277	1682408849870	0	user1.mm	$2a$10$P31EGMdOVpLdPjTky0zd6u6BSLvOMix7MvPxqO5D5k1bf/Pqv/yYK	\N		user1.mm@localhost.com	f				system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675956418277	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 stmjik91m7rsdg6q4fcjtitfhr	1687419432924	1687419433444	0	matrix_jan.ostgren	$2a$10$Kntu8qqivnoQ1v40yUwsoO4.XeXNkTI/2b2Zi2CMQkME0jtNuSRcG	\N		duplicate_jan.ostgren@localhost.com	t				system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1687419432924	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
+uzpc4t1qkjbt3gspmrtmuzrimw	1675955407698	1690280917458	0	appsbot		\N		appsbot@localhost	f		Mattermost Apps		system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675955407698	1690280917458	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
+nm4raj8trpgetcnutzc8icka7r	1675955408397	1690280917788	0	playbooks		\N		playbooks@localhost	f		Playbooks		system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675955408397	1690280917788	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 o1y7dsw4rbrg5xrrtpeqezhwqr	1687420349176	1687420349992	0	matrix_foo.bar	$2a$10$FfCsaIIZ3jKzhzU12aO.cut7i/rWQUa1qDTnTs3r.1DpAaqC2fI/i	\N		foo.bar@localhost.com	t				system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1687420349176	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
+geds3gxhdf81dccdrm8bfx37ry	1675956108535	1690280950497	0	matrix.bridge	$2a$10$JXCrzoCJTcpdLmjN1XYghuFiZOizqFjNvlAoSCjt5mhkgJl6owVhu	\N		matrix.bridge@localhost.com	f				system_user system_admin	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1675956108535	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 u53sd36877djmjrqfo9n5e1p3o	1687416752645	1687416764201	0	jan.ostgren	$2a$10$UBCU.TnS6Myfj4.S1kufDuCFrJMo4RNOyBzeCQEqGw3CdcbOdcjc6	\N		jan.ostgren@localhost.com	f				system_user	f	{}	{"push": "mention", "email": "true", "channel": "true", "desktop": "mention", "comments": "never", "first_name": "false", "push_status": "away", "mention_keys": "", "push_threads": "all", "desktop_sound": "true", "email_threads": "all", "desktop_threads": "all"}	1687416752645	0	0	en	f			{"manualTimezone": "", "automaticTimezone": "", "useAutomaticTimezone": "true"}	\N
 \.
 

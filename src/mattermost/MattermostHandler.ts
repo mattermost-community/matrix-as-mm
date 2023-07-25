@@ -535,25 +535,36 @@ export const MattermostHandlers = {
         const channel = await this.main.client.get(
             `/channels/${this.mattermostChannel}`,
         );
-        if (channel.type == 'P') {
-            const owner = await this.main.mattermostUserStore.getOrCreateClient(
-                channel.creator_id,
-            );
-            const user = User.findOne({
+        try {
+            const user = await User.findOne({
                 where: { mattermost_userid: m.data.user_id },
             });
-            await owner.invite(this.matrixRoom, (await user).matrix_userid);
-        } else {
-            const client =
-                await this.main.mattermostUserStore.getOrCreateClient(
-                    m.data.user_id,
-                );
-            await joinUserToMatrixRoom(
-                client,
-                this.matrixRoom,
-                this.main.adminClient,
-            );
+            if (user) {
+                if (channel.type == 'P') {
+
+                    const owner = await this.main.mattermostUserStore.getOrCreateClient(
+                        channel.creator_id,
+                    );
+
+                    await owner.invite(this.matrixRoom, user.matrix_userid);
+                } else {
+                    const client =
+                        await this.main.mattermostUserStore.getOrCreateClient(
+                            m.data.user_id,
+                        );
+                    await joinUserToMatrixRoom(
+                        client,
+                        this.matrixRoom,
+                        this.main.adminClient,
+                    );
+                }
+            }
+        } catch (error) {
+
+            myLogger.error(`Failed to add user ${m.data.user_id} to channel ${channel.name}. Error=${error.message}`)
+
         }
+
     },
     user_removed: async function (
         this: Channel,

@@ -256,8 +256,9 @@ export default class Main extends EventEmitter {
         try {
             if (creatorId !== '' && creatorId !== myId) {
                 const userInfo = await this.client.get(`/users/${creatorId}`);
-                if (!userInfo.roles.includes('system_admin')) {
-                    const message = `Only system administrators can map channels for Matrix integration. Not ok for user ${userInfo.username} with roles ${userInfo.roles}`;
+                const teamMember = await this.client.get(`/teams/${channel.team_id}/members/${userInfo.id}`);
+                if (!teamMember.scheme_admin && !userInfo.roles.includes('system_admin')) {
+                    const message = `Only system administrators and team administrators can map channels for Matrix integration. Not ok for user ${userInfo.username} with roles ${userInfo.roles}`;
                     this.myLogger.info(message);
                     await this.client.delete(
                         `/channels/${channel.id}/members/${myId}`,

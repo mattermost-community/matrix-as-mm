@@ -9,7 +9,7 @@ import {
     leaveMattermostChannel,
     getMatrixIntegrationTeam
 } from '../mattermost/Utils';
-import {sendNotice,NoticeType} from './Utils'
+import { sendNotice, NoticeType } from './Utils'
 import { handlePostError, none } from '../utils/Functions';
 import { matrixToMattermost } from '../utils/Formatting';
 import { MatrixEvent } from '../Interfaces';
@@ -375,18 +375,22 @@ const MatrixHandlers = {
 
         if (findMapping) {
             const user = await this.main.matrixUserStore.get(event.sender);
-            //const team = await getMatrixIntegrationTeam(this.main.client, user.mattermost_userid)
+           
             const mmUser = await User.findOne({
                 where: { matrix_userid: event.state_key }
             })
-            const team = await getMatrixIntegrationTeam(this.main.client, mmUser.mattermost_userid)
-            
-            await this.main.client.post(`/channels/${findMapping.mattermost_channel_id}/members`,
-                {
-                    user_id: mmUser.mattermost_userid,
+           // const team = await getMatrixIntegrationTeam(this.main.client, mmUser.mattermost_userid)
 
-                }
-            )
+            if (!findMapping.is_direct) {
+                await this.main.client.post(`/channels/${findMapping.mattermost_channel_id}/members`,
+                    {
+                        user_id: mmUser.mattermost_userid
+
+                    }
+                )
+            } else {
+                await sendNotice('Info',this.main.botClient,event.room_id,`Can not add members to this channel type.`)
+            }
 
         } else {
 
@@ -488,7 +492,6 @@ export const MatrixUnbridgedHandlers = {
         const user = await this.matrixUserStore.get(event.sender);
 
 
-
         for (const membership of memberships) {
             const response = await this.botClient.getRoomMembers(
                 event.room_id,
@@ -543,8 +546,8 @@ export const MatrixUnbridgedHandlers = {
         const remoteUsers = mmUsers.length - localMembers - 1;
         if (remoteUsers < 1 || (!roomName && remoteUsers > 7)) {
             const message = `<strong>No mapping to Mattermost channel done</strong>. No remote users invited or to many users invited. Invited remote users=${remoteUsers}, local users=${localMembers}.`;
-        
-            await sendNotice('Warning',this.botClient,event.room_id,message)
+
+            await sendNotice('Warning', this.botClient, event.room_id, message)
             await this.botClient.leave(event.room_id);
             return;
         }
@@ -555,15 +558,15 @@ export const MatrixUnbridgedHandlers = {
             const channelName = roomName.replace(/\s+/g, '_').toLowerCase();
             const team = await getMatrixIntegrationTeam(this.client, user.mattermost_userid)
             const teamMembers: any[] = await this.client.get(`/teams/${team.id}/members`)
-            
-            const check=await this.client.get(`/teams/${team.id}/channels/name/${channelName}`,undefined,false,false)
-            if(check.status=== 200) {
-                const message=`Channel with name ${channelName} exist in team ${team.name}. No mapping done`
-                await sendNotice('Error',this.botClient,event.room_id,message)
+
+            const check = await this.client.get(`/teams/${team.id}/channels/name/${channelName}`, undefined, false, false)
+            if (check.status === 200) {
+                const message = `Channel with name ${channelName} exist in team ${team.name}. No mapping done`
+                await sendNotice('Error', this.botClient, event.room_id, message)
                 await this.botClient.leave(event.room_id);
-                return 
+                return
             }
-            
+
             const channel = await user.client.post('/channels',
 
                 {
@@ -574,7 +577,6 @@ export const MatrixUnbridgedHandlers = {
                     header: user.matrix_displayname,
                     type: canonicalAlias ? 'O' : 'P'
                 }
-
             )
             for (let mmUser of mmUsers) {
                 if (mmUser !== user.mattermost_userid) {
@@ -587,13 +589,11 @@ export const MatrixUnbridgedHandlers = {
 
                             }
                         )
-
                     }
 
                     await user.client.post(`/channels/${channel.id}/members`,
                         {
                             user_id: mmUser,
-
                         }
                     )
 
@@ -609,8 +609,8 @@ export const MatrixUnbridgedHandlers = {
             mapping.mattermost_channel_id = channel.id;
             mapping.info = `Channel display name: ${channel.display_name}`;
             await mapping.save();
-            const message=`Room mapped to Mattermost channel <strong>${channel.display_name} </strong> in team <strong>${team.name}</strong>`
-            await sendNotice('Info',this.botClient,event.room_id,message)
+            const message = `Room mapped to Mattermost channel <strong>${channel.display_name} </strong> in team <strong>${team.name}</strong>`
+            await sendNotice('Info', this.botClient, event.room_id, message)
             await this.redoMatrixEvent(event);
         }
         else {
@@ -642,7 +642,7 @@ export const MatrixUnbridgedHandlers = {
                 await this.redoMatrixEvent(event);
                 if (findMapping) {
                     const message = `Mapping to Mattermost channel <strong>${channel.display_name}</strong> no longer valid. Use new direct chat setup.`;
-                    await sendNotice('Warning',this.botClient,findMapping.matrix_room_id,message)
+                    await sendNotice('Warning', this.botClient, findMapping.matrix_room_id, message)
                     await this.botClient.leave(findMapping.matrix_room_id);
                 }
             } catch (err) {
