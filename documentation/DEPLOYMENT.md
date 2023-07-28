@@ -247,7 +247,7 @@ The npm command will generate
 Install the connector in a target environment by installing the copied NPM package file (.tgz).
 
 ```bash
-ubuntu@ip-172-31-3-173:~$ sudo npm -g install mm-matrix-connector-3.1.1.tgz
+ubuntu@ip-172-31-3-173:~$ sudo npm -g install mm-matrix-connector-3.3.1.tgz
 
 changed 182 packages, and audited 183 packages in 27s
 
@@ -257,6 +257,42 @@ changed 182 packages, and audited 183 packages in 27s
 found 0 vulnerabilities
 ubuntu@ip-172-31-3-173:~$
 ```
+
+## Deploy directly from tgz file in a GitHub release.
+From version 3.3.1 we create a release in the repository which contain the latest tgz file. You can copy the tgz file and install it without building it.
+``` bash
+janostgren@MBPsomtllhorJan matrix-as-mm % sudo npm -g install mm-matrix-connector-3.3.1.tgz
+Password:
+
+added 6 packages, and changed 184 packages in 40s
+
+23 packages are looking for funding
+  run `npm fund` for details
+
+```
+The npm package is installed to the global npm directory.
+
+``` bash
+ls -l /usr/local/lib/node_modules/mm-matrix-connector
+total 64
+-rw-r--r--    1 root  wheel  2666 28 Jul 10:20 CHANGELOG.md
+-rw-r--r--    1 root  wheel  1055 28 Jul 10:20 LICENSE
+-rw-r--r--    1 root  wheel  3463 28 Jul 10:20 README.md
+drwxr-xr-x   20 root  wheel   640 28 Jul 10:20 build
+drwxr-xr-x    3 root  wheel    96 28 Jul 10:20 config
+-rw-r--r--    1 root  wheel  3782 28 Jul 10:20 config.sample.yaml
+-rw-r--r--    1 root  wheel  3782 28 Jul 10:20 config.yaml
+drwxr-xr-x    6 root  wheel   192 28 Jul 10:20 documentation
+drwxr-xr-x    3 root  wheel    96 28 Jul 10:20 etc
+drwxr-xr-x  178 root  wheel  5696 28 Jul 10:20 node_modules
+-rw-r--r--    1 root  wheel  2299 28 Jul 10:20 package.json
+-rwxr-xr-x    1 root  wheel   221 28 Jul 10:20 package.sh
+-rw-r--r--    1 root  wheel   405 28 Jul 10:20 registration.yaml
+
+```
+- Copy the *config.yaml* and *registration.yaml* from */usr/local/lib/node_modules/mm-matrix-connector*. 
+- Start with configuration by editing the *config.yaml* file.
+
 
 ## Installation in a target environment
 
@@ -284,8 +320,17 @@ Run the following command to create the configuration database.
 ```bash
 mm-matrix-connector -c config.yaml -f registration.yaml -s
 ```
+### Create a Application service configuration file for Matrix home server.
+```bash
+mm-matrix-connector -c config.yaml -f registration.yaml -r
+```
+- A new registration.yaml will be created from properties in config.yaml.
+- Copy the registration.yaml to the Matrix homeserver configuration directory and edit the main configuration file. It is called homeserver.yaml for Synapse.
+- Restart the Matrix homeserver.
 
-After successful creation of the configuration database the bridge can be started with. All properties in _config.yaml_ must be correct to start the bridge.
+### Start the Connector 
+After successful creation of the configuration database the connector can be started with. All properties in _config.yaml_ must be correct to start the connector.
+
 
 ```shell
 mm-matrix-connector -c config.yaml -f registration.yaml
