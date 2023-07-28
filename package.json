@@ -1,6 +1,6 @@
 {
   "name": "mm-matrix-connector",
-  "version": "3.2.2",
+  "version": "3.3.1",
   "description": "",
   "repository": "https://github.com/janostgren/matrix-as-mm",
   "main": "build/Main.js",
@@ -9,7 +9,7 @@
     "node": ">=10.16"
   },
   "scripts": {
-    "package": "rm -f docker.zip && zip -r docker.zip docker -x  docker/matrix/data/media_store/**\\* && npm pack",
+    "package": "rm -f docker.zip *.tgz && zip -r docker.zip docker -x  docker/matrix/data/media_store/**\\* && npm pack",
     "-preinstall": "git config core.hooksPath .githooks",
     "build": "tsc && typescript-json-schema --noExtraProps --required src/Config.ts Config -o build/config-schema.json",
     "test": "tape build{,/**}/*.test.js",
